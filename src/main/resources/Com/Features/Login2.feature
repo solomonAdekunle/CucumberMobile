@@ -2,10 +2,11 @@
   
   
   
-  @Reg
+# @ignore
+@Login 
  Scenario Outline:Login
- Given I am on the Page
-  #When I click on Login Button
+ Given I Navigate to the homepage on "browser"
+  When I click on Login Button
   When  I enter Username as "<username>"
    And  I enter Password as "<password>"
    And  I click on SignIn button
