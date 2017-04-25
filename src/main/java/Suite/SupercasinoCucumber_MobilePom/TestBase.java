@@ -28,19 +28,25 @@ public class TestBase {
 	WebDriver chrome = null;
 	WebDriver ie = null;
 
-	public TestBase() throws IOException {
+	public TestBase() throws IOException{
+		this.createDriver();
+	}
+	protected void createDriver()  throws IOException { 
+		
+		// initialising the properties
+		Config = new Properties();
+		FileInputStream fs = new FileInputStream(
+				System.getProperty("user.dir") + "\\src\\main\\java\\Config\\Config.Properties");
+		Config.load(fs);
+		System.out.println("Looking at");
+		// OR
+		OR = new Properties();
+		fs = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\Config\\OR.Properties");
+		OR.load(fs);
+					
 		if (d == null) {
 
-			// initialising the properties
-			Config = new Properties();
-			FileInputStream fs = new FileInputStream(
-					System.getProperty("user.dir") + "\\src\\main\\java\\Config\\Config.Properties");
-			Config.load(fs);
-			System.out.println("Looking at");
-			// OR
-			OR = new Properties();
-			fs = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\Config\\OR.Properties");
-			OR.load(fs);
+			
 
 			// initialised webdriver
 			if (Config.getProperty("browser").equals("Firefox"))
@@ -94,7 +100,7 @@ public class TestBase {
 	}
 
 	public String generateRandomAlphaNumeric(int lenght, String charcter) {
-		String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!”$%^&*()";
+		String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!â€�$%^&*()";
 		charcter = RandomStringUtils.random(lenght, characters);
 		return charcter;
 	}

@@ -7,7 +7,7 @@ Feature: User should be able to Login with Valid Username and Password
 	#@ignore
 	@Login 
 Scenario: Clicking On Login Buttton to see if Loging Pop-up box displayed 
-	Given I am on the Page
+	Given I Navigate to the homepage on "browser"
 	When I click on Login Button 
 	Then I should see Login Pop-up box displayed 
 	And I should see Supercasino Logo displayed 
@@ -21,10 +21,13 @@ Scenario: Clicking On Login Buttton to see if Loging Pop-up box displayed
 	
 	
 	
+		
+	
+#@ignore
 @Login 
 Scenario Outline: Logging in with Invalid data 
-Given I am on the Page
-#When I click on Login Button 
+Given I Navigate to the homepage on "browser"
+When I click on Login Button 
 When  I enter Username as "<username>" 
 And  I enter Password as "<password>" 
 And  I click on SignIn button 
@@ -32,14 +35,15 @@ Then I should see Login errorMesssage Pop-up box
 Examples: 
 		|username         | password   |
 		|mmm12	          |MNNH$1      |
-		|Noblebugq11	  |Bola123     |
+		|Noblebugq11	  |Bola123       |
 		
 
-	
+#@ignore
 @Login 	
 Scenario: Close the Login Pop-up box
-Given I am on the Page
- When I click on the Login Pop-up close icon
+Given I Navigate to the homepage on "browser"
+When I click on Login Button 
+ And I click on the Login Pop-up close icon
  Then Login Pop-up box should be closed
 		
  

@@ -3,7 +3,7 @@ Feature: User Should be able to navigate to the HomePage
 #@ignore
 @Homepage
 Scenario: Navigating to the Home Page
-Given I Navigate to the homepage on browser
+Given I Navigate to the homepage on "browser"
 Then I should see Login Button
  And I should see Supercasino Logo
  And I should see SideBar Menu Icon

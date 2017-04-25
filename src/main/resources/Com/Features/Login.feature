@@ -35,14 +35,15 @@ Then I should see Login errorMesssage Pop-up box
 Examples: 
 		|username         | password   |
 		|mmm12	          |MNNH$1      |
-		|Noblebugq11	  |Bola123     |
+		|Noblebugq11	  |Bola123       |
 		
 
-@ignore
+#@ignore
 @Login 	
 Scenario: Close the Login Pop-up box
-#Given I Navigate to the homepage on "browser"
- When I click on the Login Pop-up close icon
+Given I Navigate to the homepage on "browser"
+When I click on Login Button 
+ And I click on the Login Pop-up close icon
  Then Login Pop-up box should be closed
 		
  

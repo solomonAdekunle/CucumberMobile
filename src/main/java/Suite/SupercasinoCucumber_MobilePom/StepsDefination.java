@@ -27,30 +27,39 @@ public class StepsDefination extends TestBase {
 
 	}
 
-	@Before
-	public void GoToUrl() {
-		// d.get(Config.getProperty("URL"));
-
-	}
-
+//	@Before
+//	public void init() throws IOException{
+//		 this.createDriver();
+//		 basePage = new BasePage(TestBase.d);
+//			loginPage = new LoginPage(TestBase.d);
+//			LEPage=new LoginErrorPage(TestBase.d);
+//
+//	}
+//	
+//	@After()
+//	public void closeBrowser() {
+//	// Thread.sleep(1000);
+//	 d.close();
+//	}
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/* This below are Only For @Given Methods */
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/* @param {string} siteName-is the url address od supercasino.com */
 
-	@Given("^I navigate to the homepage on \"([^\"]*)\"$")
-	public void i_navigate_to_the_homepage_on(String browser) {
+	@Given("^I Navigate to the homepage on \"([^\"]*)\"$")
+	public void i_Navigate_to_the_homepage_on(String arg1) throws Throwable {
 		// basePage.getBrowserType(browser);
-		//basePage.getSiteAddress(Config.getProperty("URL"));
-		 basePage.getSiteAddress();
+		String url = Config.getProperty("URL");
+		basePage.getSiteAddress(url);
+		// basePage.getSiteAddress();
 
 	}
 
 	@Given("^I Navigate to the homepage on browser$")
-	public void i_Navigate_to_the_homepage_on_browser() throws Throwable {
-		//basePage.getSiteAddress(Config.getProperty("URL"));
-		 basePage.getSiteAddress();
+	public void i_Navigate_to_the_homepage_on_browser(String Url) {
+		basePage.getSiteAddress(Config.getProperty("URL"));
+		// basePage.getSiteAddress(Url);
 
 	}
 	@Given("^I am on the Page$")
@@ -250,10 +259,6 @@ public class StepsDefination extends TestBase {
 
 	}
 
-	@After()
-	public void closeBrowser() {
-		// Thread.sleep(1000);
-		// d.close();
-	}
+	
 
 }

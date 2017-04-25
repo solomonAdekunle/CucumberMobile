@@ -23,9 +23,9 @@ public class BasePage {
 	 d.get(browser);
 	 
  }
-	public void getSiteAddress() {
-		//this.d.get(BaseUrl + "/");
-		d.get("https://www.supercasino.com/");
+	public void getSiteAddress(String BaseUrl) {
+		this.d.get(BaseUrl + "/");
+		//d.get("https://www.supercasino.com/");
 
 	}
 
