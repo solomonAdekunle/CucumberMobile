@@ -48,6 +48,7 @@ public class StepsDefination extends TestBase {
 
 	}
 
+<<<<<<< HEAD
 	@Before
 	public void GoToUrl() throws InterruptedException {
 		if (basePage.isLoggedIn()) {
@@ -56,24 +57,52 @@ public class StepsDefination extends TestBase {
 		}
 	}
 
+=======
+//	@Before
+//	public void init() throws IOException{
+//		 this.createDriver();
+//		 basePage = new BasePage(TestBase.d);
+//			loginPage = new LoginPage(TestBase.d);
+//			LEPage=new LoginErrorPage(TestBase.d);
+//
+//	}
+//	
+//	@After()
+//	public void closeBrowser() {
+//	// Thread.sleep(1000);
+//	 d.close();
+//	}
+>>>>>>> d219a815b3476f006fd5cfeba5123e9c66426e03
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/* This below are Only For @Given Methods */
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/* @param {string} siteName-is the url address od supercasino.com */
 
-	@Given("^I navigate to the homepage on \"([^\"]*)\"$")
-	public void i_navigate_to_the_homepage_on(String browser) {
+	@Given("^I Navigate to the homepage on \"([^\"]*)\"$")
+	public void i_Navigate_to_the_homepage_on(String arg1) throws Throwable {
 		// basePage.getBrowserType(browser);
+<<<<<<< HEAD
 		basePage.getSiteAddress(Config.getProperty("URL"));
+=======
+		String url = Config.getProperty("URL");
+		basePage.getSiteAddress(url);
+>>>>>>> d219a815b3476f006fd5cfeba5123e9c66426e03
 		// basePage.getSiteAddress();
 
 	}
 
+<<<<<<< HEAD
 	@Given("^I Navigate to the homepage on \"([^\"]*)\"$")
 	public void i_Navigate_to_the_homepage_on(String browser) {
 		basePage.getSiteAddress(Config.getProperty("URL"));
 		// basePage.getSiteAddress(browser);
+=======
+	@Given("^I Navigate to the homepage on browser$")
+	public void i_Navigate_to_the_homepage_on_browser(String Url) {
+		basePage.getSiteAddress(Config.getProperty("URL"));
+		// basePage.getSiteAddress(Url);
+>>>>>>> d219a815b3476f006fd5cfeba5123e9c66426e03
 
 	}
 
@@ -585,6 +614,7 @@ public class StepsDefination extends TestBase {
 		Assert.assertTrue(basePage.isTopDepositButtonPresent());
 
 	}
+
 
 	/* Verify if user is Navigated to Registration Page */
 	@Then("^I should Navigate to Registration Page$")
