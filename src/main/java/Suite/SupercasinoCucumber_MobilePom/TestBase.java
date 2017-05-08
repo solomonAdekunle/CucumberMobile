@@ -39,7 +39,7 @@ public class TestBase {
 		FileInputStream fs = new FileInputStream(
 				System.getProperty("user.dir") + "\\src\\main\\java\\Config\\Config.Properties");
 		Config.load(fs);
-		System.out.println("Looking at");
+		//System.out.println("Looking at");
 		// OR
 		OR = new Properties();
 		fs = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\Config\\OR.Properties");

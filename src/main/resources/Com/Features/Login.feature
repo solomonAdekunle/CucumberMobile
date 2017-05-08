@@ -7,8 +7,7 @@ Feature: User should be able to Login with Valid Username and Password
 #@ignore
 @Login 
 Scenario: Clicking On Login Buttton to see if Loging Pop-up box displayed 
-<<<<<<< HEAD
-	Given I Navigate to the homepage on "browser" 
+Given I Navigate to the homepage on "browser" 
 	When I click on Login Button 
 	Then I should see Login Pop-up box displayed 
 	And I should see Supercasino Logo displayed 
@@ -28,8 +27,7 @@ Scenario: Clicking On Login Buttton to see if Loging Pop-up box displayed
 #@ignore
 @Login 
 Scenario Outline: Logging in with Invalid data 
-<<<<<<< HEAD
-	Given I Navigate to the homepage on "browser" 
+Given I Navigate to the homepage on "browser" 
 	When  I click on Login Button 
 	When  I enter Username as "<username>" 
 	And  I enter Password as "<password>" 
