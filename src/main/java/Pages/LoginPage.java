@@ -57,6 +57,8 @@ public class LoginPage extends BasePage {
 
 	}
 	public boolean isPopUpBoxCloseIconPresent(){
+		 WebDriverWait wait = new WebDriverWait(d,20);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.LoginPopUpBoxCloseIcon)));
 		return d.findElement(By.cssSelector(Constant.LoginPopUpBoxCloseIcon)).isDisplayed();
 	}
    public boolean isLoginPopUpBoxErrorMessagePresent(){
@@ -66,15 +68,15 @@ public class LoginPage extends BasePage {
 	   
    }
 	public void sendUseraname(String username) {
-//		WebDriverWait wait = new WebDriverWait(d,30);
-//		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(Constant.LoginPopUpBox)));
+	WebDriverWait wait = new WebDriverWait(d,30);
+  	wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(Constant.LoginPopUpBox)));
 		d.findElement(By.cssSelector(Constant.LoginPopUpBoxUsername)).sendKeys(username);
 
 	}
 
 	public void sendPassword(String password) {
-//		WebDriverWait wait = new WebDriverWait(d,30);
-//		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(Constant.LoginPopUpBox)));
+		WebDriverWait wait = new WebDriverWait(d,30);
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(Constant.LoginPopUpBox)));
 		d.findElement(By.cssSelector(Constant.LoginPopBoxPassword)).sendKeys(password);
 
 	}

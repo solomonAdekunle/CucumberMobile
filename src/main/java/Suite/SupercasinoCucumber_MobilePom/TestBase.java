@@ -29,18 +29,18 @@ public class TestBase {
 	WebDriver ie = null;
 
 	public TestBase() throws IOException {
-		if (d == null) {
-
+		
 			// initialising the properties
 			Config = new Properties();
 			FileInputStream fs = new FileInputStream(
 					System.getProperty("user.dir") + "\\src\\main\\java\\Config\\Config.Properties");
 			Config.load(fs);
-			System.out.println("Looking at");
+			//System.out.println("Looking at");
 			// OR
-			OR = new Properties();
-			fs = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\Config\\OR.Properties");
-			OR.load(fs);
+						OR = new Properties();
+						fs = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\Config\\OR.Properties");
+						OR.load(fs);
+			if (d == null) {
 
 			// initialised webdriver
 			if (Config.getProperty("browser").equals("Firefox"))
@@ -49,8 +49,7 @@ public class TestBase {
 				System.setProperty("webdriver.chrome.driver", "lib\\chromedriver.exe");
 				ChromeOptions options = new ChromeOptions();
 				// options.addArguments("no-sandbox");
-				options.addArguments("--user-agent="
-						+ "Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53");
+				options.addArguments("--user-agent="+ "Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53");
 				// options.addArguments("--user-agent=" + "Mozilla/5.0 (iPad;
 				// CPU OS 8_0 like Mac OS X) AppleWebKit/600.1.3 (KHTML, like
 				// Gecko) Version/8.0 Mobile/12A4345d Safari/600.1.4");
@@ -62,18 +61,18 @@ public class TestBase {
 				File file = new File("C:\\QA\\Chrome\\IEDriverServer.exe");
 				System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
 				d = new InternetExplorerDriver();
-
 			}
+			
 			EventFiringWebDriver dr = new EventFiringWebDriver(d);
-			d.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			d.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			// Smalltouch devices such as iPhone, Android and Windows phones
-			Dimension k = new Dimension(320, 580);
+			Dimension k = new Dimension(320,568);
 			// Dimension k = new Dimension(768,1024);// ipad or tablet
 			d.manage().window().setSize(k);
 
 		}
 	}
-
+	
 	public void navigate(String URLKey) {
 		d.get(Config.getProperty(URLKey));
 		// Utility.takeScreenshot(URLKey);
@@ -94,7 +93,7 @@ public class TestBase {
 	}
 
 	public String generateRandomAlphaNumeric(int lenght, String charcter) {
-		String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!”$%^&*()";
+		String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!â€�$%^&*()";
 		charcter = RandomStringUtils.random(lenght, characters);
 		return charcter;
 	}
