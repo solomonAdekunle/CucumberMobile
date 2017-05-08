@@ -3,7 +3,6 @@ Feature: User Should be able to navigate to the HomePage
          
 
 #@ignore
-<<<<<<< HEAD
 @Homepage 
 Scenario: Navigating to the Home Page 
 	Given I Navigate to the homepage on "browser" 
@@ -108,17 +107,3 @@ Scenario: Launching Live Game on Live Vertical
 	And  I click on a Live Game
 	And  I click on Play button
 	Then I should see a Play for Cash game Launching 
-=======
-@Homepage
-Scenario: Navigating to the Home Page
-Given I Navigate to the homepage on "browser"
-Then I should see Login Button
- And I should see Supercasino Logo
- And I should see SideBar Menu Icon
- And I should see Casino Vertical Tab
- And I should see Vegas Vertical Tab
- And I should see Live Vertical Tab
- And I should see Promos Vertical Tab
- And I should see Hero Banner
- And I should see  Games Category Tab
->>>>>>> d219a815b3476f006fd5cfeba5123e9c66426e03

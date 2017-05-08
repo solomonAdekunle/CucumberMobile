@@ -34,7 +34,6 @@ public class TestBase {
 		this.createDriver();
 	}
 	protected void createDriver()  throws IOException { 
-		
 		// initialising the properties
 		Config = new Properties();
 		FileInputStream fs = new FileInputStream(
@@ -47,8 +46,6 @@ public class TestBase {
 		OR.load(fs);
 					
 		if (d == null) {
-
-			
 
 			// initialised webdriver
 			if (Config.getProperty("browser").equals("Firefox"))
