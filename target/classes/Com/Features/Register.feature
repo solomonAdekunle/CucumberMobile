@@ -84,7 +84,7 @@ Scenario Outline: Registration with Invalid Data
 				
 				
 				
-				#@ignore 
+				@ignore 
 				@Register 
 				Scenario: Deposit Limit link on Registrition Page 
 					Given I navigate to the Registrationpage on "browser" 
@@ -123,7 +123,7 @@ Scenario Outline: Registration with Invalid Data
 							And I enter Choose limit as "Other" 
 							And I enter Other Amount as "£10,000" 
 							Then I should see Choose Type as "Monthly" 
-							And I should see Choose Limit  as "Other" 
+							And I should see Choose Limit as "Other" 
 							And I should see Other Amount  as "£10,000" 
 							
 						#@ignore	

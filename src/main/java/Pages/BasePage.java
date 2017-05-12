@@ -164,6 +164,14 @@ public class BasePage {
 			d.findElement(By.cssSelector(Constant.LoginPopBoxSignin)).click();
 			WebDriverWait wait = new WebDriverWait(d,10);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.hp_DepositButton)));
+			
+			try{
+				WebElement PlayerMessage=d.findElement(By.cssSelector("div.playerMessages-modal .footer .ok"));
+						if(PlayerMessage.isDisplayed())
+							PlayerMessage.click();
+				}catch (NoSuchElementException e){
+					e.getStackTrace();
+				}
 
 		}
 		
@@ -173,7 +181,7 @@ public class BasePage {
 		public void logOut() {
 			try{
 				WebElement GamePop = d.findElement(By.cssSelector(Constant.hp_GamePopUPBox_closeIcon));
-				WebDriverWait wait = new WebDriverWait(d,30);
+				WebDriverWait wait = new WebDriverWait(d,15);
 				wait.until(ExpectedConditions.visibilityOf(GamePop));
 					if(GamePop.isDisplayed())
 					     GamePop.click();
@@ -181,7 +189,7 @@ public class BasePage {
 					e.getStackTrace();
 				}
 		
-		WebDriverWait wait = new WebDriverWait(d,30);
+		WebDriverWait wait = new WebDriverWait(d,15);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(Constant.hp_GamesPopUpBox)));
 		d.findElement(By.cssSelector(Constant.hp_SidebarIcon)).click();
 		WebElement Logoutlink=d.findElement(By.cssSelector(Constant.SideBarMenu_Logout));

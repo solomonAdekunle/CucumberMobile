@@ -5,14 +5,20 @@ import java.io.IOException;
 import org.junit.Assert;
 
 import Pages.BasePage;
+import Pages.ExternalPage;
+import Pages.FooterPage;
 import Pages.HomePage;
 import Pages.LiveVerticalPage;
 import Pages.LoginErrorPage;
 import Pages.LoginPage;
+import Pages.PrivacyPolicyPage;
 import Pages.RegisterPage;
+import Pages.ResponsibleGamblingPage;
 import Pages.RouletteExpressPremium;
 import Pages.SideBarPage;
 import Pages.SlotsGamePage;
+import Pages.TermsAndConditionsPage;
+import Pages.VIPPage;
 import Pages.WelcomePage;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -31,6 +37,12 @@ public class StepsDefination extends TestBase {
 	private RouletteExpressPremium RepPage;
 	private SlotsGamePage slotGamePage;
 	private LiveVerticalPage livePage;
+	private FooterPage footerPage;
+	private ExternalPage externalPage;
+	private ResponsibleGamblingPage reponsibleGamblingPage;
+	private PrivacyPolicyPage privcypolicyPage;
+	private TermsAndConditionsPage TAndCPage;
+	private VIPPage vipPage;
 
 	public StepsDefination() throws IOException {
 
@@ -41,13 +53,18 @@ public class StepsDefination extends TestBase {
 		RegPage = new RegisterPage(TestBase.d);
 		sidebarPage = new SideBarPage(TestBase.d);
 		welcomePage = new WelcomePage(TestBase.d);
-		homePage=new HomePage(TestBase.d);
-		RepPage=new  RouletteExpressPremium(TestBase.d);
-		slotGamePage= new SlotsGamePage(TestBase.d);
+		homePage = new HomePage(TestBase.d);
+		RepPage = new RouletteExpressPremium(TestBase.d);
+		slotGamePage = new SlotsGamePage(TestBase.d);
 		livePage = new LiveVerticalPage(TestBase.d);
+		footerPage= new FooterPage(TestBase.d);
+		externalPage= new ExternalPage(TestBase.d);
+		reponsibleGamblingPage= new ResponsibleGamblingPage(TestBase.d);
+		privcypolicyPage= new PrivacyPolicyPage(TestBase.d);
+		TAndCPage= new TermsAndConditionsPage(TestBase.d);
+		vipPage = new VIPPage(TestBase.d);
 
 	}
-
 
 	@Before
 	public void GoToUrl() throws InterruptedException {
@@ -56,7 +73,6 @@ public class StepsDefination extends TestBase {
 			// d.get(Config.getProperty("URL"));
 		}
 	}
-
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -73,18 +89,17 @@ public class StepsDefination extends TestBase {
 
 	}
 
-
 	@Given("^I Navigate to the homepage on browser$")
 	public void i_Navigate_to_the_homepage_on_browser(String Url) {
 		basePage.getSiteAddress(Config.getProperty("URL"));
 		// basePage.getSiteAddress(Url);
 
-
 	}
 
 	@Given("^I have loggedin on the BasePage$")
-	public void i_have_loggedin_on_the_BasePage() throws InterruptedException  {
-		basePage.doLogin(Config.getProperty("URL"), Config.getProperty("defaultUsername"), Config.getProperty("defaultPassword"));
+	public void i_have_loggedin_on_the_BasePage() throws InterruptedException {
+		basePage.doLogin(Config.getProperty("URL"), Config.getProperty("defaultUsername"),
+				Config.getProperty("defaultPassword"));
 
 	}
 
@@ -346,6 +361,18 @@ public class StepsDefination extends TestBase {
 		RegPage.clickOver18PrivacyPolicyLink();
 
 	}
+	/* click on Promo tab on Vertical tab on home Page */
+	@When("^I click on Promos Vertical Tab$")
+	public void i_click_on_Promos_Vertical_Tab() {
+		basePage.clickPromosTab();
+
+	}
+	/* click on Terms And Condition link within the footer on home Page */
+	@When("^I click on Casino TermsAndCondition link within the footer$")
+	public void i_click_on_Casino_TermsAndCondition_link_within_the_footer() {
+		footerPage.clickFooterTermsAndConditionlink();
+
+	}
 
 	/*
 	 * Click on a Roulette Express Premium Game on Home page
@@ -355,7 +382,6 @@ public class StepsDefination extends TestBase {
 	@When("^I click on \"([^\"]*)\"$")
 	public void i_click_on(String GameType) {
 		homePage.clickNetPlayTvRouletteGame(GameType);
-		
 
 	}
 
@@ -389,14 +415,13 @@ public class StepsDefination extends TestBase {
 	/* Click on Slots tab within the Game category menu */
 	@When("^I click Games Category Slots tab$")
 	public void i_click_Games_Category_Slots_tab() {
-      homePage.clickGameCategorySlotsTab();
+		homePage.clickGameCategorySlotsTab();
 	}
 
 	/* Click on a Slots Game on the Home Page */
 	@When("^I click on a Slots Game$")
 	public void i_click_on_a_Slots_Game() {
 		homePage.clickCasinoSlotsGames();
-		
 
 	}
 
@@ -406,31 +431,156 @@ public class StepsDefination extends TestBase {
 		homePage.clickGameCategoryTableGamesTab();
 
 	}
-   /* click on Table Game */
+
+	/* click on Table Game */
 	@When("^I click on a Table Game$")
 	public void i_click_on_a_Table_Game() {
 		homePage.clickCasinoTableGames();
-	    
+
 	}
+
 	/* Click on Vegas Vertical tab */
 	@When("^I click on Vegas Vertical Tab$")
-	public void i_click_on_Vegas_Vertical_Tab()  {
+	public void i_click_on_Vegas_Vertical_Tab() {
 		basePage.clickVegasTab();
-	   
+
 	}
+
 	/* Click on Live Vertical Tab */
 	@When("^I click on Live Vertical Tab$")
 	public void i_click_on_Live_Vertical_Tab() {
 		basePage.clickLiveTab();
-	    
+
 	}
-    /* Click on any Live Game on Live home  page */
+
+	/* Click on any Live Game on Live home page */
 	@When("^I click on a Live Game$")
 	public void i_click_on_a_Live_Game() {
 		livePage.clickLiveRouletteGame();
-	   
+
 	}
 
+	/* Click on the Privacy Policy link within the footer on the Home Page */
+	@When("^I click on Casino Privacy Policy link within the footer$")
+	public void i_click_on_Casino_Privacy_Policy_link_within_the_footer() {
+		footerPage.clickFooterPrivacyPolicylink();
+
+	}
+
+	/*
+	 * Click on the Responsible Gambling link within the footer on the Home Page
+	 */
+	@When("^I click on Casino Resonsible Gambling link within the footer$")
+	public void i_click_on_Casino_Resonsible_Gambling_link_within_the_footer() {
+		footerPage.clickFooterResponsibleGamblinglink();
+
+	}
+
+	/* Click on the VIP link within the footer on the Home Page */
+	@When("^I click on Casino VIP link within the footer$")
+	public void i_click_on_Casino_VIP_link_within_the_footer() {
+		footerPage.clickFooterVIPlink();
+
+	}
+
+	/*
+	 * Click on the Terms And Condition link within the footer on the Vegas Home
+	 * Page
+	 */
+	@When("^I click on Vegas TermsAndCondition link within the footer$")
+	public void i_click_on_Vegas_TermsAndCondition_link_within_the_footer() {
+		footerPage.clickFooterTermsAndConditionlink();
+
+	}
+
+	/*
+	 * Click on the Privacy Policy link within the footer on the Vegas Home Page
+	 */
+	@When("^I click on Vegas PrivacyPolicy link within the footer$")
+	public void i_click_on_Vegas_PrivacyPolicy_link_within_the_footer() {
+		footerPage.clickFooterPrivacyPolicylink();
+
+	}
+
+	/*
+	 * Click on the Responsible Gambling link within the footer on the Vegas
+	 * Home Page
+	 */
+	@When("^I click on Vegas ResponsibleGambling link within the footer$")
+	public void i_click_on_Vegas_ResponsibleGambling_link_within_the_footer() {
+		footerPage.clickFooterResponsibleGamblinglink();
+
+	}
+
+	/* Click on the VIP link within the footer on the Vegas Home Page */
+	@When("^I click on Vegas VIP link within the footer$")
+	public void i_click_on_Vegas_VIP_link_within_the_footer() {
+		footerPage.clickLiveFooterVIPlink();
+
+	}
+	/* Click on the Terms And Conditions link within the footer on the Vegas Home Page */
+	@When("^I click on Live Terms And Conditions link within the footer$")
+	public void i_click_on_Live_Terms_And_Conditions_link_within_the_footer() {
+		footerPage.clickFooterTermsAndConditionlink();
+
+	}
+
+	/*
+	 * Click on the Privacy Policy link within the footer on the Live Home Page
+	 */
+	@When("^I click on Live PrivacyPolicy link within the footer$")
+	public void i_click_on_Live_PrivacyPolicy_link_within_the_footer() {
+		footerPage.clickFooterPrivacyPolicylink();
+
+	}
+
+	/*
+	 * Click on the Responsible Gambling link within the footer on the Live Home
+	 * Page
+	 */
+	@When("^I click on Live ResponsibleGambling link within the footer$")
+	public void i_click_on_Live_ResponsibleGambling_link_within_the_footer() {
+		footerPage.clickFooterResponsibleGamblinglink();
+
+	}
+	@When("^I click on Facebook Icon link within the footer$")
+	public void i_click_on_Facebook_Icon_link_within_the_footer() {
+	   footerPage.clickFooterFacebooklink();
+	}
+	/* Click on the VIP link within the footer on the Live Home Page */
+	@When("^I click on Live VIP link within the footer$")
+	public void i_click_on_Live_VIP_link_within_the_footer() {
+		footerPage.clickLiveFooterVIPlink();
+
+	}
+	/* Click on the Twitter logo link within the footer on the Home Page */
+	@When("^I click on Tiwtter Icon link within the footer$")
+	public void i_click_on_Tiwtter_Icon_link_within_the_footer() {
+		footerPage.clickFooterTiwtterlink();
+	   
+	}
+	/* Click on the NetPlayTV logo link within the footer on the Home Page */
+	@When("^I click on NetPlayTV Icon link within the footer$")
+	public void i_click_on_NetPlayTV_Icon_link_within_the_footer()  {
+		footerPage.clickFooterNetplayTvIconLink();
+	    
+	}
+	/* Click on the 18+ logo link within the footer on the Home Page */
+	@When("^I click on EighteenPlus Icon link within the footer$")
+	public void i_click_on_EighteenPlus_Icon_link_within_the_footer() {
+	    footerPage.clickFooterEighteenPluslink();
+	}
+	/* Click on the GamCare logo link within the footer on the Home Page */
+	@When("^I click on GameCare Icon link within the footer$")
+	public void i_click_on_GameCare_Icon_link_within_the_footer() {
+		footerPage.clickFooterGamCareink();
+	   
+	}
+	/* Click on the GamblingCommission logo link within the footer on the Home Page */
+	@When("^I click on GamblingCommission Icon link within the footer$")
+	public void i_click_on_GamblingCommission_Icon_link_within_the_footer() {
+	  footerPage.clickFooterGamblingCommissionlink();
+	}
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -591,7 +741,6 @@ public class StepsDefination extends TestBase {
 
 	}
 
-
 	/* Verify if user is Navigated to Registration Page */
 	@Then("^I should Navigate to Registration Page$")
 	public void i_should_Navigate_to_Registration_Page() {
@@ -658,8 +807,7 @@ public class StepsDefination extends TestBase {
 	public void i_should_see_Other_Amount_as(String Value) {
 		Assert.assertTrue(RegPage.isDepositLimitTenThousandPoundsPresent(Value));
 	}
-	
-	
+
 	/*
 	 * Verify if user is able to Navigate to Welcome Page after registration
 	 * with Valid Data
@@ -827,14 +975,13 @@ public class StepsDefination extends TestBase {
 		Assert.assertTrue(RepPage.isMenuIconwithinGameSessionPresent());
 		// Navigate Back to the Home Page.
 		RepPage.NavigateBackToHomePage();
-		
 
 	}
 
 	/* Verify if Slots Game can be launched by clicking Play button */
 	@Then("^I should see a Slots game launching$")
 	public void i_should_see_a_Slots_game_launching() {
-		
+
 		slotGamePage.NavigateBackToHomePage();
 	}
 
@@ -842,27 +989,251 @@ public class StepsDefination extends TestBase {
 	@Then("^I should see a Table Game launching$")
 	public void i_should_see_a_Table_Game_launching() {
 		slotGamePage.NavigateBackToHomePage();
-		
+
 	}
-	
+
+	/*
+	 * Verify if Slots Game On Vegas Home can be launched by clicking Play
+	 * button
+	 */
 	@Then("^I should see a Vegas Slots Game launching$")
-	public void i_should_see_a_Vegas_Slots_Game_launching(){
+	public void i_should_see_a_Vegas_Slots_Game_launching() {
 		Assert.assertTrue(slotGamePage.isVegasSlotGameSoundsBoxPresent());
 		slotGamePage.NavigateBackToHomePage();
-	    
+
 	}
 
-	    
-	
+	/*
+	 * Verify if Terms And Conditions link is displayed within the Footer on the
+	 * Home Page
+	 */
+	@Then("^I should see Terms link within the footer$")
+	public void i_should_see_Terms_link_within_the_footer() {
+		Assert.assertTrue(footerPage.isTermsAndConditionLinkPresent());
+		
 
+	}
+
+	/* Verify if VIP link is displayed within the Footer on the Home Page */
+	@Then("^I should see VIP link within the footer$")
+	public void i_should_see_VIP_link_within_the_footer() {
+		Assert.assertTrue(footerPage.isVIPLinkPresent());
+		
+		
+
+	}
+
+	/*
+	 * Verify if Privacy Policy link is displayed within the Footer on the Home
+	 * Page
+	 */
+	@Then("^I should see PrivacyPolicy link within the footer$")
+	public void i_should_see_PrivacyPolicy_link_within_the_footer() {
+		Assert.assertTrue(footerPage.isPrivacyPolicyLinkPresent());
+
+	}
+
+	/*
+	 * Verify if Responsible Gambling link is displayed within the Footer on the
+	 * Home Page
+	 */
+	@Then("^I should see ResponsibleGambling link within the footer$")
+	public void i_should_see_ResponsibleGambling_link_within_the_footer() {
+		Assert.assertTrue(footerPage.isResponsibleGamblingLinkPresent());
+
+	}
+
+	/*
+	 * Verify if PayPal Icon link is displayed within the Footer on the Home
+	 * Page
+	 */
+	@Then("^I should see PayPalIcon link within the footer$")
+	public void i_should_see_PayPalIcon_link_within_the_footer() {
+		Assert.assertTrue(footerPage.isPayPalLogoPresent());
+
+	}
+
+	/*
+	 * Verify if Visa Icon link is displayed within the Footer on the Home Page
+	 */
+	@Then("^I should see VisaIcon link within the footer$")
+	public void i_should_see_VisaIcon_link_within_the_footer() {
+		Assert.assertTrue(footerPage.isVisaLogoPresent());
+
+	}
+
+	/*
+	 * Verify if NetPlayTv Logo link is displayed within the Footer on the Home
+	 * Page
+	 */
+	@Then("^I should see NetPlayTvIcon link within the footer$")
+	public void i_should_see_NetPlayTvIcon_link_within_the_footer() {
+		Assert.assertTrue(footerPage.isNetPlayTVLogoPresent());
+
+	}
+
+	/*
+	 * Verify if Over Eighteen Icon link is displayed within the Footer on the
+	 * Home Page
+	 */
+	@Then("^I should see OverEighteenIcon link within the footer$")
+	public void i_should_see_OverEighteenIcon_link_within_the_footer() {
+		Assert.assertTrue(footerPage.isEighteenPlusLogoPresent());
+	   
+	}
+
+	/*
+	 * Verify if GamCare Icon link is displayed within the Footer on the Home
+	 * Page
+	 */
+	@Then("^I should see GamCareIcon link within the footer$")
+	public void i_should_see_GamCareIcon_link_within_the_footer() {
+		Assert.assertTrue(footerPage.isGameCareLogoPresent());
+
+	}
+
+	/*
+	 * Verify if Gambling Commission Icon link is displayed within the Footer on
+	 * the Home Page
+	 */
+	@Then("^I should see GamblingCommissionIcon link within the footer$")
+	public void i_should_see_GamblingCommissionIcon_link_within_the_footer() {
+		Assert.assertTrue(footerPage.isGamblingCommissionLogoPresent());
+
+	}
+
+	/*
+	 * Verify if NetPlayTv Licence and Text is displayed within the Footer on
+	 * the Home Page
+	 */
+	@Then("^I should see legalText within the footer$")
+	public void i_should_see_legalText_within_the_footer() {
+		Assert.assertTrue(footerPage.isNetplayTvLienceMessagelPresent());
+
+	}
+
+	/*
+	 * Verify if PayPal Icon link is displayed within the Footer on the Home
+	 * Page
+	 */
+	@Then("^I should Naviagte to Casino TermsAndCondition page$")
+	public void i_should_Naviagte_to_Casino_TermsAndCondition_page() {
+		Assert.assertTrue(TAndCPage.isTermsAndConditionsTitlePageDisplay());
+
+	}
+
+	/*
+	 * Verify if user can navigate to Privacy Policy page by clicking on the
+	 * Privacy policy link within the footer on the Home Page
+	 */
+	@Then("^I should Naviagte to Casino PrivacyPolicy page$")
+	public void i_should_Naviagte_to_Casino_PrivacyPolicy_page() {
+		Assert.assertTrue(privcypolicyPage.isPrivacyPolicyTitlePageDisplay());
+
+	}
+
+	/*
+	 * Verify if user can navigate to Responsible Gambling Page page by clicking
+	 * on the Responsible Gambling link within the footer on the Home Page
+	 */
+	@Then("^I should Naviagte to Casino ResponsibleGambling page$")
+	public void i_should_Naviagte_to_Casino_ResponsibleGambling_page() {
+		Assert.assertTrue(reponsibleGamblingPage.isResponsibleGamblingTitlePageDisplay());
+
+	}
+
+	/*
+	 * Verify if user can navigate to VIP page by clicking on the VIP link
+	 * within the footer on the Home Page
+	 */
+	@Then("^I should Naviagte to Casino VIP page$")
+	public void i_should_Naviagte_to_Casino_VIP_page() {
+		Assert.assertTrue(vipPage.isVIPClubLogoDisplay());
+
+	}
+
+	/*
+	 * Verify if user can navigate to Terms And Condition page by clicking on
+	 * the Terms And Conditions link within the footer on the VegasHome Page
+	 */
+	@Then("^I should Naviagte to Vegas TermsAndCondition page$")
+	public void i_should_Naviagte_to_Vegas_TermsAndCondition_page() {
+		Assert.assertTrue(TAndCPage.isTermsAndConditionsTitlePageDisplay());
+
+	}
+
+	/*
+	 * Verify if user can navigate to Privacy Policy page by clicking on the
+	 * Privacy policy link within the footer on the VegasHome Page
+	 */
+	@Then("^I should Naviagte to Vegas PrivacyPolicy page$")
+	public void i_should_Naviagte_to_Vegas_PrivacyPolicy_page() {
+		Assert.assertTrue(privcypolicyPage.isPrivacyPolicyTitlePageDisplay());
+
+	}
+
+	/*
+	 * Verify if user can navigate to Vegas Responsible Gambling page by
+	 * clicking on the Responsible Gambling link within the footer on the
+	 * VegasHome Page
+	 */
+	@Then("^I should Naviagte to Vegas ResponsibleGambling page$")
+	public void i_should_Naviagte_to_Vegas_ResponsibleGambling_page() {
+		Assert.assertTrue(reponsibleGamblingPage.isResponsibleGamblingTitlePageDisplay());
+
+	}
+
+	/*
+	 * Verify if user can navigate to Vegas VIP page by clicking on the VIP link
+	 * within the footer on the VegasHome Page
+	 */
+	@Then("^I should Naviagte to Vegas VIP page$")
+	public void i_should_Naviagte_to_Vegas_VIP_page() {
+		Assert.assertTrue(vipPage.isVIPClubLogoDisplay());
+
+	}
+	/* Verify if Facebook logo link can be clicked to Navigate to Netplaytv facebook page */
+	@Then("^I should Navigate to Netplaytv Facebook page$")
+	public void i_should_Navigate_to_Netplaytv_Facebook_page() throws InterruptedException {
+		externalPage.isNetPlaytvFacebookPageDisplayed();
+	}
+	/* Verify if Tiwtter logo link can be clicked to Navigate to NetPlayTv Twitter page */
+	@Then("^I should Navigate to Netplaytv Tiwtter page$")
+	public void i_should_Navigate_to_Netplaytv_Tiwtter_page() throws InterruptedException {
+	   externalPage.isNetPlayTvTwitterPageDisplayed();
+	}
+	/* Verify if NetPlayTv logo link can be clicked to Navigate to NetPlayTv Bettsson Corporate site page */
+	@Then("^I should Navigate to Netplaytv Corporate site page$")
+	public void i_should_Navigate_to_Netplaytv_Corporate_site_page() throws InterruptedException  {
+	   externalPage.isNetPlayTvBettssonCoporateSiteDisplayed();
+	}
+	/* Verify if 18+ logo link can be clicked to Navigate to Responsible Gambling  page */
+	@Then("^I should Navigate to Responsible Gambling page$")
+	public void i_should_Navigate_to_Responsible_Gambling_page() {
+		Assert.assertTrue(reponsibleGamblingPage.isResponsibleGamblingTitlePageDisplay());
+		
+	    
+	}
+	/* Verify if GamCare logo link can be clicked to Navigate to GamCare Corporate site page */
+	@Then("^I should Navigate to GameCare HomePage site$")
+	public void i_should_Navigate_to_GameCare_HomePage_site() throws InterruptedException {
+		externalPage.isGamCareSiteDisplayed();
+	}
+	/* Verify if Gambling Commission logo link can be clicked to Navigate to Gambling Commission Corporate site page */
+	@Then("^I should Navigate to GamblingCommission HomePage site$")
+	public void i_should_Navigate_to_GamblingCommission_HomePage_site() throws InterruptedException{
+		externalPage.isGamblingCommissionWebSiteDisplayed();
+	   
+	}
+	
 	@After("@web")
 	public void closeBrowser() throws InterruptedException {
 		d.close();
-//		 if(basePage.isLoggedIn()){
-//		 basePage.logOut();
-//		
-//	}
-	// Thread.sleep(2000);
+		// if(basePage.isLoggedIn()){
+		// basePage.logOut();
+		//
+		// }
+		// Thread.sleep(2000);
 
 	}
 }

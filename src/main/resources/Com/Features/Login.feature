@@ -41,7 +41,7 @@ Given I Navigate to the homepage on "browser"
 		
 
 
-#@ignore
+@ignore
 @Login 	
 Scenario: Close the Login Pop-up box
 Given I Navigate to the homepage on "browser"

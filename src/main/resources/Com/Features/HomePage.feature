@@ -90,7 +90,7 @@ Scenario: Launching Casino Table Game
 	# And  I click on Play button
      #Then I should see a Table Game launching
      
-     
+#@ignore	    
 @LaunchGame 		
 Scenario: Launching Vegas Slots Game
 	Given I have loggedin on the BasePage 
@@ -99,8 +99,8 @@ Scenario: Launching Vegas Slots Game
     And  I click on Play button
     Then I should see a Vegas Slots Game launching
     
-    
- @LaunchGame 		
+#@ignore	  
+@LaunchGame 		
 Scenario: Launching Live Game on Live Vertical
 	Given I have loggedin on the BasePage 
 	When I click on Live Vertical Tab

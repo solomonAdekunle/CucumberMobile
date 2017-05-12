@@ -128,7 +128,42 @@ public class Constant {
 	  // Elements on Slot Game Session Page
 	   public static String SlotsGameMenuIcon="div#mainMenuButton";
 	   public static String  SlotGamesSoundPopUpBox="//div[@id='aSU']";
-	  
+	   
+	   
+	   // Elements on Footer 
+	   
+	   public static String Footer_TermsAndConditions="div.region-footer a[title='Terms and conditions']";
+	   public static String Footer_PrivacyPolicy="div.region-footer a[title='Privacy Policy']";
+	   public static String Footer_ResponsibleGambling="div.region-footer a[title='Enjoy Responsibly']";
+	   public static String Footer_VIP="div.footer-mobile-menu a[href='/vip']";
+	   public static String Footer_PayPalLogo="div.view-payment-methods .views-row-1 img";
+	   public static String Footer_VISALogo="div.view-payment-methods .views-row-2 img";
+	   public static String Footer_MasterLogo="div.view-payment-methods .views-row-3 img";
+	   public static String Footer_DeltaLogo="div.view-payment-methods .views-row-4 img";
+	   public static String Footer_PaySafeLogo="div.view-payment-methods .views-row-6 img";
+	   public static String Footer_entroPayLogo="div.view-payment-methods .views-row-8 img";
+	   public static String Footer_NetellerLogo="div.view-payment-methods .views-row-9 img";
+	   public static String Footer_QiwiLogo="div.view-payment-methods .views-row-10 img";
+	   public static String Footer_FacebookLogo="div.footer-social-corporate a.facebook";
+	   public static String Footer_TwitterLogo="a.twitter";
+	   public static String Footer_NetPlayTvLogo="div.footer-social-corporate .footer_logo_netplay a";
+	   public static String Footer_Over18Logo="div.footer-social-corporate .footer_logo_responsibly a";
+	   public static String Footer_GamcareLogo="div.footer-social-corporate .footer_logo_gamcare a";
+	   public static String Footer_GamblingCommissionLogo="div.footer-social-corporate .footer_logo_gamblingcontrol a";
+	   public static String Footer_NetplayTvText="div.footer_legal_text";
+	   
+	   // Title Page
+	   public static String PageTitle="h1.title";
+	   
+	   
+	   // Elements on VIP Page
+	   public static String Vip_VipLogo="header.vip-logo";
+	   
+	   
+	   
+	   
+	   
+	   
 	 
 	 
 	 
