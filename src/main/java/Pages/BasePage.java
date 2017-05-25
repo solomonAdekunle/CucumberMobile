@@ -88,6 +88,8 @@ public class BasePage {
 
 	}
 	public boolean isTopDepositButtonPresent(){
+		WebDriverWait wait= new WebDriverWait(d,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_DepositButton)));
 		return d.findElement(By.cssSelector(Constant.hp_DepositButton)).isDisplayed();
 	}
 	public boolean isUserInfoPresent(){
