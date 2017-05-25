@@ -50,10 +50,11 @@ public class Constant {
 	  
 	  // Elements On SideBar Menu
 	  public static String SideBarMenu_JoinNow="div.responsive-accounts-lateral-menu a.register-button";
-	  public static String SideBarMenu_Login="div.responsive-accounts-lateral-menu a.login-button";
-	  public static String SiderBarMenu_Home="div.menu-responsive-flex-menu .menu .home a";
-	  public static String SideBarMenu_GettingStarted ="div.menu-responsive-flex-menu .menu .getting-started a";
-	  public static String SideBarMenu_GettingStarted_HowToGetStarted="div.menu-responsive-flex-menu .menu .how-to-get-started a";
+	  public static String SideBarMenu_Login="a.login-button";
+	  public static String SiderBarMenu_Home="li.home a";
+	  public static String SideBarMenu_GettingStartedMenuArrow="li.getting-started a.js-submenu-getting";
+	  public static String SideBarMenu_GettingStarted ="li.how-to-get-started a";
+	  public static String SideBarMenu_GettingStarted_HowToGetStarted="li.how-to-get-started a";
 	  public static String  SideBarMenu_GettingStarted_HowToDeposit="ul.menu .how-to-deposit a";
 	  public static String  SideBarMenu_GettingStarted_HowTWithdraw="ul.menu .how-to-withdraw a";
 	  public static String SideBarMenu_GettingStarted_IsDepositSafe="ul.menu .is-my-deposit-safe- a";
@@ -154,7 +155,7 @@ public class Constant {
 	   
 	   // Title Page
 	   public static String PageTitle="h1.title";
-	   
+	   public static String CashierTransaction_PageTitle="h2.page-title";
 	   
 	   // Elements on VIP Page
 	   public static String Vip_VipLogo="header.vip-logo";

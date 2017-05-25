@@ -2,7 +2,7 @@ Feature: User Should be able to navigate to the HomePage
 	in other to launch Roulette Game, Slots Games and Table Game.
          
 
-#@ignore
+@ignore
 @Homepage 
 Scenario: Navigating to the Home Page 
 	Given I Navigate to the homepage on "browser" 
@@ -16,7 +16,7 @@ Scenario: Navigating to the Home Page
 	And I should see Hero Banner 
 	And I should see Games Category Tab 
 	
-#@ignore
+@ignore
 @LaunchGame 
 Scenario Outline:Clicking on a Game to check if Game Pop-up box is displayed
 	Given  I have loggedin on the BasePage 
@@ -34,7 +34,7 @@ Scenario Outline:Clicking on a Game to check if Game Pop-up box is displayed
 		|Roulette Express Premium| 
 
 	
-#@ignore		
+@ignore		
 @LaunchGame 
 Scenario Outline: Launching Netplaytv Roulette Game 
 	Given I have loggedin on the BasePage 
@@ -46,7 +46,7 @@ Scenario Outline: Launching Netplaytv Roulette Game
 		|GameType				 |
 		|Roulette Express Premium| 
 		
-#@ignore			
+@ignore			
 @LaunchGame 
 Scenario Outline: Launching Netplaytv Roulette Demo Game 
 	Given  I have loggedin on the BasePage 
@@ -58,7 +58,7 @@ Scenario Outline: Launching Netplaytv Roulette Demo Game
 		|GameType				 |
 		|Roulette Express Premium| 
 		
-#@ignore			
+@ignore			
 @LaunchGame 		
 Scenario: Launching Casino Slots Game
 	Given I have loggedin on the BasePage 
@@ -81,7 +81,7 @@ Scenario Outline:Checking if Game Pop-up box will close by clickin on close icon
 	
 	
 
-#@ignore		
+@ignore		
 @LaunchGame 		
 Scenario: Launching Casino Table Game
 	Given I have loggedin on the BasePage 
@@ -90,7 +90,7 @@ Scenario: Launching Casino Table Game
 	# And  I click on Play button
      #Then I should see a Table Game launching
      
-#@ignore	    
+@ignore	    
 @LaunchGame 		
 Scenario: Launching Vegas Slots Game
 	Given I have loggedin on the BasePage 
@@ -99,7 +99,7 @@ Scenario: Launching Vegas Slots Game
     And  I click on Play button
     Then I should see a Vegas Slots Game launching
     
-#@ignore	  
+@ignore	  
 @LaunchGame 		
 Scenario: Launching Live Game on Live Vertical
 	Given I have loggedin on the BasePage 

@@ -7,20 +7,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Util.Constant;
 
-public class ResponsibleGamblingPage extends BasePage{
+public class HowToDepositPage extends BasePage{
 
-	public ResponsibleGamblingPage(WebDriver d) {
+	public HowToDepositPage(WebDriver d) {
 		super(d);
 		// TODO Auto-generated constructor stub
 	}
+
 	
 	
-	
-	public boolean isResponsibleGamblingTitlePageDisplay(){
+	public boolean isHowToDepositTitlePageDisplay(){
 		WebDriverWait wait= new WebDriverWait(d,10);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.PageTitle)));
 		return d.findElement(By.cssSelector(Constant.PageTitle)).isDisplayed();
 		
 	}
-
+	
 }

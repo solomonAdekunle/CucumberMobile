@@ -4,17 +4,28 @@ import java.io.IOException;
 
 import org.junit.Assert;
 
+import Cashier.DepositPage;
+import Cashier.TransactionPage;
+import Cashier.WithdrawPage;
 import Pages.BasePage;
+import Pages.ChangePasswordPage;
+import Pages.ContactUSPage;
 import Pages.ExternalPage;
 import Pages.FooterPage;
+import Pages.GettingStartedPage;
 import Pages.HomePage;
+import Pages.HowToDepositPage;
+import Pages.HowToWithdrawPage;
+import Pages.IsMyDepositSafePage;
 import Pages.LiveVerticalPage;
 import Pages.LoginErrorPage;
 import Pages.LoginPage;
+import Pages.PresentersPage;
 import Pages.PrivacyPolicyPage;
 import Pages.RegisterPage;
 import Pages.ResponsibleGamblingPage;
 import Pages.RouletteExpressPremium;
+import Pages.SecurityPage;
 import Pages.SideBarPage;
 import Pages.SlotsGamePage;
 import Pages.TermsAndConditionsPage;
@@ -43,6 +54,17 @@ public class StepsDefination extends TestBase {
 	private PrivacyPolicyPage privcypolicyPage;
 	private TermsAndConditionsPage TAndCPage;
 	private VIPPage vipPage;
+	private ChangePasswordPage changepasswordPage;
+	private ContactUSPage contactusPage;
+	private GettingStartedPage gettingStartedPage;
+	private HowToDepositPage howToDepositPage;
+	private HowToWithdrawPage howToWithdrawPage;
+	private IsMyDepositSafePage ismyDepositSafePage;
+	private SecurityPage securityPage;
+	private PresentersPage presenterPage;
+	private DepositPage depositPage;
+	private TransactionPage transactionPage;
+	private WithdrawPage withdrawPage;
 
 	public StepsDefination() throws IOException {
 
@@ -57,12 +79,26 @@ public class StepsDefination extends TestBase {
 		RepPage = new RouletteExpressPremium(TestBase.d);
 		slotGamePage = new SlotsGamePage(TestBase.d);
 		livePage = new LiveVerticalPage(TestBase.d);
-		footerPage= new FooterPage(TestBase.d);
-		externalPage= new ExternalPage(TestBase.d);
-		reponsibleGamblingPage= new ResponsibleGamblingPage(TestBase.d);
-		privcypolicyPage= new PrivacyPolicyPage(TestBase.d);
-		TAndCPage= new TermsAndConditionsPage(TestBase.d);
+		footerPage = new FooterPage(TestBase.d);
+		externalPage = new ExternalPage(TestBase.d);
+		reponsibleGamblingPage = new ResponsibleGamblingPage(TestBase.d);
+		privcypolicyPage = new PrivacyPolicyPage(TestBase.d);
+		TAndCPage = new TermsAndConditionsPage(TestBase.d);
 		vipPage = new VIPPage(TestBase.d);
+		changepasswordPage= new ChangePasswordPage(TestBase.d);
+		contactusPage= new ContactUSPage(TestBase.d);
+		gettingStartedPage= new GettingStartedPage(TestBase.d);
+		howToDepositPage= new HowToDepositPage(TestBase.d);
+		howToWithdrawPage= new HowToWithdrawPage(TestBase.d);
+		ismyDepositSafePage= new IsMyDepositSafePage(TestBase.d);
+		securityPage= new SecurityPage(TestBase.d);
+		presenterPage = new PresentersPage(TestBase.d);
+		depositPage = new DepositPage(TestBase.d);
+		transactionPage= new TransactionPage(TestBase.d);
+		withdrawPage= new WithdrawPage(TestBase.d);
+		
+		
+		
 
 	}
 
@@ -361,12 +397,14 @@ public class StepsDefination extends TestBase {
 		RegPage.clickOver18PrivacyPolicyLink();
 
 	}
+
 	/* click on Promo tab on Vertical tab on home Page */
 	@When("^I click on Promos Vertical Tab$")
 	public void i_click_on_Promos_Vertical_Tab() {
 		basePage.clickPromosTab();
 
 	}
+
 	/* click on Terms And Condition link within the footer on home Page */
 	@When("^I click on Casino TermsAndCondition link within the footer$")
 	public void i_click_on_Casino_TermsAndCondition_link_within_the_footer() {
@@ -518,13 +556,18 @@ public class StepsDefination extends TestBase {
 		footerPage.clickLiveFooterVIPlink();
 
 	}
-	/* Click on the Terms And Conditions link within the footer on the Vegas Home Page */
+
+	/*
+	 * Click on the Terms And Conditions link within the footer on the Vegas
+	 * Home Page
+	 */
 	@When("^I click on Live Terms And Conditions link within the footer$")
 	public void i_click_on_Live_Terms_And_Conditions_link_within_the_footer() {
 		footerPage.clickFooterTermsAndConditionlink();
 
 	}
 
+	
 	/*
 	 * Click on the Privacy Policy link within the footer on the Live Home Page
 	 */
@@ -543,44 +586,158 @@ public class StepsDefination extends TestBase {
 		footerPage.clickFooterResponsibleGamblinglink();
 
 	}
+
 	@When("^I click on Facebook Icon link within the footer$")
 	public void i_click_on_Facebook_Icon_link_within_the_footer() {
-	   footerPage.clickFooterFacebooklink();
+		footerPage.clickFooterFacebooklink();
 	}
+
 	/* Click on the VIP link within the footer on the Live Home Page */
 	@When("^I click on Live VIP link within the footer$")
 	public void i_click_on_Live_VIP_link_within_the_footer() {
 		footerPage.clickLiveFooterVIPlink();
 
 	}
+
 	/* Click on the Twitter logo link within the footer on the Home Page */
 	@When("^I click on Tiwtter Icon link within the footer$")
 	public void i_click_on_Tiwtter_Icon_link_within_the_footer() {
 		footerPage.clickFooterTiwtterlink();
-	   
+
 	}
+
 	/* Click on the NetPlayTV logo link within the footer on the Home Page */
 	@When("^I click on NetPlayTV Icon link within the footer$")
-	public void i_click_on_NetPlayTV_Icon_link_within_the_footer()  {
+	public void i_click_on_NetPlayTV_Icon_link_within_the_footer() {
 		footerPage.clickFooterNetplayTvIconLink();
-	    
+
 	}
+
 	/* Click on the 18+ logo link within the footer on the Home Page */
 	@When("^I click on EighteenPlus Icon link within the footer$")
 	public void i_click_on_EighteenPlus_Icon_link_within_the_footer() {
-	    footerPage.clickFooterEighteenPluslink();
+		footerPage.clickFooterEighteenPluslink();
 	}
+
 	/* Click on the GamCare logo link within the footer on the Home Page */
 	@When("^I click on GameCare Icon link within the footer$")
 	public void i_click_on_GameCare_Icon_link_within_the_footer() {
 		footerPage.clickFooterGamCareink();
-	   
+
 	}
-	/* Click on the GamblingCommission logo link within the footer on the Home Page */
+
+	/*
+	 * Click on the GamblingCommission logo link within the footer on the Home
+	 * Page
+	 */
 	@When("^I click on GamblingCommission Icon link within the footer$")
 	public void i_click_on_GamblingCommission_Icon_link_within_the_footer() {
-	  footerPage.clickFooterGamblingCommissionlink();
+		footerPage.clickFooterGamblingCommissionlink();
 	}
+
+	/* Click on Login button within the Sidenar Menu */
+	@When("^I click on Sidebar Menu Login Button$")
+	public void i_click_on_Sidebar_Menu_Login_Button() {
+		sidebarPage.clickSideBarLoginButton();
+	}
+
+	/* Click on Home link within the Sidenar Menu */
+	@When("^I click on Home Link within SideBar Menu$")
+	public void i_click_on_Home_Link_within_SideBar_Menu() {
+		sidebarPage.clickSideBarSideBarHomeLink();
+	}
+
+	/* Click on Getting Started within the Sidenar Menu */
+	@When("^I click on Gettstarted dropdown SubMenu arrow$")
+	public void i_click_on_Gettstarted_dropdown_SubMenu_arrow() {
+		sidebarPage.clickSideBarGettingStartedDropDownArrowLinkk();
+
+	}
+
+	/* Click on Getting started link within the Sidenar Menu */
+	@When("^I click on How To Get Started within the GettingStarted Dropdown SubMenu$")
+	public void i_click_on_How_To_Get_Started_within_the_GettingStarted_Dropdown_SubMenu() {
+		sidebarPage.clickSideBarGettingStartedDropDownHowToGetStartedLink();
+
+	}
+
+	/* Click on Deposit link within the Sidenar Menu */
+	@When("^I click on How To Deposit link within the GettingStarted Dropdown SubMenu$")
+	public void i_click_on_How_To_Deposit_link_within_the_GettingStarted_Dropdown_SubMenu() {
+		sidebarPage.clickSideBarGettingStartedDropDownHowToDepositLink();
+	}
+
+	/* Click on Withdraw within the Sidenar Menu */
+	@When("^I click on How To Withdraw link within the GettingStarted Dropdown SubMenu$")
+	public void i_click_on_How_To_Withdraw_link_within_the_GettingStarted_Dropdown_SubMenu() {
+		sidebarPage.clickSideBarGettingStartedDropDownHowToWithdrawLink();
+
+	}
+
+	/* Click on Is My Deposit link within the Getting Started DropDown Menu */
+	@When("^I click on Is My Deposit Safe link within the GettingStarted Dropdown SubMenu$")
+	public void i_click_on_Is_My_Deposit_Safe_link_within_the_GettingStarted_Dropdown_SubMenu() {
+		sidebarPage.clickSideBarGettingStartedDropDownIsMyDepositSafeLink();
+	}
+
+	/* Click on Presenter link within the Sidenar Menu */
+	@When("^I click on TV Presenter link within the SideBar Menu$")
+	public void i_click_on_TV_Presenter_link_within_the_SideBar_Menu() {
+		sidebarPage.clickSideBarMenuTVPresenterLink();
+
+	}
+
+	/* Click on Responsible Gambling link within the Sidenar Menu */
+	@When("^I click on Responsible Gambling link within the SideBar Menu$")
+	public void i_click_on_Responsible_Gambling_link_within_the_SideBar_Menu() {
+		sidebarPage.clickSideBarMenuResponsibleGamblingLink();
+	}
+
+	/* Click on My Account arrow within the Sidenar Menu */
+	@When("^I click on My Account dropdown arrow$")
+	public void i_click_on_My_Account_dropdown_arrow() {
+		sidebarPage.clickSideBarMyAccountDropDownMemuArrowLink();
+	}
+
+	/* Click on Deposit link within the Sidebar Menu */
+	@When("^I click on Deposit link within My Account DropDown SubMenu$")
+	public void i_click_on_Deposit_link_within_My_Account_DropDown_SubMenu() throws InterruptedException {
+		sidebarPage.clickSideBarMyAccountDropDownMemuDepositLink();
+
+	}
+
+	/* Click on Transaction within the Sidenar Menu */
+	@When("^I click on Transaction link within My Account DropDown SubMenu$")
+	public void i_click_on_Transaction_link_within_My_Account_DropDown_SubMenu() {
+		sidebarPage.clickSideBarMyAccountDropDownMenuTransactionLink();
+
+	}
+
+	/* Click on Withdraw link within the Sidenar Menu */
+	@When("^I click on Withdraw link within My Account DropDown SubMenu$")
+	public void i_click_on_Withdraw_link_within_My_Account_DropDown_SubMenu() throws InterruptedException {
+		sidebarPage.clickSideBarMyAccountDropDownMenuWithdrawLink();
+
+	}
+
+	/* Click on Change Password link the Sidenar Menu */
+	@When("^I click on Change Password link within My Account DropDown SubMenu$")
+	public void i_click_on_Change_Password_link_within_My_Account_DropDown_SubMenu() {
+		sidebarPage.clickSideBarMyAccountDropDownMenuAChangePasswordLink();
+
+	}
+
+	@When("^I click on Logout link within the SideBar Menu$")
+	public void i_click_on_Logout_link_within_the_SideBar_Menu() {
+		sidebarPage.clickSideBarLogOutLink();
+
+	}
+	@When("^I click on Help link within the SideBar Menu$")
+	public void i_click_on_Help_link_within_the_SideBar_Menu() {
+		sidebarPage.clickSideBarMenuHelpLink();
+
+	}
+
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1010,7 +1167,6 @@ public class StepsDefination extends TestBase {
 	@Then("^I should see Terms link within the footer$")
 	public void i_should_see_Terms_link_within_the_footer() {
 		Assert.assertTrue(footerPage.isTermsAndConditionLinkPresent());
-		
 
 	}
 
@@ -1018,8 +1174,6 @@ public class StepsDefination extends TestBase {
 	@Then("^I should see VIP link within the footer$")
 	public void i_should_see_VIP_link_within_the_footer() {
 		Assert.assertTrue(footerPage.isVIPLinkPresent());
-		
-		
 
 	}
 
@@ -1079,7 +1233,7 @@ public class StepsDefination extends TestBase {
 	@Then("^I should see OverEighteenIcon link within the footer$")
 	public void i_should_see_OverEighteenIcon_link_within_the_footer() {
 		Assert.assertTrue(footerPage.isEighteenPlusLogoPresent());
-	   
+
 	}
 
 	/*
@@ -1192,48 +1346,319 @@ public class StepsDefination extends TestBase {
 		Assert.assertTrue(vipPage.isVIPClubLogoDisplay());
 
 	}
-	/* Verify if Facebook logo link can be clicked to Navigate to Netplaytv facebook page */
+
+	/*
+	 * Verify if Facebook logo link can be clicked to Navigate to Netplaytv
+	 * facebook page
+	 */
 	@Then("^I should Navigate to Netplaytv Facebook page$")
 	public void i_should_Navigate_to_Netplaytv_Facebook_page() throws InterruptedException {
 		externalPage.isNetPlaytvFacebookPageDisplayed();
 	}
-	/* Verify if Tiwtter logo link can be clicked to Navigate to NetPlayTv Twitter page */
+
+	/*
+	 * Verify if Tiwtter logo link can be clicked to Navigate to NetPlayTv
+	 * Twitter page
+	 */
 	@Then("^I should Navigate to Netplaytv Tiwtter page$")
 	public void i_should_Navigate_to_Netplaytv_Tiwtter_page() throws InterruptedException {
-	   externalPage.isNetPlayTvTwitterPageDisplayed();
+		externalPage.isNetPlayTvTwitterPageDisplayed();
 	}
-	/* Verify if NetPlayTv logo link can be clicked to Navigate to NetPlayTv Bettsson Corporate site page */
+
+	/*
+	 * Verify if NetPlayTv logo link can be clicked to Navigate to NetPlayTv
+	 * Bettsson Corporate site page
+	 */
 	@Then("^I should Navigate to Netplaytv Corporate site page$")
-	public void i_should_Navigate_to_Netplaytv_Corporate_site_page() throws InterruptedException  {
-	   externalPage.isNetPlayTvBettssonCoporateSiteDisplayed();
+	public void i_should_Navigate_to_Netplaytv_Corporate_site_page() throws InterruptedException {
+		externalPage.isNetPlayTvBettssonCoporateSiteDisplayed();
 	}
-	/* Verify if 18+ logo link can be clicked to Navigate to Responsible Gambling  page */
+
+	/*
+	 * Verify if 18+ logo link can be clicked to Navigate to Responsible
+	 * Gambling page
+	 */
 	@Then("^I should Navigate to Responsible Gambling page$")
 	public void i_should_Navigate_to_Responsible_Gambling_page() {
 		Assert.assertTrue(reponsibleGamblingPage.isResponsibleGamblingTitlePageDisplay());
-		
-	    
+
 	}
-	/* Verify if GamCare logo link can be clicked to Navigate to GamCare Corporate site page */
+
+	/*
+	 * Verify if GamCare logo link can be clicked to Navigate to GamCare
+	 * Corporate site page
+	 */
 	@Then("^I should Navigate to GameCare HomePage site$")
 	public void i_should_Navigate_to_GameCare_HomePage_site() throws InterruptedException {
 		externalPage.isGamCareSiteDisplayed();
 	}
-	/* Verify if Gambling Commission logo link can be clicked to Navigate to Gambling Commission Corporate site page */
+
+	/*
+	 * Verify if Gambling Commission logo link can be clicked to Navigate to
+	 * Gambling Commission Corporate site page
+	 */
 	@Then("^I should Navigate to GamblingCommission HomePage site$")
-	public void i_should_Navigate_to_GamblingCommission_HomePage_site() throws InterruptedException{
+	public void i_should_Navigate_to_GamblingCommission_HomePage_site() throws InterruptedException {
 		externalPage.isGamblingCommissionWebSiteDisplayed();
-	   
+
 	}
-	
+
+	/* Verify if user will see a Join Now button within the Sidebar Menu */
+	@Then("^I should see Join Now Button in SidebarMenu$")
+	public void i_should_see_Join_Now_Button_in_SidebarMenu() {
+		Assert.assertTrue(sidebarPage.IsSideBarJoinNowButtonPresent());
+
+	}
+
+	/* Verify if user see a Login Button within the SideBar Menu */
+	@Then("^I should see Login Button in the SidebarMenu$")
+	public void i_should_see_Login_Button_in_the_SidebarMenu() {
+		Assert.assertTrue(sidebarPage.IsSideBarLoginButtonPresent());
+	}
+
+	/* Verify if user will see Home Link within the Sidebar Menu */
+	@Then("^I should see Home link whtin the SidebarMenu$")
+	public void i_should_see_Home_link_whtin_the_SidebarMenu() {
+		Assert.assertTrue(sidebarPage.IsSideBarHomeLinkPresent());
+	}
+
+	/* Verify if user see Home Link within the Sidebar Menu */
+	@Then("^I should see Getting Started dropdown Menu$")
+	public void i_should_see_Getting_Started_dropdown_Menu() {
+		Assert.assertTrue(sidebarPage.IsSideBarGettingStartedDropDownArrowLinkPresent());
+	}
+
+	/* I should see Help Link within the Sidebar Menu */
+	@Then("^I should see an Help link within the SidebarMenu$")
+	public void i_should_see_an_Help_link_within_the_SidebarMenu() {
+		Assert.assertTrue(sidebarPage.IsSideBarHelpLinkPresent());
+
+	}
+
+	/* Verify if user will see Tv Presenter Link within the Sidebar Menu */
+	@Then("^I should Tv Presenterlink within the SidebarMenu$")
+	public void i_should_Tv_Presenterlink_within_the_SidebarMenu() {
+		Assert.assertTrue(sidebarPage.IsSideBarTVPresenterLinkPresent());
+
+	}
+
+	/*
+	 * Verify if Responsible Gambling link is displayed within the Sidebar Menu
+	 */
+	@Then("^I should see Responsible Gambling link within the SidebarMenu$")
+	public void i_should_see_Responsible_Gambling_link_within_the_SidebarMenu() {
+		Assert.assertTrue(sidebarPage.IsSideBarResponsibleGamblingLinkPresent());
+
+	}
+
+	/*
+	 * Verify if user Navigated back to the Home Page By click Home Link within
+	 * the Sidebar Menu
+	 */
+	@Then("^I should Navigate Back to Home Page$")
+	public void i_should_Navigate_Back_to_Home_Page() {
+		Assert.assertTrue(basePage.isLoginButtonPresent());
+
+	}
+
+	/*
+	 * Verify if user will see Getting started within the Getting Started
+	 * Dropdown Menu
+	 */
+	@Then("^I should see How To Get Started link within the GettingStarted dropdown SubMenu$")
+	public void i_should_see_How_To_Get_Started_link_within_the_GettingStarted_dropdown_SubMenu() {
+		Assert.assertTrue(sidebarPage.IsSideBarGettingStartedDropDownHowToGetStartedLinkPresent());
+
+	}
+
+	/*
+	 * Verify if user will see How To Deposit within the Getting Started
+	 * Dropdown Menu
+	 */
+	@Then("^I should see How To deposit link within the GettingStarted Dropdown SubMenu$")
+	public void i_should_see_How_To_deposit_link_within_the_GettingStarted_Dropdown_SubMenu() {
+		Assert.assertTrue(sidebarPage.IsSideBarGettingStartedDropDownHowToDepositLinkPresent());
+
+	}
+
+	/*
+	 * Verify if user will see How To Withdraw within the Getting Started
+	 * Dropdown Menu
+	 */
+	@Then("^I should see How To withdraw within the GettingStarted Dropdown SubMenu$")
+	public void i_should_see_How_To_withdraw_within_the_GettingStarted_Dropdown_SubMenu() {
+		Assert.assertTrue(sidebarPage.IsSideBarJoinNowButtonPresent());
+
+	}
+
+	/*
+	 * Verify if user will see How to withdraw within the Getting Started
+	 * Dropdown Menu
+	 */
+	@Then("^I should see How To Withdraw link within the GettingStarted Dropdown SubMenu$")
+	public void i_should_see_How_To_Withdraw_link_within_the_GettingStarted_Dropdown_SubMenu() {
+		Assert.assertTrue(sidebarPage.IsSideBarGettingStartedDropDownHowToWithdrawLinkPresent());
+
+	}
+
+	/*
+	 * Verify if user will see Is My Deposit Safe within the Getting Started
+	 * Dropdown Menu
+	 */
+	@Then("^I should see Is My Deposit Safe link within the GettingStarted Dropdown SubMenu$")
+	public void i_should_see_Is_My_Deposit_Safe_link_within_the_GettingStarted_Dropdown_SubMenu() {
+		Assert.assertTrue(sidebarPage.IsSideBarGettingStartedDropDownIsMyDepositSafeLinkPresent());
+	}
+
+	/*
+	 * Verify if user will see Security within the Getting Started Dropdown Menu
+	 */
+	@Then("^I should see Security link within the GettingStarted Dropdown SubMenu$")
+	public void i_should_see_Security_link_within_the_GettingStarted_Dropdown_SubMenu() {
+		Assert.assertTrue(sidebarPage.IsSideBarGettingSecurityLinkPresent());
+	}
+
+	/* Verify if user will Navigate to Getting Started Page */
+	@Then("^I should Navigate to Getting Started page$")
+	public void i_should_Navigate_to_Getting_Started_page() {
+		Assert.assertTrue(gettingStartedPage.isGettingStartedTitlePageDisplay());
+
+	}
+
+	/* Verify if user will Navigate to How To Deposit Page */
+	@Then("^I should Navigate to How To Deposit$")
+	public void i_should_Navigate_to_How_To_Deposit() {
+		Assert.assertTrue(howToDepositPage.isHowToDepositTitlePageDisplay());
+
+	}
+
+	/* Verify if user will Navigate to How To Withdraw Page */
+	@Then("^I should Navigate to How To Withdraw page$")
+	public void i_should_Navigate_to_How_To_Withdraw_page() {
+		Assert.assertTrue(howToWithdrawPage.isHowToWithdrawTitlePageDisplay());
+
+	}
+
+	/* Verify if user will Navigate to Is My Deposit Safe Page */
+	@Then("^I should Navigate to Is My Depost Safe page$")
+	public void i_should_Navigate_to_Is_My_Depost_Safe_page() {
+		Assert.assertTrue(ismyDepositSafePage.isIsMyDepositSafeTitlePageDisplay());
+
+	}
+
+	/* Verify if user will Navigate to Contact-Us Page */
+	@Then("^I should Navigate to Contact Us Page$")
+	public void i_should_Navigate_to_Contact_Us_Page()  {
+		Assert.assertTrue(contactusPage.isContactUSTitlePageDisplay());
+	}
+
+	/* Verify if user will Navigate to Presenters Page */
+	@Then("^I should Navigate to Presenters Page$")
+	public void i_should_Navigate_to_Presenters_Page() {
+		Assert.assertTrue(presenterPage.isPresntersTitlePageDisplay());
+
+	}
+
+	/* Verify if user will Navigate to Responsible Gambling Page */
+	@Then("^I should Navigate to Responsible Gambling Page$")
+	public void i_should_Navigate_to_Responsible_Gambling_Page() {
+		Assert.assertTrue(reponsibleGamblingPage.isResponsibleGamblingTitlePageDisplay());
+
+	}
+
+	/* Verify if user see HMy Account Link within the Sidebar Menu */
+	@Then("^I should see My Account Dropdown Menu$")
+	public void i_should_see_My_Account_Dropdown_Menu() {
+		Assert.assertTrue(sidebarPage.IsSideBarMyAccountDropDownMemuArrowLinkPresent());
+
+	}
+
+	/* Verify if user see Logout Link within the Sidebar Menu */
+	@Then("^I should see a LogOut link$")
+	public void i_should_see_a_LogOut_link() {
+		Assert.assertTrue(sidebarPage.IsSideBarLogOutLinkPresent());
+
+	}
+
+	/*
+	 * Verify if user see Deposit Link within the nMy Account Droppdown within
+	 * Sidebar Menu
+	 */
+	@Then("^I should see Deposit link within My Account DropDown SubMenu$")
+	public void i_should_see_Deposit_link_within_My_Account_DropDown_SubMenu() {
+		Assert.assertTrue(sidebarPage.IsSideBarMyAccountDropDownMemuDepositLinkPresent());
+
+	}
+
+	/*
+	 * Verify if user see Transaction Link within the My Account Dropdown
+	 * Sidebar Menu
+	 */
+	@Then("^I should see Transaction link within My Account DropDown SubMenu$")
+	public void i_should_see_Transaction_link_within_My_Account_DropDown_SubMenu() {
+		Assert.assertTrue(sidebarPage.IsSideBarMyAccountDropDownMenuTransactionLinkPresent());
+
+	}
+
+	@Then("^I should see Withdraw link within My Account DropDown SubMenu$")
+	public void i_should_see_Withdraw_link_within_My_Account_DropDown_SubMenu() {
+		Assert.assertTrue(sidebarPage.IsSideBarMyAccountDropDownMenuWithdrawLinkPresent());
+
+	}
+
+	/* Verify if user see Change Password Link within the Sidebar Menu */
+	@Then("^I should see Change Password link within My Account DropDown SubMenu$")
+	public void i_should_see_Change_Password_link_within_My_Account_DropDown_SubMenu() {
+		Assert.assertTrue(sidebarPage.IsSideBarMyAccountDropDownMenuAChangePasswordLinkPresent());
+
+	}
+
+	@Then("^I should Navigate to SafeCharge Cashier Deposit Page$")
+	public void i_should_Navigate_to_SafeCharge_Cashier_Deposit_Page() {
+
+	}
+
+	/* Verify if user will Navigate to Transaction Cashier Page */
+	@Then("^I should Navigate to SafeCharge Cashier Transaction Page$")
+	public void i_should_Navigate_to_SafeCharge_Cashier_Transaction_Page() {
+		Assert.assertTrue(transactionPage.isTransactionTitlePageDisplay());
+		transactionPage.NavigateBackToHomePage();
+
+	}
+
+	/* Verify if user will Navigate to SafeCharge Withdraw Cashier Page */
+	@Then("^I should Navigate to SafeCharge Cashier Withdraw Page$")
+	public void i_should_Navigate_to_SafeCharge_Cashier_Withdraw_Page() {
+
+	}
+
+	/* Verify if user will Navigate to SafeCharge Deposit Cashier Page */
+	@Then("^I should Navigate to  Change Password Page$")
+	public void i_should_Navigate_to_Change_Password_Page() {
+		Assert.assertTrue(changepasswordPage.isChangePasswordTitlePageDisplay());
+
+	}
+	@Then("^I should Depsit button on Home Page$")
+	public void i_should_Depsit_button_on_Home_Page() {
+		Assert.assertTrue(basePage.isTopDepositButtonPresent());
+	    
+	}
+
+	/* Verify if user will is logged out */
+	@Then("^I should be logged out$")
+	public void i_should_be_logged_out() {
+		Assert.assertTrue(basePage.isLoginButtonPresent());
+
+	}
+
 	@After("@web")
 	public void closeBrowser() throws InterruptedException {
 		d.close();
-		// if(basePage.isLoggedIn()){
-		// basePage.logOut();
-		//
-		// }
-		// Thread.sleep(2000);
+//		 if(basePage.isLoggedIn()){
+//		 basePage.logOut();
+//		
+//		 }
+//		// Thread.sleep(2000);
 
 	}
 }

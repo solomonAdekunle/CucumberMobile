@@ -156,11 +156,11 @@ public class BasePage {
 		public void doLogin(String baseURL, String username, String password) throws InterruptedException {
 			d.get(baseURL);
 			d.findElement(By.cssSelector(Constant.hp_Login)).click();
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			d.findElement(By.cssSelector(Constant.LoginPopUpBoxUsername)).sendKeys(username);
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			d.findElement(By.cssSelector(Constant.LoginPopBoxPassword)).sendKeys(password);
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			d.findElement(By.cssSelector(Constant.LoginPopBoxSignin)).click();
 			WebDriverWait wait = new WebDriverWait(d,10);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.hp_DepositButton)));

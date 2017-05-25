@@ -3,7 +3,7 @@ Feature: User should see footer on all pages on the site
           it should also displayed Method of Payments icons, Facebook icon, twitter icon, Netplaytv icon , over18 icon
           and Gamecare Certified logo, Gamling Commisison icon and Netplay Tv lience texts.
           
- #@ignore
+ @ignore
   @Footer	          
 Scenario: Verifying Footer contents on Casino Home Page
 Given I Navigate to the homepage on "browser" 
@@ -19,7 +19,7 @@ Then  I should see Terms link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
  
- #@ignore
+ @ignore
   @Footer	 
  Scenario: Verifying Footer contents is on Vegas Home Page
 Given I Navigate to the homepage on "browser" 
@@ -36,7 +36,7 @@ Then  I should see Terms link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
  
-  #@ignore
+  @ignore
   @Footer	 
 Scenario: Verifying Footer contents is on Live Home Page
 Given I Navigate to the homepage on "browser" 
@@ -53,7 +53,7 @@ Then  I should see Terms link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
  
-#@ignore
+@ignore
  @Footer	 
  Scenario: Verifying Footer contents is on Promotion Home Page
 Given I Navigate to the homepage on "browser" 
@@ -70,7 +70,7 @@ Then  I should see Terms link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
  
-  #@ignore
+  @ignore
   @Footer	 
  Scenario: Verifying if Casino Terms And Condition link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
@@ -88,7 +88,7 @@ Then I should Naviagte to Casino TermsAndCondition page
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
  
-  #@ignore
+  @ignore
   @Footer	 
  Scenario: Verifying if Casino Privacy Policy link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
@@ -106,7 +106,7 @@ Then  I should see Terms link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
  
- #@ignore
+ @ignore
   @Footer	 
 Scenario: Verifying if Casino Responsible Gambling link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
@@ -124,7 +124,7 @@ Then  I should see Terms link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
  
- #@ignore
+ @ignore
  @Footer	 
  Scenario: Verifying if Casino VIP link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
@@ -143,7 +143,7 @@ Then  I should see Terms link within the footer
  And  I should see legalText within the footer
  
  
-#@ignore
+@ignore
  @Footer	 
 Scenario: Verifying if Vegas Terms And Conditions link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
@@ -162,7 +162,7 @@ Then  I should Naviagte to Vegas TermsAndCondition page
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
  
-#@ignore
+@ignore
  @Footer	 
 Scenario: Verifying if Vegas PrivacyPolicylink within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
@@ -181,7 +181,7 @@ Then  I should Naviagte to Vegas PrivacyPolicy page
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
  
- #@ignore
+ @ignore
  @Footer	 
 Scenario: Verifying if Vegas ResponsibleGambling link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
@@ -218,7 +218,7 @@ Then  I should Naviagte to Vegas VIP page
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
  
-#@ignore
+@ignore
  @Footer	 
 Scenario: Verifying if Live Terms And Conditions link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
@@ -236,7 +236,8 @@ Then  I should see Terms link within the footer
  And  I should see GamCareIcon link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
- #@ignore
+ 
+ @ignore
  @Footer	 
  Scenario: Verifying if Live PrivacyPolicy link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
@@ -255,7 +256,7 @@ Then  I should see Terms link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
 
- #@ignore
+ @ignore
  @Footer	 
 Scenario: Verifying if Live ResponsibleGambling link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
@@ -273,7 +274,8 @@ When  I click on Live Vertical Tab
  And  I should see GamCareIcon link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
- #@ignore
+ 
+ @ignore
  @Footer
  Scenario: Verifying if Live VIP link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
@@ -291,39 +293,43 @@ When  I click on Live Vertical Tab
  And  I should see GamCareIcon link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
- #@ignore
+ 
+ @ignore
  @Footer	 
  Scenario: Verifying facebook Icon link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
 When I click on Facebook Icon link within the footer
 Then I should Navigate to Netplaytv Facebook page
- #@ignore
+ 
+ @ignore
  @Footer	 
 Scenario: Verifying Tiwtter Icon link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
 When I click on Tiwtter Icon link within the footer
 Then I should Navigate to Netplaytv Tiwtter page
 
-#@ignore
+@ignore
  @Footer	 
  Scenario: Verifying NetPlayTv Icon link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
 When I click on NetPlayTV Icon link within the footer
 Then I should Navigate to Netplaytv Corporate site page
-#@ignore
+
+@ignore
  @Footer	 
 Scenario: Verifying 18+ Icon link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
 When I click on EighteenPlus Icon link within the footer
 Then I should Navigate to Responsible Gambling page
-#@ignore
+
+@ignore
 @Footer
 Scenario: Verifying GameCare Icon link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
 When I click on GameCare Icon link within the footer
 Then I should Navigate to GameCare HomePage site
 
-#@ignore
+@ignore
 @Footer
 Scenario: Verifying GamblingCommission Icon link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 

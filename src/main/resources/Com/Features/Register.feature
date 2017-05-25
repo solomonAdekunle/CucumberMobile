@@ -1,15 +1,10 @@
 Feature: User Should be able to Navigate to Registeration Page and Register 
 
-#@ignore
-@Reg 
-Scenario: Registration Page 
-	Given I Navigate to the homepage on "browser" 
-	When I click on Sidebar Menu 
-	And I click on Join Now Button 
-	Then I should Navigate to Registration Page 
+
+
 	
 	
-#@ignore 
+@ignore 
 @Register 
 Scenario Outline: Registration with Invalid Data 
 	Given I navigate to the Registrationpage on "browser" 
@@ -48,7 +43,7 @@ Scenario Outline: Registration with Invalid Data
 		
 		
 		
-		#@ignore
+		@ignore
 		@Register 
 		Scenario Outline: Registration with valid Data 
 			Given I navigate to the Registrationpage on "browser" 
@@ -90,7 +85,7 @@ Scenario Outline: Registration with Invalid Data
 					Given I navigate to the Registrationpage on "browser" 
 					Then I should see Deposit Limit Link 
 					
-				#@ignore 
+				@ignore 
 				@Register 
 				Scenario: Deposit Limit link on Registrition Page 
 					Given I navigate to the Registrationpage on "browser" 
@@ -98,7 +93,7 @@ Scenario Outline: Registration with Invalid Data
 					Then I should see Choose Type dropdown box 
 					And I should see Choose Limit  dropdown box 
 					
-				#@ignore 
+				@ignore 
 				@Register 
 				Scenario Outline: setting a Weekly   deposit limit  on Registration page 
 					Given I navigate to the Registrationpage on "<browser>" 
@@ -114,7 +109,7 @@ Scenario Outline: Registration with Invalid Data
 						| Daily		| 1000		 | Daily					|1000					|
 						| Daily		|Other	 	 | Other					| 10000					|
 						
-						#@ignore
+						@ignore
 						@Register 
 						Scenario: setting a Other deposit limit  on Registration page 
 							Given I navigate to the Registrationpage on "<browser>" 
@@ -126,14 +121,14 @@ Scenario Outline: Registration with Invalid Data
 							And I should see Choose Limit as "Other" 
 							And I should see Other Amount  as "£10,000" 
 							
-						#@ignore	
+						@ignore	
 						@Register 
 						Scenario: Clicking on BonusTerms And Wagering Requirement link 
 							Given I navigate to the Registrationpage on "browser" 
 							When I click on BonusTerms and Wagering link 
 							Then I should see BonusTerms and Condition pop-up displayed 
 							
-						#@ignore	
+						@ignore	
 						@Register 
 						Scenario: Clicking on Close Icon within the Bonus terms frame box 
 							Given I navigate to the Registrationpage on "browser" 
@@ -141,27 +136,27 @@ Scenario Outline: Registration with Invalid Data
 							And I click on the Close icon within Bonus Term Frame box 
 							Then I should see no BonusTerms and Condition pop-up frame box 
 							
-						#@ignore		
+						@ignore		
 						@Register 
 						Scenario: Clicking on Over18Terms link 
 							Given I navigate to the Registrationpage on "browser" 
 							When I click on  OverEighteen Terms link 
 							Then I should see Terms and Condition pop-up displayed 
-						#@ignore		
+						@ignore		
 						@Register 
 						Scenario: Clicking on Close icon on Over18Term and Condition Frame Box 
 							Given I navigate to the Registrationpage on "browser" 
 							When I click on  OverEighteen Terms link 
 							And I click on the Close icon within the Frame box 
 							Then I should see no Terms and Condition pop-up frame box 
-						#@ignore		
+						@ignore		
 						@Register 
 						Scenario: Clicking on OverEighteen Privacy Policy link 
 							Given I navigate to the Registrationpage on "browser" 
 							When I click on  OverEighteen Privacy Policy link 
 							Then I should see Privacy Policy pop-up displayed 
 							
-						#@ignore
+						@ignore
 						@web	
 						@Register 
 						Scenario: Clicking on Close icon on Over18Term and Condition Frame Box 
