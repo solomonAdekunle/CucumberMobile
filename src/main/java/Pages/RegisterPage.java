@@ -22,6 +22,9 @@ public class RegisterPage extends BasePage {
 	}
 
 	public String isRegisterPageTitlePresent() {
+		WebDriverWait wait = new WebDriverWait(d, 20);
+		wait.until(ExpectedConditions
+				.visibilityOfAllElementsLocatedBy(By.cssSelector(Constant.RegisterTitle)));
 		String Title = d.findElement(By.cssSelector(Constant.RegisterTitle)).getText();
 		return Title;
 

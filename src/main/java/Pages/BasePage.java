@@ -55,6 +55,8 @@ public class BasePage {
 	}
 
 	public boolean isLoginButtonPresent() {
+		WebDriverWait wait= new WebDriverWait(d,30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_Login)));
 		return d.findElement(By.cssSelector(Constant.hp_Login)).isDisplayed();
 
 	}
@@ -88,7 +90,7 @@ public class BasePage {
 
 	}
 	public boolean isTopDepositButtonPresent(){
-		WebDriverWait wait= new WebDriverWait(d,20);
+		WebDriverWait wait= new WebDriverWait(d,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_DepositButton)));
 		return d.findElement(By.cssSelector(Constant.hp_DepositButton)).isDisplayed();
 	}
@@ -115,7 +117,12 @@ public class BasePage {
 	
 
 	public void clickSideBarMenu() {
-	d.findElement(By.cssSelector(Constant.hp_SidebarIcon)).click();
+	WebDriverWait wait= new WebDriverWait(d,20);
+	wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(Constant.LoginPopUpBox)));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_SidebarIcon)));
+	WebElement SideBarMenu = d.findElement(By.cssSelector(Constant.hp_SidebarIcon));
+	((JavascriptExecutor) d).executeScript("arguments[0].click();", SideBarMenu);
+	//d.findElement(By.cssSelector(Constant.hp_SidebarIcon)).click();
 
 	}
 

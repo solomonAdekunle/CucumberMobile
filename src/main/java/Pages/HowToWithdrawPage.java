@@ -14,7 +14,7 @@ public class HowToWithdrawPage extends BasePage {
 		// TODO Auto-generated constructor stub
 	}
 	public boolean isHowToWithdrawTitlePageDisplay(){
-		WebDriverWait wait= new WebDriverWait(d,10);
+		WebDriverWait wait= new WebDriverWait(d,30);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.PageTitle)));
 		return d.findElement(By.cssSelector(Constant.PageTitle)).isDisplayed();
 		

@@ -67,23 +67,25 @@ public class LoginPage extends BasePage {
 	return d.findElement(By.cssSelector(Constant.LoginPopUpBoxErrorMessage)).isDisplayed();
 	   
    }
-	public void sendUseraname(String username) {
+	public void sendUseraname(String username) throws InterruptedException {
 	WebDriverWait wait = new WebDriverWait(d,30);
-  	wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(Constant.LoginPopUpBox)));
-		d.findElement(By.cssSelector(Constant.LoginPopUpBoxUsername)).sendKeys(username);
+  	wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.LoginPopUpBoxUsername)));
+  	Thread.sleep(1000);
+	d.findElement(By.cssSelector(Constant.LoginPopUpBoxUsername)).sendKeys(username);
 
 	}
 
-	public void sendPassword(String password) {
+	public void sendPassword(String password) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(d,30);
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(Constant.LoginPopUpBox)));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.LoginPopBoxPassword)));
+		Thread.sleep(1000);
 		d.findElement(By.cssSelector(Constant.LoginPopBoxPassword)).sendKeys(password);
 
 	}
 
 	public void clickSigninButton() {
-		WebDriverWait wait = new WebDriverWait(d,20);
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(Constant.LoginPopUpBox)));
+		WebDriverWait wait = new WebDriverWait(d,30);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.LoginPopUpBox)));
 		d.findElement(By.cssSelector(Constant.LoginPopBoxSignin)).click();
 
 	}

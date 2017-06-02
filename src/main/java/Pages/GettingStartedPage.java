@@ -16,7 +16,7 @@ public class GettingStartedPage extends BasePage {
 
 	
 	public boolean isGettingStartedTitlePageDisplay(){
-		WebDriverWait wait= new WebDriverWait(d,10);
+		WebDriverWait wait= new WebDriverWait(d,30);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.PageTitle)));
 		return d.findElement(By.cssSelector(Constant.PageTitle)).isDisplayed();
 		

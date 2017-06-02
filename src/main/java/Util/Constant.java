@@ -6,7 +6,7 @@ public class Constant {
 	// Elements on Home Page
 	 public static String hp_Login="a.sign-in";
 	 public static String hp_SiteLogo="a.site-logo";
-	 public static String hp_SidebarIcon="a.menu-swipe";
+	 public static String hp_SidebarIcon="a.menu-swipe .icon-menu";
 	 public static String  hp_CasinoTab="div.menu-verticals .casino a";
 	 public static String hp_VegasTab="div.menu-verticals .vegas a";
 	 public static String hp_LiveTab="div.menu-verticals .live a";
@@ -62,7 +62,8 @@ public class Constant {
 	  public static String SideBarMenu_Help="li.help a";
 	  public static String SideBarMenu_TVPresenter="li.tv-presenters a";
 	  public static String SideBarMenu_ResponsibleGambling="li.responsible-gambling a";
-	  public static String SideBarMenu_MyAccount="ul.menu .my-account a.js-submenu-link";
+	  public static String SiderBarMenu_LiveChat="li.live-chat a";
+	  public static String SideBarMenu_MyAccount="li.my-account a.js-submenu-link";
 	  public static String SideBarMenu_MyAccount_Deposit="li.deposit a.cashier";
 	  public static String SideBarMenu_MyAccount_Transactions="li.transactions a.cashier";
 	  public static String SideBarMenu_MyAccount_Withdraw="li.withdraw a.cashier";
@@ -161,7 +162,16 @@ public class Constant {
 	   public static String Vip_VipLogo="header.vip-logo";
 	   
 	   
+	   // Elements on Live Chat Page
+	   public static String LiveChat_SupercasinoLogo="div.logo_div";
 	   
+	   // Elements on Change Password
+	   public static String ChangePassword_OldPassword="input#old_password";
+	   public static String ChangePassword_NewPassword="input#new_password";
+	   public static String ChangePassword_ConfirmPassword="input#password_confirm";
+	   public static String ChangePassword_Submit="button#change_password_submit";
+	   public static String ChangePassword_ErrorMessage="body.page-change-password .basic-page .messages.error";
+	   public static String PasswordChangeSuccessfully="h1.title";
 	   
 	   
 	   

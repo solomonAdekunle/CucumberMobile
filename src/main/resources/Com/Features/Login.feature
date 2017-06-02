@@ -1,9 +1,7 @@
 Feature: User should be able to Login with Valid Username and Password 
 	User should also not be able to login with Invalid data
    
-	#	   Background:
-	#	    Given I Navigate to the homepage on browser     
-	#	  
+	
 @ignore
 @Login 
 Scenario: Clicking On Login Buttton to see if Loging Pop-up box displayed 
@@ -33,8 +31,8 @@ Given I Navigate to the homepage on "browser"
 	And  I enter Password as "<password>" 
 	And  I click on SignIn button 
 	Then I should see Login errorMesssage Pop-up box 
+	
 	Examples: 
-
 	|username         | password   |
 	|mmm12	          |MNNH$1      |
 	|Noblebugq11	  |Bola123     |
@@ -51,14 +49,14 @@ When I click on Login Button
 
 		
 		
-@ignore
-@Login 
-Scenario: Close the Login Pop-up box 
-Given I Navigate to the homepage on "browser" 
-When I click on Login Button 
- And I click on the Login Pop-up close icon 
-Then Login Pop-up box should be closed 
-				
+##@ignore
+#@Login 
+#Scenario: Close the Login Pop-up box 
+#Given I Navigate to the homepage on "browser" 
+#When I click on Login Button 
+# And I click on the Login Pop-up close icon 
+#Then Login Pop-up box should be closed 
+#				
 			
 @ignore
 @Login 

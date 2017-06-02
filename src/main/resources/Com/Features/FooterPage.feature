@@ -70,7 +70,7 @@ Then  I should see Terms link within the footer
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
  
-  @ignore
+ @ignore
   @Footer	 
  Scenario: Verifying if Casino Terms And Condition link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
@@ -88,7 +88,7 @@ Then I should Naviagte to Casino TermsAndCondition page
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
  
-  @ignore
+ @ignore
   @Footer	 
  Scenario: Verifying if Casino Privacy Policy link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 
@@ -181,7 +181,7 @@ Then  I should Naviagte to Vegas PrivacyPolicy page
  And  I should see GamblingCommissionIcon link within the footer
  And  I should see legalText within the footer
  
- @ignore
+@ignore
  @Footer	 
 Scenario: Verifying if Vegas ResponsibleGambling link within the footer can be clicked
 Given I Navigate to the homepage on "browser" 

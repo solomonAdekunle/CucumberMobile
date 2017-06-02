@@ -9,6 +9,7 @@ import Cashier.TransactionPage;
 import Cashier.WithdrawPage;
 import Pages.BasePage;
 import Pages.ChangePasswordPage;
+import Pages.ChatPage;
 import Pages.ContactUSPage;
 import Pages.ExternalPage;
 import Pages.FooterPage;
@@ -65,7 +66,7 @@ public class StepsDefination extends TestBase {
 	private DepositPage depositPage;
 	private TransactionPage transactionPage;
 	private WithdrawPage withdrawPage;
-
+    private ChatPage chatPage;
 	public StepsDefination() throws IOException {
 
 		super();
@@ -96,6 +97,7 @@ public class StepsDefination extends TestBase {
 		depositPage = new DepositPage(TestBase.d);
 		transactionPage= new TransactionPage(TestBase.d);
 		withdrawPage= new WithdrawPage(TestBase.d);
+		chatPage= new ChatPage(TestBase.d);
 		
 		
 		
@@ -155,6 +157,22 @@ public class StepsDefination extends TestBase {
 	/* This Below are Only for @When Method */
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	/* 
+	 * login with valid username and password
+	 * @param{string username}- this is the username of the Account holder
+	 * @param{string password}- this is the Password of the Account Holder
+	 */
+	@When("^I have logged in username as \"([^\"]*)\" and password \"([^\"]*)\"$")
+	public void i_have_logged_in_username_as_and_password(String username, String password) throws Throwable {
+		loginPage.clickLoginButton();
+		loginPage.sendUseraname(username);
+		loginPage.sendPassword(password);
+		loginPage.clickSigninButton();
+	   
+	}
+	
+	
+	
 	/* Click on the Login Button at the RTop of the Home Page */
 	@When("^I click on Login Button$")
 	public void i_click_on_Login_Button() {
@@ -171,14 +189,14 @@ public class StepsDefination extends TestBase {
 
 	/* Enter User in the Useranem input box */
 	@When("^I enter Username as \"([^\"]*)\"$")
-	public void i_enter_Username_as(String username) {
+	public void i_enter_Username_as(String username) throws InterruptedException {
 		loginPage.sendUseraname(username);
 
 	}
 
 	/* Enter Password in Password input box */
 	@When("^I enter Password as \"([^\"]*)\"$")
-	public void i_enter_Password_as(String password) {
+	public void i_enter_Password_as(String password) throws InterruptedException {
 		loginPage.sendPassword(password);
 	}
 
@@ -737,8 +755,37 @@ public class StepsDefination extends TestBase {
 		sidebarPage.clickSideBarMenuHelpLink();
 
 	}
+	
+	/* Click on the  live Chart link within the Side Bar Menu */
+	@When("^I click on Live Chat link within the SideBar Menu$")
+	public void i_click_on_Live_Chat_link_within_the_SideBar_Menu() {
+		sidebarPage.clickSideBarMenuLiveChatLink();
+	 
+	}
+	
+	/* Enter your Old Password on Change Password Page */
+	 @When("^I Enter Old Password as \"([^\"]*)\"$")
+	public void i_Enter_Old_Password_as(String oldpassword)  {
+		 changepasswordPage.sendChangePasswordOldPassword(oldpassword);
+	   
+	}
+    /* Enter your New Password on Change Password Page */
+	@When("^I Enter New Password as \"([^\"]*)\"$")
+	public void i_Enter_New_Password_as(String newpassword)  {
+		changepasswordPage.sendChangePasswordNewPassword(newpassword);
+	}
+   /* Enter your Confirm Password on Change Password Page */
+	@When("^I Enter Confirmed Password  as \"([^\"]*)\"$")
+	public void i_Enter_Confirmed_Password_as(String confirmPassword)  {
+		changepasswordPage.sendChangePasswordConfirmPassword(confirmPassword);
+	    
 
-
+	}
+	/* Click on Submit button on Change Password page */
+	@When("^I click Submit button$")
+	public void i_click_Submit_button() {
+		changepasswordPage.clickChangePasswordSubmitButton();
+	}
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/* This Below are Only for @Then Method */
@@ -1487,7 +1534,7 @@ public class StepsDefination extends TestBase {
 	 */
 	@Then("^I should see How To withdraw within the GettingStarted Dropdown SubMenu$")
 	public void i_should_see_How_To_withdraw_within_the_GettingStarted_Dropdown_SubMenu() {
-		Assert.assertTrue(sidebarPage.IsSideBarJoinNowButtonPresent());
+		Assert.assertTrue(sidebarPage.IsSideBarGettingStartedDropDownHowToWithdrawLinkPresent());
 
 	}
 
@@ -1643,14 +1690,57 @@ public class StepsDefination extends TestBase {
 		Assert.assertTrue(basePage.isTopDepositButtonPresent());
 	    
 	}
-
+	
+	/* Verify if  Live Chat is displayed within the Side bar Menu */
+	@Then("^I Should see a Live Chat link within the SidebarMenu$")
+	public void i_Should_see_a_Live_Chat_link_within_the_SidebarMenu(){
+		Assert.assertTrue(sidebarPage.isSideBarLiveChatLinkPresent());
+	}
+	
+	/* Verify if Live Chat Open in a new Tab window */
+	@Then("^I should Navigate to Live Chat Page$")
+	public void i_should_Navigate_to_Live_Chat_Page() {
+		chatPage.isLiveChatSuperCasinoLogoPresent();
+	   
+	}
 	/* Verify if user will is logged out */
 	@Then("^I should be logged out$")
 	public void i_should_be_logged_out() {
 		Assert.assertTrue(basePage.isLoginButtonPresent());
 
 	}
-
+	/* Verify if Old Password text box is displayed*/
+	@Then("^I should see old password text box$")
+	public void i_should_see_old_password_text_box() {
+	Assert.assertTrue(changepasswordPage.isChangePasswordOldPasswordInputboxPresent());
+		
+	   
+	}
+   /* Verify if New Password text box is displayed */
+	@Then("^I should see new password text box$")
+	public void i_should_see_new_password_text_box() {
+	 Assert.assertTrue(changepasswordPage.isChangePasswordNewPasswordInputBoxPresent());
+	    
+	}
+	/* Verify if Confirm Password text box is displayed */
+	@Then("^I should confrim password text box$")
+	public void i_should_confrim_password_text_box()  {
+		Assert.assertTrue(changepasswordPage.isChangePasswordConfirmPasswordInputBoxPresent());
+	   
+	}
+    /* Verify if Change your Password is displayed as title page on Change Password Page */
+	@Then("^I should see Change password as Title Page$")
+	public void i_should_see_Change_password_as_Title_Page() {
+	Assert.assertTrue(changepasswordPage.isChangePasswordTitlePageDisplay());
+	    
+	}
+	/* Verify if Error Messsage is displayed when invalid data are submited on Change Password page */
+	@Then("^I should see Error Message displayed$")
+	public void i_should_see_Error_Message_displayed(){
+		Assert.assertTrue(changepasswordPage.isChangePassWordErrorMessagePresent());
+	   
+	}
+	
 	@After("@web")
 	public void closeBrowser() throws InterruptedException {
 		d.close();

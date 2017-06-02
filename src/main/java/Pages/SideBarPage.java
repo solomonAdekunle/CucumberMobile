@@ -1,5 +1,8 @@
 package Pages;
 
+import java.util.Iterator;
+import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +20,8 @@ public class SideBarPage extends BasePage {
 	}
 
 	public boolean IsSideBarJoinNowButtonPresent() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_JoinNow)));
 		return d.findElement(By.cssSelector(Constant.SideBarMenu_JoinNow)).isDisplayed();
 
 	}
@@ -35,77 +40,119 @@ public class SideBarPage extends BasePage {
 	}
 
 	public boolean IsSideBarGettingStartedDropDownArrowLinkPresent() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStartedMenuArrow)));
 		return d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStartedMenuArrow)).isDisplayed();
 
 	}
 
 	public boolean IsSideBarGettingStartedDropDownHowToGetStartedLinkPresent() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStarted)));
 		return d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted)).isDisplayed();
 
 	}
 
 	public boolean IsSideBarGettingStartedDropDownHowToDepositLinkPresent() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowToDeposit)));
 		return d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowToDeposit)).isDisplayed();
 
 	}
 
 	public boolean IsSideBarGettingStartedDropDownHowToWithdrawLinkPresent() {
 		WebDriverWait wait = new WebDriverWait(d, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowTWithdraw)));
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowTWithdraw)));
 		return d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowTWithdraw)).isDisplayed();
 	}
 
 	public boolean IsSideBarGettingStartedDropDownIsMyDepositSafeLinkPresent() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStarted_IsDepositSafe)));
 		return d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_IsDepositSafe)).isDisplayed();
 
 	}
 
 	public boolean IsSideBarGettingSecurityLinkPresent() {
 		WebDriverWait wait = new WebDriverWait(d, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStarted_Security)));
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStarted_Security)));
 		return d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_Security)).isDisplayed();
 
 	}
 
 	public boolean IsSideBarHelpLinkPresent() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_Help)));
 		return d.findElement(By.cssSelector(Constant.SideBarMenu_Help)).isDisplayed();
 	}
 
 	public boolean IsSideBarTVPresenterLinkPresent() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_TVPresenter)));
 		return d.findElement(By.cssSelector(Constant.SideBarMenu_TVPresenter)).isDisplayed();
 
 	}
 
 	public boolean IsSideBarResponsibleGamblingLinkPresent() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_ResponsibleGambling)));
 		return d.findElement(By.cssSelector(Constant.SideBarMenu_ResponsibleGambling)).isDisplayed();
 	}
 
 	public boolean IsSideBarMyAccountDropDownMemuArrowLinkPresent() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_MyAccount)));
 		return d.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount)).isDisplayed();
 
 	}
 
 	public boolean IsSideBarMyAccountDropDownMemuDepositLinkPresent() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_MyAccount_Deposit)));
 		return d.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount_Deposit)).isDisplayed();
 
 	}
 
 	public boolean IsSideBarMyAccountDropDownMenuTransactionLinkPresent() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_MyAccount_Transactions)));
 		return d.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount_Transactions)).isDisplayed();
 
 	}
 
 	public boolean IsSideBarMyAccountDropDownMenuWithdrawLinkPresent() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_MyAccount_Withdraw)));
 		return d.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount_Withdraw)).isDisplayed();
 
 	}
 
 	public boolean IsSideBarMyAccountDropDownMenuAChangePasswordLinkPresent() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarmenu_ChangePassword)));
 		return d.findElement(By.cssSelector(Constant.SideBarmenu_ChangePassword)).isDisplayed();
 
 	}
 
+	public boolean isSideBarLiveChatLinkPresent() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SiderBarMenu_LiveChat)));
+		return d.findElement(By.cssSelector(Constant.SiderBarMenu_LiveChat)).isDisplayed();
+
+	}
+
 	public boolean IsSideBarLogOutLinkPresent() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_Logout)));
 		return d.findElement(By.cssSelector(Constant.SideBarMenu_Logout)).isDisplayed();
 
 	}
@@ -124,125 +171,152 @@ public class SideBarPage extends BasePage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_Login)));
 		WebElement LoginButton = d.findElement(By.cssSelector(Constant.SideBarMenu_Login));
 		((JavascriptExecutor) d).executeScript("arguments[0].click();", LoginButton);
-		//d.findElement(By.cssSelector(Constant.SideBarMenu_Login)).click();
+		// d.findElement(By.cssSelector(Constant.SideBarMenu_Login)).click();
 	}
 
 	public void clickSideBarSideBarHomeLink() {
-		WebDriverWait wait = new WebDriverWait(d,30);
+		WebDriverWait wait = new WebDriverWait(d, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SiderBarMenu_Home)));
 		WebElement HomeLink = d.findElement(By.cssSelector(Constant.SiderBarMenu_Home));
-		((JavascriptExecutor) d).executeScript("arguments[0].click();",HomeLink);
-		//d.findElement(By.cssSelector(Constant.SiderBarMenu_Home)).click();
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", HomeLink);
+		// d.findElement(By.cssSelector(Constant.SiderBarMenu_Home)).click();
 
 	}
 
 	public void clickSideBarGettingStartedDropDownArrowLinkk() {
-		WebDriverWait wait = new WebDriverWait(d,40);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStartedMenuArrow)));
-		WebElement GettingStartedDropDownArrow = d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStartedMenuArrow));
-		((JavascriptExecutor) d).executeScript("arguments[0].click();",GettingStartedDropDownArrow);
-		//d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStartedMenuArrow)).click();
+		WebDriverWait wait = new WebDriverWait(d, 40);
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStartedMenuArrow)));
+		WebElement GettingStartedDropDownArrow = d
+				.findElement(By.cssSelector(Constant.SideBarMenu_GettingStartedMenuArrow));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", GettingStartedDropDownArrow);
+		// d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStartedMenuArrow)).click();
 	}
 
 	public void clickSideBarGettingStartedDropDownHowToGetStartedLink() {
 		WebDriverWait wait = new WebDriverWait(d, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowToGetStarted)));
-		WebElement GettingStartedLink= d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowToGetStarted));
-		((JavascriptExecutor) d).executeScript("arguments[0].click();",GettingStartedLink);
-		//d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowToGetStarted)).click();
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowToGetStarted)));
+		WebElement GettingStartedLink = d
+				.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowToGetStarted));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", GettingStartedLink);
+		// d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowToGetStarted)).click();
 	}
 
 	public void clickSideBarGettingStartedDropDownHowToDepositLink() {
 		WebDriverWait wait = new WebDriverWait(d, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowToDeposit)));
-		WebElement HowToDepositLink= d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowToDeposit));
-		((JavascriptExecutor) d).executeScript("arguments[0].click();",HowToDepositLink);
-		//d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowToDeposit)).click();
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowToDeposit)));
+		WebElement HowToDepositLink = d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowToDeposit));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", HowToDepositLink);
+		// d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowToDeposit)).click();
 
 	}
 
 	public void clickSideBarGettingStartedDropDownHowToWithdrawLink() {
 		WebDriverWait wait = new WebDriverWait(d, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowTWithdraw)));
-		WebElement HowToDepositLink= d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowTWithdraw));
-		((JavascriptExecutor) d).executeScript("arguments[0].click();",HowToDepositLink);
-		//d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowTWithdraw)).click();
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowTWithdraw)));
+		WebElement HowToDepositLink = d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowTWithdraw));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", HowToDepositLink);
+		// d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_HowTWithdraw)).click();
 	}
 
 	public void clickSideBarGettingStartedDropDownIsMyDepositSafeLink() {
-		d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_IsDepositSafe)).click();
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStarted_IsDepositSafe)));
+		WebElement IsMyDepositLink = d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_IsDepositSafe));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", IsMyDepositLink);
+		// d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_IsDepositSafe)).click();
 	}
 
 	public void clickSideBarGettingSecurityLink() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_GettingStarted_IsDepositSafe)));
+		WebElement IsMyDepositLink = d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_Security));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", IsMyDepositLink);
 		d.findElement(By.cssSelector(Constant.SideBarMenu_GettingStarted_Security)).click();
 
 	}
 
 	public void clickSideBarMenuHelpLink() {
-		WebDriverWait wait = new WebDriverWait(d,30);
+		WebDriverWait wait = new WebDriverWait(d, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_Help)));
-		WebElement HelpLink= d.findElement(By.cssSelector(Constant.SideBarMenu_Help));
-		((JavascriptExecutor) d).executeScript("arguments[0].click();",HelpLink);
-		//d.findElement(By.cssSelector(Constant.SideBarMenu_Help)).click();
+		WebElement HelpLink = d.findElement(By.cssSelector(Constant.SideBarMenu_Help));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", HelpLink);
+		// d.findElement(By.cssSelector(Constant.SideBarMenu_Help)).click();
 	}
 
 	public void clickSideBarMenuTVPresenterLink() {
 		WebDriverWait wait = new WebDriverWait(d, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_TVPresenter)));
-		WebElement TVPresenterLink= d.findElement(By.cssSelector(Constant.SideBarMenu_TVPresenter));
-		((JavascriptExecutor) d).executeScript("arguments[0].click();",TVPresenterLink);
-		//d.findElement(By.cssSelector(Constant.SideBarMenu_TVPresenter)).click();
+		WebElement TVPresenterLink = d.findElement(By.cssSelector(Constant.SideBarMenu_TVPresenter));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", TVPresenterLink);
+		// d.findElement(By.cssSelector(Constant.SideBarMenu_TVPresenter)).click();
+
+	}
+
+	public void clickSideBarMenuLiveChatLink() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SiderBarMenu_LiveChat)));
+		WebElement LiveChatLinkLink = d.findElement(By.cssSelector(Constant.SiderBarMenu_LiveChat));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", LiveChatLinkLink);
 
 	}
 
 	public void clickSideBarMenuResponsibleGamblingLink() {
 		WebDriverWait wait = new WebDriverWait(d, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_ResponsibleGambling)));
-		WebElement ResponsibleGamblingLink= d.findElement(By.cssSelector(Constant.SideBarMenu_ResponsibleGambling));
-		((JavascriptExecutor) d).executeScript("arguments[0].click();",ResponsibleGamblingLink);
-		//d.findElement(By.cssSelector(Constant.SideBarMenu_ResponsibleGambling)).click();
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_ResponsibleGambling)));
+		WebElement ResponsibleGamblingLink = d.findElement(By.cssSelector(Constant.SideBarMenu_ResponsibleGambling));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", ResponsibleGamblingLink);
+		// d.findElement(By.cssSelector(Constant.SideBarMenu_ResponsibleGambling)).click();
 	}
 
 	public void clickSideBarMyAccountDropDownMemuArrowLink() {
 		WebDriverWait wait = new WebDriverWait(d, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_MyAccount)));
-		WebElement MyAccountink= d.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount));
-		((JavascriptExecutor) d).executeScript("arguments[0].click();",MyAccountink);
-		//d.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount)).click();
+		WebElement MyAccountink = d.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", MyAccountink);
+		// d.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount)).click();
 
 	}
 
 	public void clickSideBarMyAccountDropDownMemuDepositLink() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(d,30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_MyAccount_Deposit)));
-		WebElement MyAccountDepositLink= d.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount_Deposit));
-		((JavascriptExecutor) d).executeScript("arguments[0].click();",MyAccountDepositLink);
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_MyAccount_Deposit)));
+		WebElement MyAccountDepositLink = d.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount_Deposit));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", MyAccountDepositLink);
 		Thread.sleep(2000);
 		d.navigate().back();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_SidebarIcon)));
 		d.findElement(By.cssSelector(Constant.hp_SidebarIcon)).click();
-		WebElement Logoutlink=d.findElement(By.cssSelector(Constant.SideBarMenu_Logout));
+		WebElement Logoutlink = d.findElement(By.cssSelector(Constant.SideBarMenu_Logout));
 		wait.until(ExpectedConditions.visibilityOf(Logoutlink));
 		((JavascriptExecutor) d).executeScript("arguments[0].click();", Logoutlink);
-		
-		
+
 	}
 
 	public void clickSideBarMyAccountDropDownMenuTransactionLink() {
-		WebElement MyAccountTransactionLink= d.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount_Transactions));
-		((JavascriptExecutor) d).executeScript("arguments[0].click();",MyAccountTransactionLink);
-		//d.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount_Transactions)).click();
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		WebElement MyAccountTransactionLink = d
+				.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount_Transactions));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", MyAccountTransactionLink);
+		// d.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount_Transactions)).click();
 
 	}
 
 	public void clickSideBarMyAccountDropDownMenuWithdrawLink() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(d,30);
+		WebDriverWait wait = new WebDriverWait(d, 30);
 		d.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount_Withdraw)).click();
 		Thread.sleep(2000);
 		d.navigate().back();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_SidebarIcon)));
 		d.findElement(By.cssSelector(Constant.hp_SidebarIcon)).click();
-		WebElement Logoutlink=d.findElement(By.cssSelector(Constant.SideBarMenu_Logout));
+		WebElement Logoutlink = d.findElement(By.cssSelector(Constant.SideBarMenu_Logout));
 		wait.until(ExpectedConditions.visibilityOf(Logoutlink));
 		((JavascriptExecutor) d).executeScript("arguments[0].click();", Logoutlink);
 
@@ -254,11 +328,11 @@ public class SideBarPage extends BasePage {
 	}
 
 	public void clickSideBarLogOutLink() {
-		WebDriverWait wait = new WebDriverWait(d,30);
+		WebDriverWait wait = new WebDriverWait(d, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_Logout)));
-		WebElement LogOutLink= d.findElement(By.cssSelector(Constant.SideBarMenu_Logout));
-		((JavascriptExecutor) d).executeScript("arguments[0].click();",LogOutLink);
-		//d.findElement(By.cssSelector(Constant.SideBarMenu_Logout)).click();
+		WebElement LogOutLink = d.findElement(By.cssSelector(Constant.SideBarMenu_Logout));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", LogOutLink);
+		// d.findElement(By.cssSelector(Constant.SideBarMenu_Logout)).click();
 
 	}
 }

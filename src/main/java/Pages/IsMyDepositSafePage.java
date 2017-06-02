@@ -16,7 +16,7 @@ public class IsMyDepositSafePage extends BasePage {
 	
 	
 	public boolean isIsMyDepositSafeTitlePageDisplay(){
-		WebDriverWait wait= new WebDriverWait(d,20);
+		WebDriverWait wait= new WebDriverWait(d,30);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.PageTitle)));
 		return d.findElement(By.cssSelector(Constant.PageTitle)).isDisplayed();
 		
