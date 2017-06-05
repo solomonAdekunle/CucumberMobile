@@ -2,7 +2,7 @@ Feature: User should be able to Login with Valid Username and Password
 	User should also not be able to login with Invalid data
    
 	
-@ignore
+#@ignore
 @Login 
 Scenario: Clicking On Login Buttton to see if Loging Pop-up box displayed 
 Given I Navigate to the homepage on "browser" 
@@ -22,7 +22,7 @@ Given I Navigate to the homepage on "browser"
 	
 
 	
-@ignore
+#@ignore
 @Login 
 Scenario Outline: Logging in with Invalid data 
 Given I Navigate to the homepage on "browser" 
@@ -58,7 +58,7 @@ When I click on Login Button
 #Then Login Pop-up box should be closed 
 #				
 			
-@ignore
+#@ignore
 @Login 
 Scenario Outline: Login 
 Given I Navigate to the homepage on "browser" 

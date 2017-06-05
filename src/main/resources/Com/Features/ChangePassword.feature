@@ -3,11 +3,11 @@ Feature: User Should be able to Change their Password After They have logged-in
          
 
 
-#@ignore       
+@ignore       
 @ChangePassword  
 Scenario: Verifying Elements on Change Password page on Casino 
 Given I Navigate to the homepage on "browser" 
-When  I have logged in username as "superch1" and password "Bola123$%^"
+When  I have logged in username as "superch1" and password "Bola1234$%^"
 When  I click on Sidebar Menu 
  And  I click on My Account dropdown arrow 
  And  I click on Change Password link within My Account DropDown SubMenu 
@@ -18,11 +18,11 @@ Then  I should see old password text box
 
 
 
-#@ignore       
+@ignore       
  @ChangePassword  
 Scenario Outline:Changing password with Invalid data criterias 
 Given I Navigate to the homepage on "browser" 
-When  I have logged in username as "superch1" and password "Bola123$%^"
+When  I have logged in username as "superch1" and password "Bola1234$%^"
  And  I click on Sidebar Menu 
  And  I click on My Account dropdown arrow 
  And  I click on Change Password link within My Account DropDown SubMenu 
@@ -35,23 +35,23 @@ Then  I should see Error Message displayed
 Examples:
 		| oldpassword         | newpassword     		| confirmPassword 			|
 		|  	bola123			  |	bola123		  			|	bola123					|
-		|  Bola123$%^   	  |	ADSERTYG	   			|	ADSERTYG				|
-		|  Bola123$%^		  |	£$%^$$$$$				|	£$%^$$$$$				|
-		|  Bola123$%^  		  |	GGGGGGGGGGGGGGGGGGGG1122|GGGGGGGGGGGGGGGGGGGG1122	|
+		|  Bola1234$%^   	  |	ADSERTYG	   			|	ADSERTYG				|
+		|  Bola1234$%^		  |	£$%^$$$$$				|	£$%^$$$$$				|
+		|  Bola1234$%^  	  |	GGGGGGGGGGGGGGGGGGGG1122|GGGGGGGGGGGGGGGGGGGG1122	|
 		|  Bola12$%^ 		  |	Bola1234$%^				|	Bola1234$%^				|
-		|  Bola123$%^		  |	12345678				|	12345678				|
-		|  Bola123$%^		  |	Manjuyat			 	|	Manjuyat				|
-		|  Bola123$%^		  |	$$$$$%%1a				|  $$$$$%%1a				|
-		|  Bola123$%^		  |	Bola1217				|	Bola1217				|
-		|  Bola123$%^		  |	Looking/>1				|Looking/>1					|
-		|  Bola1$()			  |	Bola1$(				    |	Bola1$(    				|
+		|  Bola1234$%^		  |	12345678				|	12345678				|
+		|  Bola1234$%^		  |	Manjuyat			 	|	Manjuyat				|
+		|  Bola1234$%^		  |	$$$$$%%1a				|  $$$$$%%1a				|
+		|  Bola1234$%^		  |	Bola1217				|	Bola1217				|
+		|  Bola1234$%^		  |	Looking/>1				|Looking/>1					|
+		|  Bola1234$%^ 		  |	Bola1$(				    |	Bola1$(    				|
+    
      
-     
-#@ignore
+@ignore
  @ChangePassword  
 Scenario Outline:Changing password with valid data criterias 
 Given I Navigate to the homepage on "browser" 
-When  I have logged in username as "superch1" and password "Bola123$%^"
+When  I have logged in username as "superch1" and password "Bola1234$%^"
  And  I click on Sidebar Menu 
  And  I click on My Account dropdown arrow 
  And  I click on Change Password link within My Account DropDown SubMenu 
@@ -62,7 +62,7 @@ When  I have logged in username as "superch1" and password "Bola123$%^"
 Then  My Password Should be Successfuly Change
 Examples:
 		| oldpassword	     | newpassword   			| confirmPassword 			 |
-		|  Bola1$()		  	 |k1N4HX"9SG9%y7TxRx4f		| 	k1N4HX"9SG9%y7TxRx4f	 |
+		|  Bola12345$%^ 	 |Bola1234$%^				| 	Bola1234$%^				 |
 			     
      
    
@@ -109,7 +109,7 @@ Examples:
 		|  Bola123$%^		  |	$$$$$%%1a				|  $$$$$%%1a				|
 		|  Bola123$%^		  |	Bola1217				|	Bola1217				|
 		|  Bola123$%^		  |	Looking/>1				|Looking/>1					|
-		|  Bola123$%^		  |	Bola1$()				|	Bola1$()				|
+		|  Bola123$%^		  |	Bola1$(		   			|	Bola1$(					|
      
      
 @ignore

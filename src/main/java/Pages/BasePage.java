@@ -81,6 +81,8 @@ public class BasePage {
 	}
 
 	public boolean isLiveTabPresent() {
+		WebDriverWait wait= new WebDriverWait(d,30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_LiveTab)));
 		return d.findElement(By.cssSelector(Constant.hp_LiveTab)).isDisplayed();
 
 	}
@@ -131,11 +133,17 @@ public class BasePage {
 	}
 
 	public void clickVegasTab() {
+		WebDriverWait wait= new WebDriverWait(d,20);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(Constant.LoginPopUpBox)));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_VegasTab)));
 		d.findElement(By.cssSelector(Constant.hp_VegasTab)).click();
 
 	}
 
 	public void clickLiveTab() {
+		WebDriverWait wait= new WebDriverWait(d,20);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(Constant.LoginPopUpBox)));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_LiveTab)));
 	d.findElement(By.cssSelector(Constant.hp_LiveTab)).click();
 
 	}

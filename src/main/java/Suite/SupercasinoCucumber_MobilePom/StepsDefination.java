@@ -1740,6 +1740,11 @@ public class StepsDefination extends TestBase {
 		Assert.assertTrue(changepasswordPage.isChangePassWordErrorMessagePresent());
 	   
 	}
+	@Then("^My Password Should be Successfuly Change$")
+	public void my_Password_Should_be_Successfuly_Change() throws Throwable {
+		Assert.assertTrue(changepasswordPage.isPassWordSuccessfullyChangeTitlePagePresent());
+	}
+
 	
 	@After("@web")
 	public void closeBrowser() throws InterruptedException {
