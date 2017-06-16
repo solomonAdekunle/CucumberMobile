@@ -7,7 +7,7 @@ Feature: User Should be able to Change their Password After They have logged-in
 @ChangePassword  
 Scenario: Verifying Elements on Change Password page on Casino 
 Given I Navigate to the homepage on "browser" 
-When  I have logged in username as "superch1" and password "Bola1234$%^"
+When  I have logged in username as "superch1" and password "Bola123$%^"
 When  I click on Sidebar Menu 
  And  I click on My Account dropdown arrow 
  And  I click on Change Password link within My Account DropDown SubMenu 
@@ -22,7 +22,7 @@ Then  I should see old password text box
  @ChangePassword  
 Scenario Outline:Changing password with Invalid data criterias 
 Given I Navigate to the homepage on "browser" 
-When  I have logged in username as "superch1" and password "Bola1234$%^"
+When  I have logged in username as "superch1" and password "Bola123$%^"
  And  I click on Sidebar Menu 
  And  I click on My Account dropdown arrow 
  And  I click on Change Password link within My Account DropDown SubMenu 
@@ -51,7 +51,7 @@ Examples:
  @ChangePassword  
 Scenario Outline:Changing password with valid data criterias 
 Given I Navigate to the homepage on "browser" 
-When  I have logged in username as "superch1" and password "Bola1234$%^"
+When  I have logged in username as "superch1" and password "Bola123$%^"
  And  I click on Sidebar Menu 
  And  I click on My Account dropdown arrow 
  And  I click on Change Password link within My Account DropDown SubMenu 
@@ -66,7 +66,7 @@ Examples:
 			     
      
    
-#@ignore       
+@ignore       
  @ChangePassword  
 Scenario: Verifying Elements on Change Password page on Vegas
 Given I Navigate to the homepage on "browser" 
@@ -135,7 +135,7 @@ Examples:
    
    
    
-#@ignore       
+@ignore       
  @ChangePassword  
 Scenario: Changing password with Invalid data criterias on Live Vetical
 Given I Navigate to the homepage on "browser" 

@@ -66,7 +66,8 @@ public class StepsDefination extends TestBase {
 	private DepositPage depositPage;
 	private TransactionPage transactionPage;
 	private WithdrawPage withdrawPage;
-    private ChatPage chatPage;
+	private ChatPage chatPage;
+
 	public StepsDefination() throws IOException {
 
 		super();
@@ -86,21 +87,18 @@ public class StepsDefination extends TestBase {
 		privcypolicyPage = new PrivacyPolicyPage(TestBase.d);
 		TAndCPage = new TermsAndConditionsPage(TestBase.d);
 		vipPage = new VIPPage(TestBase.d);
-		changepasswordPage= new ChangePasswordPage(TestBase.d);
-		contactusPage= new ContactUSPage(TestBase.d);
-		gettingStartedPage= new GettingStartedPage(TestBase.d);
-		howToDepositPage= new HowToDepositPage(TestBase.d);
-		howToWithdrawPage= new HowToWithdrawPage(TestBase.d);
-		ismyDepositSafePage= new IsMyDepositSafePage(TestBase.d);
-		securityPage= new SecurityPage(TestBase.d);
+		changepasswordPage = new ChangePasswordPage(TestBase.d);
+		contactusPage = new ContactUSPage(TestBase.d);
+		gettingStartedPage = new GettingStartedPage(TestBase.d);
+		howToDepositPage = new HowToDepositPage(TestBase.d);
+		howToWithdrawPage = new HowToWithdrawPage(TestBase.d);
+		ismyDepositSafePage = new IsMyDepositSafePage(TestBase.d);
+		securityPage = new SecurityPage(TestBase.d);
 		presenterPage = new PresentersPage(TestBase.d);
 		depositPage = new DepositPage(TestBase.d);
-		transactionPage= new TransactionPage(TestBase.d);
-		withdrawPage= new WithdrawPage(TestBase.d);
-		chatPage= new ChatPage(TestBase.d);
-		
-		
-		
+		transactionPage = new TransactionPage(TestBase.d);
+		withdrawPage = new WithdrawPage(TestBase.d);
+		chatPage = new ChatPage(TestBase.d);
 
 	}
 
@@ -157,9 +155,11 @@ public class StepsDefination extends TestBase {
 	/* This Below are Only for @When Method */
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	/* 
+	/*
 	 * login with valid username and password
+	 * 
 	 * @param{string username}- this is the username of the Account holder
+	 * 
 	 * @param{string password}- this is the Password of the Account Holder
 	 */
 	@When("^I have logged in username as \"([^\"]*)\" and password \"([^\"]*)\"$")
@@ -168,11 +168,9 @@ public class StepsDefination extends TestBase {
 		loginPage.sendUseraname(username);
 		loginPage.sendPassword(password);
 		loginPage.clickSigninButton();
-	   
+
 	}
-	
-	
-	
+
 	/* Click on the Login Button at the RTop of the Home Page */
 	@When("^I click on Login Button$")
 	public void i_click_on_Login_Button() {
@@ -187,14 +185,22 @@ public class StepsDefination extends TestBase {
 
 	}
 
-	/* Enter User in the Useranem input box */
+	/*
+	 * Enter User in the Useranem input box
+	 * 
+	 * @param{string username}- this is the username of the Account holder
+	 */
 	@When("^I enter Username as \"([^\"]*)\"$")
 	public void i_enter_Username_as(String username) throws InterruptedException {
 		loginPage.sendUseraname(username);
 
 	}
 
-	/* Enter Password in Password input box */
+	/*
+	 * Enter Password in Password input box
+	 * 
+	 * @param{string password}- this is the password of the Account holder
+	 */
 	@When("^I enter Password as \"([^\"]*)\"$")
 	public void i_enter_Password_as(String password) throws InterruptedException {
 		loginPage.sendPassword(password);
@@ -221,21 +227,34 @@ public class StepsDefination extends TestBase {
 
 	}
 
-	/* Enter Username for Registeration */
+	/*
+	 * Enter Username for Registeration
+	 * 
+	 * @param{string username}- this is the username for the Account
+	 * 
+	 */
 	@When("^I enter regUsername as \"([^\"]*)\"$")
 	public void i_enter_regUsername_as(String UserName) {
 		RegPage.sendRegUserNmae(UserName);
 
 	}
 
-	/* Enter Password for Registration */
+	/*
+	 * Enter Password for Registration
+	 * 
+	 * @param{string password}- this is the password of the Account
+	 */
 	@When("^I enter RegPassword as \"([^\"]*)\"$")
 	public void i_enter_RegPassword_as(String password) {
 		RegPage.sendRegPasswor(password);
 
 	}
 
-	/* Enter confirm Password for Registration */
+	/*
+	 * Enter confirm Password for Registration
+	 * 
+	 * @param{string ConfPass}- this is the Confirm Password of the Account
+	 */
 	@When("^I enter RegConfirmPassword as \"([^\"]*)\"$")
 	public void i_enter_RegConfirmPassword_as(String ConfPass) {
 		RegPage.sendRegCofirmPassword(ConfPass);
@@ -248,49 +267,80 @@ public class StepsDefination extends TestBase {
 
 	}
 
-	/* Enter E-mail address for Registration */
+	/*
+	 * Enter E-mail address for Registration
+	 * 
+	 * @param{string email}- this is the email of the Account holder
+	 */
 	@When("^I enter RegEmail as \"([^\"]*)\"$")
 	public void i_enter_RegEmail_as(String email) {
 		RegPage.sendRegEmail(email);
 
 	}
 
-	/* Enter Title for Registration */
+	/*
+	 * Enter Title for Registration
+	 * 
+	 * @param{string title}- this is the Title of the Account holder
+	 */
 	@When("^I enter RegTitle as \"([^\"]*)\"$")
 	public void i_enter_RegTitle_as(String title) {
 		RegPage.sendRegTitle(title);
 
 	}
 
-	/* Enter Your First Name for Registration */
+	/*
+	 * Enter Your First Name for Registration
+	 * 
+	 * @param{string firstName}- this is the FirstName of the Account holder
+	 */
 	@When("^I enter RegFirstName as \"([^\"]*)\"$")
 	public void i_enter_RegFirstName_as(String firstName) {
 		RegPage.sendRegFirstName(firstName);
 
 	}
 
-	/* Enter Your Surname for Registration */
+	/*
+	 * Enter Your Surname for Registration
+	 * 
+	 * @param{string surName}- this is the SurName of the Account holder
+	 */
 	@When("^I enter RegSurName as \"([^\"]*)\"$")
 	public void i_enter_RegSurName_as(String surName) {
 		RegPage.sendRegLastName(surName);
 		;
 	}
 
-	/* Enter Date of Birth Day for Registration */
+	/*
+	 * Enter Date of Birth Day for Registration
+	 * 
+	 * @param{string Day}- this is the Day of the Date of Birth of the Account
+	 * holder
+	 */
 	@When("^I enter RegDOBDay as \"([^\"]*)\"$")
 	public void i_enter_RegDOBDay_as(String Day) {
 		RegPage.sendRegDOBDay(Day);
 
 	}
 
-	/* Enter Date of Birth Month for Registration */
+	/*
+	 * Enter Date of Birth Month for Registration
+	 * 
+	 * @param{string Month}- this is the Month of the Date of Birth of the
+	 * Account holder
+	 */
 	@When("^I enter RegDOBMonth as \"([^\"]*)\"$")
 	public void i_enter_RegDOBMonth_as(String Month) {
 		RegPage.sendRegDOBMonth(Month);
 		;
 	}
 
-	/* Enter Date of Birth Year for Registration */
+	/*
+	 * Enter Date of Birth Year for Registration
+	 * 
+	 * @param{string Year}- this is the Year of the Date of Birth of the Account
+	 * holder
+	 */
 	@When("^I enter RegDOBYear as \"([^\"]*)\"$")
 	public void i_enter_RegDOBYear_as(String Year) {
 		RegPage.sendRegDOBYear(Year);
@@ -304,35 +354,57 @@ public class StepsDefination extends TestBase {
 
 	}
 
-	/* Enter your House address for Registration */
+	/*
+	 * Enter your House address for Registration
+	 * 
+	 * @param{string Address}- this is the House Number of the Account holder
+	 */
 	@When("^I enter RegAddress as \"([^\"]*)\"$")
 	public void i_enter_RegAddress_as(String Address) {
 		RegPage.sendRegAddress(Address);
 
 	}
 
-	/* Enter Town or City Address for Registration */
+	/*
+	 * Enter Town or City Address for Registration
+	 * 
+	 * @param{string Town}- this is the Town of the Account holder
+	 */
 	@When("^I enter RegTown as \"([^\"]*)\"$")
 	public void i_enter_RegTown_as(String Town) {
 		RegPage.sendRegCity(Town);
 
 	}
 
-	/* Enter your County for Registration */
+	/*
+	 * Enter your County for Registration
+	 * 
+	 * @param{string county}- this is the County of the Account holder
+	 */
 	@When("^I enter RegCounty as \"([^\"]*)\"$")
 	public void i_enter_RegCounty_as(String county) {
 		RegPage.sendRegCounty(county);
 
 	}
 
-	/* Enter Your Post Code for Registration */
+	/*
+	 * Enter Your Post Code for Registration
+	 * 
+	 * @param{string PostCode}- this is the PostCode Address of the Account
+	 * holder
+	 */
 	@When("^I enter RegPostCode as \"([^\"]*)\"$")
 	public void i_enter_RegPostCode_as(String Postcode) {
 		RegPage.sendRegPostCode(Postcode);
 
 	}
 
-	/* Enter Contact Number for Registration */
+	/*
+	 * Enter Contact Number for Registration
+	 * 
+	 * @param{string contactNumber}- this is the Contact Phone Number of the
+	 * Account holder
+	 */
 	@When("^I enter RegContactNum as \"([^\"]*)\"$")
 	public void i_enter_RegContactNum_as(String contactNumber) {
 		RegPage.sendRegContactNumber(contactNumber);
@@ -360,20 +432,35 @@ public class StepsDefination extends TestBase {
 
 	}
 
-	/* Select the Deposit limit Type on Registration */
+	/*
+	 * Select the Deposit limit Type on Registration
+	 * 
+	 * @param{string TypeLimit}- this is the Choose Limit Type for deposit limit
+	 * on the Account holder
+	 */
 	@When("^I enter Choose Type as \"([^\"]*)\"$")
 	public void i_enter_Choose_Type_as(String TypeLimit) {
 		RegPage.sendRegChooseType(TypeLimit);
 
 	}
 
-	/* Select the Deposit Limit Amount for Registration */
+	/*
+	 * Select the Deposit Limit Amount for Registration
+	 * 
+	 * @param{string ChooseLimit}- this is the Deposit Limit set amount of the
+	 * Account
+	 */
 	@When("^I enter Choose limit as \"([^\"]*)\"$")
 	public void i_enter_Choose_limit_as(String ChooseLimit) {
 		RegPage.sendRegLimitType(ChooseLimit);
 	}
 
-	/* Enter Amount willing as a deposit limit on Registration page */
+	/*
+	 * Enter Amount willing as a deposit limit on Registration page
+	 * 
+	 * @param{string Other}- this is the Other Deposit limit amount to set on
+	 * the Account
+	 */
 	@When("^I enter Other Amount as \"([^\"]*)\"$")
 	public void i_enter_Other_Amount_as(String Other) {
 		RegPage.sendRegDepositLimitOtherAmount(Other);
@@ -585,7 +672,6 @@ public class StepsDefination extends TestBase {
 
 	}
 
-	
 	/*
 	 * Click on the Privacy Policy link within the footer on the Live Home Page
 	 */
@@ -750,42 +836,162 @@ public class StepsDefination extends TestBase {
 		sidebarPage.clickSideBarLogOutLink();
 
 	}
+
 	@When("^I click on Help link within the SideBar Menu$")
 	public void i_click_on_Help_link_within_the_SideBar_Menu() {
 		sidebarPage.clickSideBarMenuHelpLink();
 
 	}
-	
-	/* Click on the  live Chart link within the Side Bar Menu */
+
+	/* Click on the live Chart link within the Side Bar Menu */
 	@When("^I click on Live Chat link within the SideBar Menu$")
 	public void i_click_on_Live_Chat_link_within_the_SideBar_Menu() {
 		sidebarPage.clickSideBarMenuLiveChatLink();
-	 
-	}
-	
-	/* Enter your Old Password on Change Password Page */
-	 @When("^I Enter Old Password as \"([^\"]*)\"$")
-	public void i_Enter_Old_Password_as(String oldpassword)  {
-		 changepasswordPage.sendChangePasswordOldPassword(oldpassword);
-	   
-	}
-    /* Enter your New Password on Change Password Page */
-	@When("^I Enter New Password as \"([^\"]*)\"$")
-	public void i_Enter_New_Password_as(String newpassword)  {
-		changepasswordPage.sendChangePasswordNewPassword(newpassword);
-	}
-   /* Enter your Confirm Password on Change Password Page */
-	@When("^I Enter Confirmed Password  as \"([^\"]*)\"$")
-	public void i_Enter_Confirmed_Password_as(String confirmPassword)  {
-		changepasswordPage.sendChangePasswordConfirmPassword(confirmPassword);
-	    
 
 	}
+
+	/*
+	 * Enter your Old Password on Change Password Page
+	 * 
+	 * @param{string Old Password}- this is the Current Password User is willing
+	 * to Change on the Account
+	 */
+	@When("^I Enter Old Password as \"([^\"]*)\"$")
+	public void i_Enter_Old_Password_as(String oldpassword) {
+		changepasswordPage.sendChangePasswordOldPassword(oldpassword);
+
+	}
+
+	/*
+	 * Enter your New Password on Change Password Page
+	 * 
+	 * @param{string newpassword}- this is the New Password user wants to Change
+	 * to for the Account
+	 */
+	@When("^I Enter New Password as \"([^\"]*)\"$")
+	public void i_Enter_New_Password_as(String newpassword) {
+		changepasswordPage.sendChangePasswordNewPassword(newpassword);
+	}
+
+	/*
+	 * Enter your Confirm Password on Change Password Page
+	 * 
+	 * @param{string confirmPassword}- this is the confirm Password same as the
+	 * New Pass word user willing to Change to on the Account
+	 */
+	@When("^I Enter Confirmed Password  as \"([^\"]*)\"$")
+	public void i_Enter_Confirmed_Password_as(String confirmPassword) {
+		changepasswordPage.sendChangePasswordConfirmPassword(confirmPassword);
+
+	}
+
 	/* Click on Submit button on Change Password page */
 	@When("^I click Submit button$")
 	public void i_click_Submit_button() {
 		changepasswordPage.clickChangePasswordSubmitButton();
 	}
+
+	/* Click Top Deposit Button on the Home Page */
+	@When("^I click a Depositbutton$")
+	public void i_click_a_Depositbutton() {
+		basePage.clickTopDepositButton();
+
+	}
+
+	/* Getting the Current Cash Balance displayed on the Home Page */
+	@When("^I get the Current Cash Balance$")
+	public void i_get_the_Current_Cash_Balance() {
+		basePage.storeHomePageAccountBalance();
+
+	}
+
+	/* User Check is Balance */
+	@When("^I check My account Balance$")
+	public void i_check_My_account_Balance() {
+		depositPage.storePreviousBalance();
+
+	}
+
+	/*
+	 * Enter your CVV Number
+	 * 
+	 * @param{string CardCVVNumber}- this is the Security Number at the Back of
+	 * the Credit Card of the Account holder
+	 */
+	@When("^I enter CVV as \"([^\"]*)\"$")
+	public void i_enter_CVV_as(String CardCVVNumber) {
+		depositPage.sendCashierDepositCardCVVNumber(CardCVVNumber);
+	}
+
+	/*
+	 * Enter the Amount to Deposit
+	 * 
+	 * @param{string Amount}- this is the Amount User wants to Deposit to the
+	 * Account
+	 */
+	@When("^I enter Amount To Deposit as \"([^\"]*)\"$")
+	public void i_enter_Amount_To_Deposit_as(String Amount) {
+		depositPage.sendCashierDepositOtherAmountToDeposit(Amount);
+
+	}
+
+	/* Click on Deposit button within the Cashier Deposit Page */
+	@When("^I click a SafeChargeDepositbutton$")
+	public void i_click_a_SafeChargeDepositbutton() {
+		depositPage.clickCashierDepositSafeChargeDepositButton();
+
+	}
+
+	/* Click on Close Button on Deposit Successful Pop-up box */
+	@When("^I click on CloseButton within the Success Cashier Pop-up box$")
+	public void i_click_on_CloseButton_within_the_Success_Cashier_Pop_up_box() {
+		depositPage.clickCashierDepositSuccessPopBoxCloseButton();
+
+	}
+
+	/* Click on the Payment Method Logo */
+	@When("^I click on Payment Methods Card Logo$")
+	public void i_click_on_Payment_Methods_Card_Logo() {
+		depositPage.clickCashierDepositPaymentMethodLogo();
+
+	}
+
+	/*
+	 * Enter your Credit Card Numbers
+	 * 
+	 * @param{string cardNumbers}- this is the Credit Card Numbers of the
+	 * Account holder
+	 */
+	@When("^I enter CardVisa Number as \"([^\"]*)\"$")
+	public void i_enter_CardVisa_Number_as(String cardNumbers) {
+		depositPage.sendCashierDepositCreditCardNumbers(cardNumbers);
+	}
+
+	/*
+	 * Enter the Card Expiry date of the Month
+	 * 
+	 * @param{string cardExpiryMonth}- this is theCredit Card Expire Month of
+	 * the Account holder
+	 * 
+	 */
+	@When("^I entry Expiry card month as \"([^\"]*)\"$")
+	public void i_entry_Expiry_card_month_as(String cardExpiryMonth) {
+		depositPage.sendCashierDepositCreditCradExpireDateMonth(cardExpiryMonth);
+
+	}
+
+	/*
+	 * Enter Expiry date of the Year for the Card
+	 * 
+	 * @param{string cardExpiryYear}- this is the Credit card Year of Expiration
+	 * of the Account holder
+	 */
+	@When("^I enter Expiry card year as \"([^\"]*)\"$")
+	public void i_enter_Expiry_card_year_as(String cardExpiryYear) {
+		depositPage.sendCashierDepositCreditCardExpireDateYear(cardExpiryYear);
+
+	}
+
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/* This Below are Only for @Then Method */
@@ -1595,7 +1801,7 @@ public class StepsDefination extends TestBase {
 
 	/* Verify if user will Navigate to Contact-Us Page */
 	@Then("^I should Navigate to Contact Us Page$")
-	public void i_should_Navigate_to_Contact_Us_Page()  {
+	public void i_should_Navigate_to_Contact_Us_Page() {
 		Assert.assertTrue(contactusPage.isContactUSTitlePageDisplay());
 	}
 
@@ -1662,6 +1868,8 @@ public class StepsDefination extends TestBase {
 
 	@Then("^I should Navigate to SafeCharge Cashier Deposit Page$")
 	public void i_should_Navigate_to_SafeCharge_Cashier_Deposit_Page() {
+		Assert.assertTrue(depositPage.isSafeChargeLogoPresent());
+		depositPage.NavigateBackToHomePage();
 
 	}
 
@@ -1685,75 +1893,326 @@ public class StepsDefination extends TestBase {
 		Assert.assertTrue(changepasswordPage.isChangePasswordTitlePageDisplay());
 
 	}
+
 	@Then("^I should Depsit button on Home Page$")
 	public void i_should_Depsit_button_on_Home_Page() {
 		Assert.assertTrue(basePage.isTopDepositButtonPresent());
-	    
+
 	}
-	
-	/* Verify if  Live Chat is displayed within the Side bar Menu */
+
+	/* Verify if Live Chat is displayed within the Side bar Menu */
 	@Then("^I Should see a Live Chat link within the SidebarMenu$")
-	public void i_Should_see_a_Live_Chat_link_within_the_SidebarMenu(){
+	public void i_Should_see_a_Live_Chat_link_within_the_SidebarMenu() {
 		Assert.assertTrue(sidebarPage.isSideBarLiveChatLinkPresent());
 	}
-	
+
 	/* Verify if Live Chat Open in a new Tab window */
 	@Then("^I should Navigate to Live Chat Page$")
 	public void i_should_Navigate_to_Live_Chat_Page() {
 		chatPage.isLiveChatSuperCasinoLogoPresent();
-	   
+
 	}
+
 	/* Verify if user will is logged out */
 	@Then("^I should be logged out$")
 	public void i_should_be_logged_out() {
 		Assert.assertTrue(basePage.isLoginButtonPresent());
 
 	}
-	/* Verify if Old Password text box is displayed*/
+
+	/* Verify if Old Password text box is displayed */
 	@Then("^I should see old password text box$")
 	public void i_should_see_old_password_text_box() {
-	Assert.assertTrue(changepasswordPage.isChangePasswordOldPasswordInputboxPresent());
-		
-	   
+		Assert.assertTrue(changepasswordPage.isChangePasswordOldPasswordInputboxPresent());
+
 	}
-   /* Verify if New Password text box is displayed */
+
+	/* Verify if New Password text box is displayed */
 	@Then("^I should see new password text box$")
 	public void i_should_see_new_password_text_box() {
-	 Assert.assertTrue(changepasswordPage.isChangePasswordNewPasswordInputBoxPresent());
-	    
+		Assert.assertTrue(changepasswordPage.isChangePasswordNewPasswordInputBoxPresent());
+
 	}
+
 	/* Verify if Confirm Password text box is displayed */
 	@Then("^I should confrim password text box$")
-	public void i_should_confrim_password_text_box()  {
+	public void i_should_confrim_password_text_box() {
 		Assert.assertTrue(changepasswordPage.isChangePasswordConfirmPasswordInputBoxPresent());
-	   
+
 	}
-    /* Verify if Change your Password is displayed as title page on Change Password Page */
+
+	/*
+	 * Verify if Change your Password is displayed as title page on Change
+	 * Password Page
+	 */
 	@Then("^I should see Change password as Title Page$")
 	public void i_should_see_Change_password_as_Title_Page() {
-	Assert.assertTrue(changepasswordPage.isChangePasswordTitlePageDisplay());
-	    
+		Assert.assertTrue(changepasswordPage.isChangePasswordTitlePageDisplay());
+
 	}
-	/* Verify if Error Messsage is displayed when invalid data are submited on Change Password page */
+
+	/*
+	 * Verify if Error Messsage is displayed when invalid data are submited on
+	 * Change Password page
+	 */
 	@Then("^I should see Error Message displayed$")
-	public void i_should_see_Error_Message_displayed(){
+	public void i_should_see_Error_Message_displayed() {
 		Assert.assertTrue(changepasswordPage.isChangePassWordErrorMessagePresent());
-	   
+
 	}
+
+	/*
+	 * User should be redirected to Your Passowrd Has been successfuly Change
+	 * Page
+	 */
 	@Then("^My Password Should be Successfuly Change$")
-	public void my_Password_Should_be_Successfuly_Change() throws Throwable {
+	public void my_Password_Should_be_Successfuly_Change() {
 		Assert.assertTrue(changepasswordPage.isPassWordSuccessfullyChangeTitlePagePresent());
 	}
 
+	/* Verify if User has been redirected to New Safe Charge Cashier */
+	@Then("^I should see new cashier$")
+	public void i_should_see_new_cashier() {
+		Assert.assertTrue(depositPage.isSafeChargeLogoPresent());
+
+	}
+
+	/*
+	 * Verify if Cash Balance displayed is the same as the Cash Balance
+	 * displayed on the Home Page
+	 */
+	@Then("^I should see Balance value in the cashier Deposit Page$")
+	public void i_should_see_Balance_value_in_the_cashier_Deposit_Page() {
+		double CashierBalDisplay = depositPage.storeCashierBalance();
+		System.out.println(CashierBalDisplay);
+		System.out.println(basePage.currentBalance);
+		Assert.assertTrue("equals", CashierBalDisplay - basePage.currentBalance == 0);
+
+	}
+
+	/* Verify if Payment Details Texts is diaplayed on the cashier */
+	@Then("^I should see  My Payments Methods text in the cashier Deposit Page$")
+	public void i_should_see_My_Payments_Methods_text_in_the_cashier_Deposit_Page() {
+		Assert.assertTrue(depositPage.isCashierPaymentsMethodTextPresent());
+
+	}
+
+	/*
+	 * Verify Payment Details tests are displayed within the Cashier deposit
+	 * Page
+	 */
+	@Then("^I should see  Payment Details text in the cashier Deposit Page$")
+	public void i_should_see_Payment_Details_text_in_the_cashier_Deposit_Page() {
+		Assert.assertTrue(depositPage.isCashierPaymentDetailsTextPresent());
+
+	}
+
+	/* Verify if Payment card Logo is displayed within the Cashier */
+	@Then("^I should see payment logo in the cashier Deposit Page$")
+	public void i_should_see_payment_logo_in_the_cashier_Deposit_Page() {
+		Assert.assertTrue(depositPage.isCashierPaymentsLogoPresent());
+
+	}
+
+	/* Verify if other Payment Logo are displayed */
+	@Then("^I should see other Payment Methods logo in the cashier Deposit Page$")
+	public void i_should_see_other_Payment_Methods_logo_in_the_cashier_Deposit_Page() {
+		Assert.assertTrue(depositPage.isCashierOtherPaymentsLogoPresent());
+		// depositPage.NavigateBackToHomePage();
+	}
+
+	/*
+	 * Verify if the Name of the Card owner is displayed within the Deposit Page
+	 */
+	@Then("^I should see account creditcard ownername in the cashier Deposit Page$")
+	public void i_should_see_account_creditcard_ownername_in_the_cashier_Deposit_Page() {
+		Assert.assertTrue(depositPage.isCashierCreditCardOwnerNamePresent());
+
+	}
+
+	/*
+	 * Verify if the Card Expiry date is displayed within the Cashier Deposit
+	 * Page
+	 */
+	@Then("^I should see card expiry date in the cashier$")
+	public void i_should_see_card_expiry_date_in_the_cashier() {
+		Assert.assertTrue(depositPage.isCashierCreditCardExpiryDatePresent());
+
+	}
+
+	/*
+	 * Verify if UsernameInfo is displayed within the within the Cashier deposit
+	 * Page
+	 */
+	@Then("^I should see  UsernameInfo as \"([^\"]*)\"$")
+	public void i_should_see_UsernameInfo_as(String Username) {
+		Assert.assertTrue(depositPage.isUserNamePresent(Username));
+
+	}
+
+	/* Verify if the Last four Number of th card is displayed */
+	@Then("^I should see lastfour card numbers as \"([^\"]*)\"$")
+	public void i_should_see_lastfour_card_numbers_as(String cardnumber) {
+		Assert.assertTrue(depositPage.isCashierCreditCardLastFourNumberPresent(cardnumber));
+
+	}
+
+	/*
+	 * Verify if the CVV Input box card is displayed within the Cashier Deposit
+	 * Page
+	 */
+	@Then("^I should see CVV input field in the cashier Deposit Page$")
+	public void i_should_see_CVV_input_field_in_the_cashier_Deposit_Page() {
+		Assert.assertTrue(depositPage.isCashierCreditCardCVVPresent());
+
+	}
+
+	/*
+	 * Verify ifPromoCode input box is displayed within the Cashier Deposit Page
+	 */
+	@Then("^I should see Promocode input text in the cashier Desposit Page$")
+	public void i_should_see_Promocode_input_text_in_the_cashier_Desposit_Page() {
+		Assert.assertTrue(depositPage.isCashierPromoCodePresent());
+	}
+
+	/* Verify if Billing Address check box is displayed within the cashier */
+	@Then("^I should see Bill Address check box in the cashier Deposit Page$")
+	public void i_should_see_Bill_Address_check_box_in_the_cashier_Deposit_Page() {
+		Assert.assertTrue(depositPage.isCashierBillingAddressCheckBoxPresent());
+	}
+
+	/*
+	 * Verify if the Amount to deposit boxes are displayed within the Cashier
+	 * deposit page
+	 */
+	@Then("^I should Amount To deposit in the cashier Deposit Page$")
+	public void i_should_Amount_To_deposit_in_the_cashier_Deposit_Page() {
+		Assert.assertTrue(depositPage.isCashierAmountToDepositPresent());
+
+	}
+
+	/*
+	 * Verify if the other Amount to deposit Input box is displayed within the
+	 * Cashier Deposit page
+	 */
+	@Then("^I should see other amount input field in the cashier Deposit Page$")
+	public void i_should_see_other_amount_input_field_in_the_cashier_Deposit_Page() {
+		Assert.assertTrue(depositPage.isCashierOtherAmountInputFieldPresent());
+	}
+
+	/*
+	 * Verify if SafeCharge Deposit Button is displayed within the Cashier
+	 * Deposit Page
+	 */
+	@Then("^I should see Deposit deposit button in the cashier Deposit Page$")
+	public void i_should_see_Deposit_deposit_button_in_the_cashier_Deposit_Page() {
+		Assert.assertTrue(depositPage.isCashierSafeChargeDepositButtonPresent());
+		depositPage.NavigateBackToHomePage();
+
+	}
+
+	/*
+	 * Verify if Deposit Success Highlight Pop-up will be displayed when user
+	 * deposit successfully
+	 */
+	@Then("^I should see Deposit Success Cashier Pop-up box displayed$")
+	public void i_should_see_Deposit_Success_Cashier_Pop_up_box_displayed() {
+		Assert.assertTrue(depositPage.isCashierDepositSuccessLightBoxPresent());
+	}
+
+	/*
+	 * Verify if the Your Transaction was approved text is displayed within the
+	 * Deposit Success Pop up box
+	 */
+	@Then("^I should see Your transaction was approved Text displayed$")
+	public void i_should_see_Your_transaction_was_approved_Text_displayed() {
+		Assert.assertTrue(depositPage.isCashierDepositSuccessLightBoxTextPresent());
+	}
+
+	/*
+	 * Verify if the Close Button is displayed within the Deposit Success Pop up
+	 * box
+	 */
+	@Then("^I should see CloseButton within the Success Cashier Pop-up box displayed$")
+	public void i_should_see_CloseButton_within_the_Success_Cashier_Pop_up_box_displayed() {
+		Assert.assertTrue(depositPage.isCashierDepositSuccessLightBoxCloseButtonPresent());
+		depositPage.NavigateBackToHomePage();
+
+	}
+
+	/* Verify if the Account Balance Increase by the Amount Deposit */
+	@Then("^I should see my new Account Balance increase by \"([^\"]*)\"$")
+	public void i_should_see_my_new_Account_Balance_increase_by(String Amount) {
+		double PreviousBalDisplay = depositPage.storeCashierBalance();
+		double amtDeposit = Double.parseDouble(Amount);
+		double NewBal = (amtDeposit + PreviousBalDisplay);
+		Assert.assertTrue("equals", PreviousBalDisplay + amtDeposit == NewBal);
+		depositPage.NavigateBackToHomePage();
+	}
+
+	/*
+	 * Verify if Success Deposit pop-up box is closed after clicking on Close
+	 * button
+	 */
+	@Then("^I should see no Deposit Success Cashier Pop-up box displayed\\.$")
+	public void i_should_see_no_Deposit_Success_Cashier_Pop_up_box_displayed() {
+		Assert.assertTrue(depositPage.isCashierSafeChargeDepositButtonPresent());
+	}
+
+	/* Verify if Error Message is displayed */
+	@Then("^I should see In Valid Expeiratin ErrorMessage displayed$")
+	public void i_should_see_In_Valid_Expeiratin_ErrorMessage_displayed() {
+		Assert.assertTrue(depositPage.isCreditCardEXperiationMonthErrorMessagePresent());
+		depositPage.NavigateBackToHomePage();
+	}
+	/* Verify if Cvv Error Message is displayed when cvv Number are not filled */
+	@Then("^I should see The field must be exactly Three digits ErrorMessage Text displayed$")
+	public void i_should_see_The_field_must_be_exactly_Three_digits_ErrorMessage_Text_displayed() {
+		Assert.assertTrue(depositPage.isCreditCardCVVErrorMessagePresent());
+		depositPage.NavigateBackToHomePage();
+	}
+
+
+   /* Verify if Error Message will be displayed when invalid amount is input in the Other Amount Input box */
+	@Then("^I should  Please Enter Valid ammount errorText displayed$")
+	public void i_should_Please_Enter_Valid_ammount_errorText_displayed() {
+		Assert.assertTrue(depositPage.isCashierDepositOtherAmounToDepositErrorMessagePresent());
+		depositPage.NavigateBackToHomePage();
+	}
+
+	/* Verify if Green tick or green colour is diplayed when oreect data is input */
+	@Then("^I should see Green tick mark next to CardOwnerNametext box$")
+	public void i_should_see_Green_tick_mark_next_to_CardOwnerNametext_box()  {
+	   
+	}
+	/* Verify if Green tick or green colour is diplayed when oreect data is input */
+	@Then("^I should see Green tick mark next to CardNumberbox box$")
+	public void i_should_see_Green_tick_mark_next_to_CardNumberbox_box()  {
+		Assert.assertTrue(depositPage.isCashierDepositCardNumberGreenMarkPresent());
+	   
+	}
+    /* Verify if Green tick or green colour is diplayed when oreect data is input */
+	@Then("^I should see Green tick mark next to CardCVVtext box$")
+	public void i_should_see_Green_tick_mark_next_to_CardCVVtext_box()  {
+		Assert.assertTrue(depositPage.isCashierDepositCardCVVNumberGreenMarkPresent());
+	}
+	/* Verify if Green tick or green colour is diplayed when oreect data is input */
+	@Then("^I should see a Green tick Mark next to EnterAmounttext box$")
+	public void i_should_see_a_Green_tick_Mark_next_to_EnterAmounttext_box(){
+		Assert.assertTrue(depositPage.isCashierDepositOtherAmountToDepositGreenMarkPresent());
+		depositPage.NavigateBackToHomePage();
+	    
+	}
+	
 	
 	@After("@web")
 	public void closeBrowser() throws InterruptedException {
 		d.close();
-//		 if(basePage.isLoggedIn()){
-//		 basePage.logOut();
-//		
-//		 }
-//		// Thread.sleep(2000);
+		// if(basePage.isLoggedIn()){
+		// basePage.logOut();
+		//
+		// }
+		// // Thread.sleep(2000);
 
 	}
 }

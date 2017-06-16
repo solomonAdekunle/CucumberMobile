@@ -24,8 +24,8 @@ public class BasePage {
 
 	protected WebDriver d;
 	protected static Properties OR=null;
-	
-	
+	public double currentBalance;
+
 	
 	public void ORConfig() throws IOException{
 		// OR
@@ -103,17 +103,35 @@ public class BasePage {
 		return d.findElement(By.cssSelector(Constant.hp_UserNmaeInfo)).isDisplayed();
 	}
 	
-	public boolean isHomePageAccountBalancePresent(){
-		return d.findElement(By.cssSelector(Constant.hp_AccountBalance)).isDisplayed();
+	public void storeHomePageAccountBalance(){
+		WebDriverWait wait= new WebDriverWait(d,20);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(Constant.LoginPopUpBox)));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_AccountBalance)));
+		String HomePageBal=d.findElement(By.cssSelector(Constant.hp_AccountBalance)).getText();
+		String balance = HomePageBal.replace(",", "").substring(0);
+		 currentBalance=Double.parseDouble( balance);
+		  System.out.println(currentBalance);
+		
+	
 	}
 	
-	
+	public boolean isHomePageAccountBalancePresent(){
+	return d.findElement(By.cssSelector(Constant.hp_AccountBalance)).isDisplayed();
+		
+	}
 	
 	
 	
 	
 	public void clickLoginButton() {
 	d.findElement(By.cssSelector(Constant.hp_Login)).click();
+	try{
+		WebElement PlayerMessage=d.findElement(By.cssSelector("div.playerMessages-modal .footer .ok"));
+				if(PlayerMessage.isDisplayed()==true)
+					PlayerMessage.click();
+		}catch (NoSuchElementException e){
+			e.getStackTrace();
+		}
 
 	}
 	
@@ -147,6 +165,13 @@ public class BasePage {
 	d.findElement(By.cssSelector(Constant.hp_LiveTab)).click();
 
 	}
+	 public void clickTopDepositButton(){
+		 WebDriverWait wait= new WebDriverWait(d,20);
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(Constant.LoginPopUpBox)));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_DepositButton)));
+		 d.findElement(By.cssSelector(Constant.hp_DepositButton)).click();
+		 
+	 }
 
 	public void clickPromosTab() {
 		d.findElement(By.cssSelector(Constant.hp_PromotionTab)).click();
@@ -184,7 +209,7 @@ public class BasePage {
 			
 			try{
 				WebElement PlayerMessage=d.findElement(By.cssSelector("div.playerMessages-modal .footer .ok"));
-						if(PlayerMessage.isDisplayed())
+						if(PlayerMessage.isDisplayed()==true)
 							PlayerMessage.click();
 				}catch (NoSuchElementException e){
 					e.getStackTrace();

@@ -13,7 +13,7 @@ public class Constant {
 	 public static String hp_PromotionTab="div.menu-verticals .promotions a";
 	 public static String hp_DepositButton="div.deposit-button a";
 	 public static String hp_UserNmaeInfo="div.balance a.username";
-	 public static String hp_AccountBalance="div.balance a.cashier .amount";
+	 public static String hp_AccountBalance="a.js-total-balance .amount";
 	 public static String hp_GameCategoryMenu="div.view-games-nav";
 	 public static String hp_GameCategoryMenu_FeatureTab="div.view-games-nav .games_menu a[href='/taxonomy/term/82']";
 	 public static String hp_GameCategoryMenu_SlotsTab="div.view-games-nav .games_menu a[href='/taxonomy/term/83']";
@@ -156,7 +156,7 @@ public class Constant {
 	   
 	   // Title Page
 	   public static String PageTitle="h1.title";
-	   public static String CashierTransaction_PageTitle="h2.page-title";
+	 
 	   
 	   // Elements on VIP Page
 	   public static String Vip_VipLogo="header.vip-logo";
@@ -172,6 +172,104 @@ public class Constant {
 	   public static String ChangePassword_Submit="button#change_password_submit";
 	   public static String ChangePassword_ErrorMessage="body.page-change-password .basic-page .messages.error";
 	   public static String PasswordChangeSuccessfully="h1.title";
+	   
+	   
+	   // Elements on Cashier Deposit page
+	   public static String CashierDeposit_MenuIcon="span.btnMyHub";
+	   public static String CashierDeposit_SupercasinoLogo="div.logo";
+	   public static String CashierDeposit_AccuntholderName="div.headerName";
+	   public static String CashierDeposit_AccountBalance="div.headerBalance";
+	   public static String CashierDeposit_titlePage="div.amount-title h3";
+	   public static String CashierDeposit_CardNumberInputBox="input#cc_card_number";
+	   public static String CashierDeposit_CardExpiryMonth="select#cc_exp_month option";
+	   public static String CashierDeposit_CardExpiryYear="select#cc_exp_year option";
+	   public static String CashierDeposit_OtherAmountToDeposit="input.open_amount_input";
+	   public static String CashierDeposit_DEPOSIT="input#continueButton";
+	   public static String CashierDeposit_SafechargeLogo="span.sfc-logo";
+	   public static String CashierDeposit_PaymentDetailsText="div.title h3";
+	   public static String CashierDeposit_MyCashBalance="div.headerBalance";
+	   public static String CashierDeposit_UserNameInfo="div.headerName";
+	   public static String CashierDeposit_CardOwnerName="div#cc_name_on_card_read_only_text";
+	   public static String CashierDeposit_PaymentList="div.list-container .pm-list";
+	   public static String CashierDeposit_LastFourNumber="div#cc_card_number_read_only_text";
+	   public static String CashierDeposit_CardExpiredDate="div#cc_exp_month_read_only_text";
+	   public static String CashierDeposit_CVV="input#cc_cvv2";
+	   public static String CashierDeposit_BillingAddressCheck="label[for='user_details']";
+	   public static String CashierDeposit_PromotionCode="input#promoCode";
+	   public static String CashierDeposit_AmountToDeposit="div.suggested-amounts-holder";
+	   public static String CashierDeposit_OtherMethodsPaymentLogo="div.apmgw_neteller";
+	   public static String CashierDeposit_SuccessDepositPop_Box="div.lightbox-header h2";
+	   public static String CashierDeposit_SuccessDepositPopBoxMessage="div.lightbox-content .h3";
+	   public static String CashierDeposit_SuccessDepositPopBoxCloseButton="button.modal_close";
+	   public static String CashierDeposit_SuccessDepositPopBoxCloseIcon="div.lightbox-header .on_cancel";
+	   public static String CashierDeposit_PaymentVisaLogo="div.pm-logo .visa";
+	   public static String CashierDeposit_CardNumberInputBoxErrorMessage="div.cc_card_number .invalid_field";
+	   public static String CashierDeposit_CardExpiryMonthErrorMessage="div.invalid_field";
+	   public static String CashierDeposit_CardExpiryYearErrorMessage="div.invalid_field";
+	   public static String CashierDeposit_CardCVVErrorMessage="div.cc_cvv2 .invalid_field";
+	   public static String CashierDeposit_OtherAmountToDepositInvalidAmount="div.amount-wrapper .invalid_field";
+	   public static String CashierDeposit_CardNumberInputBoxGreenTick="div#cc_card_number_validation";
+	   public static String CashierDeposit_CardExpiryMonthGreenTick="div[data-id='cc_exp_month']";
+	   public static String CashierDeposit_CardExpiryYearGreenTick="div[data-id='cc_exp_year']";
+	   public static String CashierDeposit_CVVGreenTick="div.cc_cvv2 #cc_cvv2_validation";
+	   public static String CashierDeposit_OtherAmountToDepositGreenTick="input#item_amount_1";
+	   public static String CashierDeposit_DepositDeclinePop_UpBox="div#lightbox .lightbox-header h2";
+	   public static String CashierDeposit_DepositDeclinePopUpBoxText="div#lightbox h3";
+	   public static String CashierDeposit_DepositDeclinedPoUpBoxContactSupportEmail="div#lightbox .support a[href='mailto:support@supercasino.com']";
+	   public static String CashierDeposit_DepositDeclinedPopUpBoxContactSupportNumber="div#lightbox .support a[href='tel:08000147523']";
+	   public static String CashierDeposit_DepositDeclinedPopBoxCloseIcon="div#lightbox .lightbox-header .on_cancel";
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   //Elements on the Menu on Cashier Page
+	   public static String CashierMenu_Home="div.icon-home";
+	   public static String CashierMenu_Tv="div[data-item='TV']";
+	   public static String CashierMenu_MyAccountDropdown="div[data-item='MY_ACCOUNT']";
+	   public static String CashierMenu_MyAccountDeposit="li.current";
+	   public static String CashierMenu_MyAccountWithdraw="li.item [data-href='/payment/withdraw']";
+	   public static String CashierBonusHistory="li.item [data-href='/bonus/bonus']";
+	   public static String CashierMenu_PromoCode="li.item [data-href='/bonus/promo']";
+	   public static String CashierMenu_MyBalance="li.item [data-href='/balance']";
+	   public static String CashierMenu_PendingWithdraw="li.item [data-href='/transaction/cancelwithdraw']";
+	   public static String CashierMenu_Transaction="li.item [data-href='/transaction']";
+	   public static String CashierMenu_ResponsibleGamblingSubMenu="div[data-item='RESPONSIBLE_GAMING']";
+	   public static String CashierMenu_RespGambling_DepositLimit="li.item div[data-href='/responsible/deposit_limit']";
+	   public static String CashierMenu_RespGambling_SelfExclusion="div[data-href='/responsible/self_exclusion']";
+	   public static String CashierMenu_RespGambling_TimeOUT="li.item div[data-href='/responsible/time_out']";
+	   public static String CashierMenu_RespGambling_RealityCheck="ul li.item div[data-href='/responsible/reality_check']";
+	   public static String CashierMenu_RespGambling_GambleResponsible="ul li.item div[data-href='/responsible/reality_check']";
+	   public static String CashierMenu_RespGambling_GettingStarted="ul li.item div[data-href='/infopages/gettingstarted']";
+	   public static String CashierMenu_247Support="ul li.item div[data-href='/infopages/support']";
+	   public static String CashierMenu_HelpAndSupportMenu="div[data-item='HELP_AND_SUPPORT']";
+	   
+	   
+	   // Elements on Cashier SafeCharge Withdraw Page
+	   public static String CashierWithdraw_PayMentDetailsInfo="div.payment_options_details";
+	   public static String CashierWithdraw_AmountToWithdraw="input.amount";
+	   public static String  CashierWithdraw_WithdrawButton="button.withdraw";
+	   
+	   // Element on Cashier Pending withdrawal Page
+	   public static String CashierPendingWithraw_TitlePage="div.pending-withdrawals h2";
+	   
+	   // Elements on Cashier Transaction Page
+	   public static String CashierTransaction_PageTitle="h2.page-title";
+	   public static String CashierTransaction_TransactionTable="div.tabs-container";
+	   
+	   // Elements on Cashier My Balance
+	   public static String CashierMyBalance_PageTile="h2.page-title";
+	   public static String CashierMyBalance_BalanceValue="div.my-balance .balance-row";
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
 	   
 	   
 	   

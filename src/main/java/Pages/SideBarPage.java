@@ -290,13 +290,7 @@ public class SideBarPage extends BasePage {
 				ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.SideBarMenu_MyAccount_Deposit)));
 		WebElement MyAccountDepositLink = d.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount_Deposit));
 		((JavascriptExecutor) d).executeScript("arguments[0].click();", MyAccountDepositLink);
-		Thread.sleep(2000);
-		d.navigate().back();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_SidebarIcon)));
-		d.findElement(By.cssSelector(Constant.hp_SidebarIcon)).click();
-		WebElement Logoutlink = d.findElement(By.cssSelector(Constant.SideBarMenu_Logout));
-		wait.until(ExpectedConditions.visibilityOf(Logoutlink));
-		((JavascriptExecutor) d).executeScript("arguments[0].click();", Logoutlink);
+		
 
 	}
 
