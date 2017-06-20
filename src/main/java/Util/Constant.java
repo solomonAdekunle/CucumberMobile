@@ -181,8 +181,8 @@ public class Constant {
 	   public static String CashierDeposit_AccountBalance="div.headerBalance";
 	   public static String CashierDeposit_titlePage="div.amount-title h3";
 	   public static String CashierDeposit_CardNumberInputBox="input#cc_card_number";
-	   public static String CashierDeposit_CardExpiryMonth="select#cc_exp_month option";
-	   public static String CashierDeposit_CardExpiryYear="select#cc_exp_year option";
+	   public static String CashierDeposit_CardExpiryMonth="select#cc_exp_month";
+	   public static String CashierDeposit_CardExpiryYear="select#cc_exp_year";
 	   public static String CashierDeposit_OtherAmountToDeposit="input.open_amount_input";
 	   public static String CashierDeposit_DEPOSIT="input#continueButton";
 	   public static String CashierDeposit_SafechargeLogo="span.sfc-logo";
@@ -208,7 +208,7 @@ public class Constant {
 	   public static String CashierDeposit_CardExpiryYearErrorMessage="div.invalid_field";
 	   public static String CashierDeposit_CardCVVErrorMessage="div.cc_cvv2 .invalid_field";
 	   public static String CashierDeposit_OtherAmountToDepositInvalidAmount="div.amount-wrapper .invalid_field";
-	   public static String CashierDeposit_CardNumberInputBoxGreenTick="div#cc_card_number_validation";
+	   public static String CashierDeposit_CardNumberInputBoxGreenTick="div.valid #cc_card_number";
 	   public static String CashierDeposit_CardExpiryMonthGreenTick="div[data-id='cc_exp_month']";
 	   public static String CashierDeposit_CardExpiryYearGreenTick="div[data-id='cc_exp_year']";
 	   public static String CashierDeposit_CVVGreenTick="div.cc_cvv2 #cc_cvv2_validation";

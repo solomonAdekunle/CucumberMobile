@@ -5,7 +5,7 @@ Feature: Deposit
 
   
  
- @ignore
+@ignore
  @Deposit
  Scenario Outline:Deposit
 Given I Navigate to the homepage on "browser"
@@ -118,7 +118,7 @@ When I have logged in username as "safecharge13" and password "Bola123"
   And  I click a SafeChargeDepositbutton
   Then I should  Please Enter Valid ammount errorText displayed
 
- #@ignore 
+ @ignore 
   @RegisterNewCard   
 Scenario: Checking the Green thick Validation mark
 Given I Navigate to the homepage on "browser"
@@ -134,14 +134,14 @@ Then I should see Green tick mark next to CardOwnerNametext box
 And  I should see Green tick mark next to CardNumberbox box
 And  I should see a Green tick Mark next to EnterAmounttext box
  
- #@ignore
+ @ignore
   @RegisterNewCard   
 Scenario: Existing User should be able to register a new card
 Given I Navigate to the homepage on "browser"
-When  I have logged in username as "safecharge7" and password "Bola123$%^"
+When  I have logged in username as "safecharge11" and password "Bola123"
  And  I click a Depositbutton
  And  I click on Payment Methods Card Logo
- And  I enter CardVisa Number as "42650365 3784 6897"
+ And  I enter CardVisa Number as "4265 0382 3262 6897"
  And  I entry Expiry card month as "06"
  And  I enter Expiry card year as "2020"
  And  I enter CVV as "572"
@@ -149,7 +149,7 @@ When  I have logged in username as "safecharge7" and password "Bola123$%^"
  And  I click a SafeChargeDepositbutton
 Then  I should see Your transaction was approved Text displayed
  And  I should see CloseButton within the Success Cashier Pop-up box displayed
- And  I should see my new Account Balance increase by "200.12"
+ 
 
   
 @ignore
@@ -192,7 +192,34 @@ When I have logged in username as "safecharge7" and password "Bola123$%^"
   
 
 
-
+@ignore 
+@Register 
+Scenario: Registration with valid Data and clicking Deposit Button on Welcome 
+	Given I navigate to the Registrationpage on "<browser>" 
+	When I enter regUsername as "Safecharge014" 
+	And I enter RegPassword as "Bola123$%^" 
+	And I enter RegConfirmPassword as "Bola123$%^" 
+	And I enter a RegScreenName as "weraq258asw0p12" 
+	And I enter RegEmail as "test@playtech.com" 
+	And I enter RegTitle as "Ms" 
+	And I enter RegFirstName as "first" 
+	And I enter RegSurName as "Namesdo" 
+	And I enter RegDOBDay as "03" 
+	And I enter RegDOBMonth as "Oct" 
+	And I enter RegDOBYear as "1980" 
+	And I click on RegClickHere 
+	And I enter RegAddress as "80" 
+	And I enter RegTown as "London" 
+	And I enter RegCounty as "London" 
+	And I enter RegPostCode as "SW8 3HE" 
+	And I enter RegContactNum as "020700070010" 
+	And I click on deposit limit click here link 
+	And I enter Choose Type as "Daily" 
+	And I enter Choose limit as "50,000" 
+	And I click on RegT$CCheckBox 
+	And I click on RegSubmitButton 
+	And I click on deposit Button on Welcome page 
+	Then I should see payment logo in the cashier pop-up 
 
 
 

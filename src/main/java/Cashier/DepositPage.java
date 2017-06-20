@@ -1,4 +1,4 @@
-package Cashier;
+ package Cashier;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -178,22 +178,52 @@ public class DepositPage extends BasePage {
 	
 	public boolean isCashierDepositCardNumberGreenMarkPresent(){
 		WebDriverWait wait= new WebDriverWait(d,20);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.CashierDeposit_CardNumberInputBoxGreenTick)));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.CashierDeposit_CardNumberInputBoxGreenTick)));
 		return d.findElement(By.cssSelector(Constant.CashierDeposit_CardNumberInputBoxGreenTick)).isDisplayed();
 		
 	}
 	public boolean isCashierDepositOtherAmountToDepositGreenMarkPresent(){
-		WebDriverWait wait= new WebDriverWait(d,20);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.CashierDeposit_CardNumberInputBoxGreenTick)));
+		WebDriverWait wait= new WebDriverWait(d,30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.CashierDeposit_OtherAmountToDepositGreenTick)));
 		return d.findElement(By.cssSelector(Constant.CashierDeposit_OtherAmountToDepositGreenTick)).isDisplayed();
 		
 	}
+	public boolean isCashierDepositDeclinedPop_BoxPresent(){
+		WebDriverWait wait= new WebDriverWait(d,60);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockOverlay")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.CashierDeposit_DepositDeclinePop_UpBox)));
+		return d.findElement(By.cssSelector(Constant.CashierDeposit_DepositDeclinePop_UpBox)).isDisplayed();
+		
+	}
 	
+	public boolean isCashierDepositDeclinedPopBoxMessagePresent(){
+		WebDriverWait wait= new WebDriverWait(d,20);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockOverlay")));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.CashierDeposit_DepositDeclinePopUpBoxText)));
+		return d.findElement(By.cssSelector(Constant.CashierDeposit_DepositDeclinePopUpBoxText)).isDisplayed();
+		
+	}
 	
+	public boolean isCashierDepositDeclinedPopBoxMCustomerSupportContactNumberPresent(){
+		WebDriverWait wait= new WebDriverWait(d,30);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockOverlay")));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.CashierDeposit_DepositDeclinedPopUpBoxContactSupportNumber)));
+		return d.findElement(By.cssSelector(Constant.CashierDeposit_DepositDeclinePopUpBoxText)).isDisplayed();
+		
+	}
 	
-	
-	
-	
+	public boolean isCashierDepositDeclinedPopBoxCloseIconPresent(){
+		WebDriverWait wait= new WebDriverWait(d,45);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockOverlay")));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.CashierDeposit_DepositDeclinedPopBoxCloseIcon)));
+		WebElement DepositDeclinedCloseIcon=d.findElement(By.cssSelector(Constant.CashierDeposit_DepositDeclinedPopBoxCloseIcon));
+		Actions move = new Actions(d);
+		move.moveToElement(DepositDeclinedCloseIcon).build();
+		move.perform();
+		return DepositDeclinedCloseIcon.isDisplayed();
+		
+		
+	}
 	///////////////////////////// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	//////////////////////////// Send method\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	
@@ -231,12 +261,8 @@ public class DepositPage extends BasePage {
 		WebDriverWait wait = new WebDriverWait(d,45);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.CashierDeposit_CardExpiryMonth)));
 		WebElement ExpiryDateMonth=d.findElement(By.cssSelector(Constant.CashierDeposit_CardExpiryMonth));
-		Actions move= new Actions(d);
-		move.moveToElement(ExpiryDateMonth);
-		move.click();
-		move.sendKeys(cardExpiryMonth);
-		move.perform();
-		//d.findElement(By.cssSelector(Constant.CashierDeposit_CardExpiryMonth)).sendKeys(cardExpiryMonth);
+
+		d.findElement(By.cssSelector(Constant.CashierDeposit_CardExpiryMonth)).sendKeys(cardExpiryMonth);
 	}
 	public void sendCashierDepositCreditCardExpireDateYear(String cardExpiryYear){
 		WebElement ExpiryDateYear=d.findElement(By.cssSelector(Constant.CashierDeposit_CardExpiryYear));

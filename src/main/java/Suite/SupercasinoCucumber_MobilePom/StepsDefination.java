@@ -2204,6 +2204,31 @@ public class StepsDefination extends TestBase {
 	    
 	}
 	
+	@Then("^I should see Decline Pop-up box displayed$")
+	public void i_should_see_Decline_Pop_up_box_displayed() {
+		Assert.assertTrue(depositPage.isCashierDepositDeclinedPop_BoxPresent());
+	}
+
+	@Then("^I should see Your Transaction decline text displayed$")
+	public void i_should_see_Your_Transaction_decline_text_displayed()  {
+		Assert.assertTrue(depositPage.isCashierDepositDeclinedPopBoxMessagePresent());
+	  
+	}
+
+	@Then("^I should see Contact Support Number displayed$")
+	public void i_should_see_Contact_Support_Number_displayed() {
+		Assert.assertTrue(depositPage.isCashierDepositDeclinedPopBoxMCustomerSupportContactNumberPresent());
+	  
+	}
+
+	@Then("^I should see a close icon displayed$")
+	public void i_should_see_a_close_icon_displayed()  {
+		Assert.assertTrue(depositPage.isCashierDepositDeclinedPopBoxCloseIconPresent());
+	   
+	}
+
+
+	
 	
 	@After("@web")
 	public void closeBrowser() throws InterruptedException {

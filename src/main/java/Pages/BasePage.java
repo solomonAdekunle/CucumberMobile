@@ -126,9 +126,12 @@ public class BasePage {
 	public void clickLoginButton() {
 	d.findElement(By.cssSelector(Constant.hp_Login)).click();
 	try{
+		WebDriverWait wait = new WebDriverWait(d,15);
 		WebElement PlayerMessage=d.findElement(By.cssSelector("div.playerMessages-modal .footer .ok"));
 				if(PlayerMessage.isDisplayed()==true)
-					PlayerMessage.click();
+					wait.until(ExpectedConditions.visibilityOf(PlayerMessage));
+					((JavascriptExecutor) d).executeScript("arguments[0].click();", PlayerMessage);
+				
 		}catch (NoSuchElementException e){
 			e.getStackTrace();
 		}
@@ -165,13 +168,25 @@ public class BasePage {
 	d.findElement(By.cssSelector(Constant.hp_LiveTab)).click();
 
 	}
-	 public void clickTopDepositButton(){
-		 WebDriverWait wait= new WebDriverWait(d,20);
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(Constant.LoginPopUpBox)));
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_DepositButton)));
-		 d.findElement(By.cssSelector(Constant.hp_DepositButton)).click();
-		 
-	 }
+
+	public void clickTopDepositButton() {
+		try {
+			WebDriverWait wait = new WebDriverWait(d, 15);
+			WebElement PlayerMessage = d.findElement(By.cssSelector("div.playerMessages-modal .footer .ok"));
+			if (PlayerMessage.isDisplayed() == true)
+				wait.until(ExpectedConditions.visibilityOf(PlayerMessage));
+			((JavascriptExecutor) d).executeScript("arguments[0].click();", PlayerMessage);
+
+		} catch (NoSuchElementException e) {
+			e.getStackTrace();
+		}
+		WebDriverWait wait = new WebDriverWait(d, 20);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(Constant.LoginPopUpBox)));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_DepositButton)));
+
+		d.findElement(By.cssSelector(Constant.hp_DepositButton)).click();
+
+	}
 
 	public void clickPromosTab() {
 		d.findElement(By.cssSelector(Constant.hp_PromotionTab)).click();
@@ -210,8 +225,8 @@ public class BasePage {
 			try{
 				WebElement PlayerMessage=d.findElement(By.cssSelector("div.playerMessages-modal .footer .ok"));
 						if(PlayerMessage.isDisplayed()==true)
-							PlayerMessage.click();
-				}catch (NoSuchElementException e){
+							((JavascriptExecutor) d).executeScript("arguments[0].click();", PlayerMessage);
+							}catch (NoSuchElementException e){
 					e.getStackTrace();
 				}
 
