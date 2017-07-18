@@ -125,6 +125,7 @@ public class Constant {
 			  
 	  // Element on Roulette Express Premium Page
 	  public static String RouletteExpressPremiun_MenuIcon="div.toprow .red";
+	  public static String RouletteExpressPremium=".netplay-games.rep";
 	  
 	  
 	  // Elements on Slot Game Session Page
@@ -175,8 +176,7 @@ public class Constant {
 	   
 	   
 	   // Elements on Cashier Deposit page
-	   public static String CashierDeposit_MenuIcon="span.btnMyHub";
-	   public static String CashierDeposit_SupercasinoLogo="div.logo";
+	    public static String CashierDeposit_SupercasinoLogo="div.logo";
 	   public static String CashierDeposit_AccuntholderName="div.headerName";
 	   public static String CashierDeposit_AccountBalance="div.headerBalance";
 	   public static String CashierDeposit_titlePage="div.amount-title h3";
@@ -226,11 +226,12 @@ public class Constant {
 	   
 	   
 	   //Elements on the Menu on Cashier Page
+	   public static String CashierDeposit_MenuIcon="header.gradMain .btnMyHub";
 	   public static String CashierMenu_Home="div.icon-home";
 	   public static String CashierMenu_Tv="div[data-item='TV']";
 	   public static String CashierMenu_MyAccountDropdown="div[data-item='MY_ACCOUNT']";
 	   public static String CashierMenu_MyAccountDeposit="li.current";
-	   public static String CashierMenu_MyAccountWithdraw="li.item [data-href='/payment/withdraw']";
+	   public static String CashierMenu_MyAccountWithdraw="div.myHub [data-href='/payment/withdraw']";
 	   public static String CashierBonusHistory="li.item [data-href='/bonus/bonus']";
 	   public static String CashierMenu_PromoCode="li.item [data-href='/bonus/promo']";
 	   public static String CashierMenu_MyBalance="li.item [data-href='/balance']";
@@ -248,12 +249,41 @@ public class Constant {
 	   
 	   
 	   // Elements on Cashier SafeCharge Withdraw Page
+	   public static String CashierWithdraw_NoWithdrawMethodAvailablePop_UpBox="div.lightbox h2";
 	   public static String CashierWithdraw_PayMentDetailsInfo="div.payment_options_details";
 	   public static String CashierWithdraw_AmountToWithdraw="input.amount";
-	   public static String  CashierWithdraw_WithdrawButton="button.withdraw";
+	   public static String CashierWithdraw_WithdrawButton="button.withdraw";
+	   public static String CashierWithdraw_DisabledWithdrawButton="button[disabled='disabled']";
+	   public static String CashierWithdraw_WithdrawFundsTexts="div#label_withdrawal_funds";
+	   public static String CashierWithdraw_WithdrawConfirmationPop_Box="div#lightbox .lightbox-header h2";
+	   public static String CashierWithdraw_WithdrawConfirmationPopBox_CloseIcon="div#lightbox .lightbox-header .on_cancel";
+	   public static String CashierWithdraw_WithdrawConfirmationPopBox_Yes="button.ok";
+	   public static String CashierWithdraw_WithdrawConfirmationPopBox_No="button.no";
+	   public static String CashierWithdraw_WithdrawSuccesPop_Box="div#lightbox .lightbox-header h2";
+	   public static String CashierWithdraw_WithdrawSuccessCloseIconPopBox="div#lightbox .lightbox-header .on_cancel";
+	   public static String CashierWithdraw_WithdrawSuccessPopBox_Ok="button.modal_close";
+	   public static String CashierWithdraw_PendingWithdrawal_Cancel="td.wd_button button";
+	   public static String CashierWithdraw_PendingWithdrawal_CancelCofirmationPop_Box="div.lightbox-header h2";
+	   public static String CashierWithdraw_PendingWithdrawal_CancelConfirmationPopBox_CloseIcon="div.lightbox-header .on_cancel";
+	   public static String CashierWithdraw_PendingWithdrawal_CancelConfirmationPopBox_Text="div.lightbox-content .msg";
+	   public static String CashierWithdraw_PendingWithdrawal_CancelConfirmationPopBox_Yes="button.ok";
+	   public static String CashierWithdraw_PendingWithdrawal_CancelConfirmationPopBox_No="button.no";
+	   public static String CashierWithdraw_PendingWithdrawal_CancelConfirmationPopBox_OK="button.modal_close";
+	   public static String CashierPendingWithdrawalNotification_PopBox="div.pending_wd_list h2";
+	   public static String CashierPendingWithdrawalNotificationPopBox_GoToDeposit="div.lightbox-content .on_confirm";
+	   public static String CashierPendingWithdrawalNotificationPopBox_VisaCancelButton="div.lightbox-content .wd_button button";
+	   public static String CashierWithdrawalTransactionDeclinedPopBox_Ok="div.lightbox-content .modal_close";
+	   
+	   
+	   public static String CashierWithdraw_CreditCardLogo="ul.pm-list [data-type='user_pm']";
+	   
+	   
+	   
+	   
 	   
 	   // Element on Cashier Pending withdrawal Page
 	   public static String CashierPendingWithraw_TitlePage="div.pending-withdrawals h2";
+	   
 	   
 	   // Elements on Cashier Transaction Page
 	   public static String CashierTransaction_PageTitle="h2.page-title";
@@ -264,7 +294,17 @@ public class Constant {
 	   public static String CashierMyBalance_BalanceValue="div.my-balance .balance-row";
 	   
 	   
-	   
+	   // Elements on Game Info page
+	   public static String GameBanner="div.game-info-image img";
+	   public static String GameInfomationDetails="div.game-info-details";
+	   public static String GameDevices=".device-available-container";
+	   public static String GameAirStaus="div.on-air";
+	   public static String GameInfoPlayForReal="a.action-button.play-for-real";
+	   public static String GameInfoPlayForFun="a.play-for-fun";
+	   public static String GameInfoJackPotSlider="div.jackpot_slider";
+	   public static String GameInfoWinnerSlider="div.block-winners";
+	   public static String GameInfoAppStoreLogo="img.app-store-logo";
+	   public static String GameInfoAndroidLogo="img.android-logo";
 	   
 	   
 	   

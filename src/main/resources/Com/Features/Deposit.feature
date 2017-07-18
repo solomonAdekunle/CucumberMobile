@@ -172,7 +172,7 @@ Given I Navigate to the homepage on "browser"
 Then  I should  see new Post code as "Cr0 6jx" displayed
   And I should see  House address as "6 Goodhew Road"
   
-#@ignore
+@ignore
  @DepositAppoved
  Scenario: Checking if Decline Recovery lightbox is displayed when user deposit unsucessful
 Given I Navigate to the homepage on "browser"
@@ -224,52 +224,52 @@ Scenario: Registration with valid Data and clicking Deposit Button on Welcome
 
 
 
-
-
-
-#Credit Card Visa On production
-
-#42650314 4370 6897, 2019/06, 275, Visa - Barclays Bank Plc, UK (Gold)
-#42650300 3535 6897, 2019/10, 230, Visa - Barclays Bank Plc, UK (Gold)
-#42650367 5555 6897, 2019/04, 170, Visa - Barclays Bank Plc, UK (Gold)
-#42650376 5786 6897, 2019/10, 472, Visa - Barclays Bank Plc, UK (Gold)
-#42650365 0285 6897, 2020/11, 818, Visa - Barclays Bank Plc, UK (Gold)
-#42650365 3784 6897, 2020/10, 572, Visa - Barclays Bank Plc, UK (Gold)
-#42650304 1014 6897, 2019/12, 647, Visa - Barclays Bank Plc, UK (Gold)
-#42650338 3861 6897, 2019/03, 558, Visa - Barclays Bank Plc, UK (Gold)
-#42650341 8071 6897, 2019/12, 696, Visa - Barclays Bank Plc, UK (Gold)
-#42650345 0058 6897, 2020/07, 148, Visa - Barclays Bank Plc, UK (Gold)
-
-#############################################################################
-# New Visa Card for live
-#4265 0362 4314 6897, 2020/08, 104, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0365 0475 6897, 2020/09, 278, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0318 7445 6897, 2020/03, 351, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0345 1882 6897, 2019/03, 336, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0370 8414 6897, 2020/11, 123, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0310 6536 6897, 2019/10, 374, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0382 3262 6897, 2019/09, 953, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0324 1135 6897, 2019/08, 925, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0383 2461 6897, 2020/08, 418, Visa - Barclays Bank Plc, UK (Gold)
+#
+#
+#
+##Credit Card Visa On production
+#
+##42650314 4370 6897, 2019/06, 275, Visa - Barclays Bank Plc, UK (Gold)
+##42650300 3535 6897, 2019/10, 230, Visa - Barclays Bank Plc, UK (Gold)
+##42650367 5555 6897, 2019/04, 170, Visa - Barclays Bank Plc, UK (Gold)
+##42650376 5786 6897, 2019/10, 472, Visa - Barclays Bank Plc, UK (Gold)
+##42650365 0285 6897, 2020/11, 818, Visa - Barclays Bank Plc, UK (Gold)
+##42650365 3784 6897, 2020/10, 572, Visa - Barclays Bank Plc, UK (Gold)
+##42650304 1014 6897, 2019/12, 647, Visa - Barclays Bank Plc, UK (Gold)
+##42650338 3861 6897, 2019/03, 558, Visa - Barclays Bank Plc, UK (Gold)
+##42650341 8071 6897, 2019/12, 696, Visa - Barclays Bank Plc, UK (Gold)
+##42650345 0058 6897, 2020/07, 148, Visa - Barclays Bank Plc, UK (Gold)
+#
+##############################################################################
+## New Visa Card for live
+##4265 0362 4314 6897, 2020/08, 104, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0365 0475 6897, 2020/09, 278, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0318 7445 6897, 2020/03, 351, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0345 1882 6897, 2019/03, 336, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0370 8414 6897, 2020/11, 123, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0310 6536 6897, 2019/10, 374, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0382 3262 6897, 2019/09, 953, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0324 1135 6897, 2019/08, 925, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0383 2461 6897, 2020/08, 418, Visa - Barclays Bank Plc, UK (Gold)
 #4265 0346 8365 6897, 2020/02, 336, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0326 7163 6897, 2020/04, 517, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0340 3701 6897, 2020/06, 839, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0346 2244 6897, 2019/02, 768, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0343 6735 6897, 2020/08, 375, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0363 6631 6897, 2020/02, 394, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0370 2110 6897, 2020/02, 630, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0326 7163 6897, 2020/04, 517, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0340 3701 6897, 2020/06, 839, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0346 2244 6897, 2019/02, 768, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0343 6735 6897, 2020/08, 375, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0363 6631 6897, 2020/02, 394, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0370 2110 6897, 2020/02, 630, Visa - Barclays Bank Plc, UK (Gold)
 #4265 0361 2103 6897, 2020/01, 874, Visa - Barclays Bank Plc, UK (Gold)
 #4265 0381 0384 6897, 2019/03, 772, Visa - Barclays Bank Plc, UK (Gold)
 #4265 0363 4461 6897, 2019/08, 829, Visa - Barclays Bank Plc, UK (Gold)
 #4265 0314 8637 6897, 2020/02, 720, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0358 1522 6897, 2019/08, 185, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0386 5156 6897, 2019/07, 259, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0358 1225 6897, 2019/01, 742, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0326 8880 6897, 2020/02, 290, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0371 5211 6897, 2020/11, 890, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0354 3753 6897, 2020/09, 644, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0378 0843 6897, 2019/10, 239, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0328 4515 6897, 2020/11, 129, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0332 3131 6897, 2019/09, 280, Visa - Barclays Bank Plc, UK (Gold)
-#4265 0361 3614 6897, 2020/10, 591, Visa - Barclays Bank Plc, UK (Gold)
-#
+##4265 0358 1522 6897, 2019/08, 185, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0386 5156 6897, 2019/07, 259, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0358 1225 6897, 2019/01, 742, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0326 8880 6897, 2020/02, 290, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0371 5211 6897, 2020/11, 890, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0354 3753 6897, 2020/09, 644, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0378 0843 6897, 2019/10, 239, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0328 4515 6897, 2020/11, 129, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0332 3131 6897, 2019/09, 280, Visa - Barclays Bank Plc, UK (Gold)
+##4265 0361 3614 6897, 2020/10, 591, Visa - Barclays Bank Plc, UK (Gold)
+

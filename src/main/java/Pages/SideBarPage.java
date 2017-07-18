@@ -305,19 +305,19 @@ public class SideBarPage extends BasePage {
 
 	public void clickSideBarMyAccountDropDownMenuWithdrawLink() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(d, 30);
-		d.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount_Withdraw)).click();
-		Thread.sleep(2000);
-		d.navigate().back();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_SidebarIcon)));
-		d.findElement(By.cssSelector(Constant.hp_SidebarIcon)).click();
-		WebElement Logoutlink = d.findElement(By.cssSelector(Constant.SideBarMenu_Logout));
-		wait.until(ExpectedConditions.visibilityOf(Logoutlink));
-		((JavascriptExecutor) d).executeScript("arguments[0].click();", Logoutlink);
+		WebElement WithdrawaLink = d.findElement(By.cssSelector(Constant.SideBarMenu_MyAccount_Withdraw));
+		wait.until(ExpectedConditions.visibilityOf(WithdrawaLink));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", WithdrawaLink);
+		
 
 	}
 
 	public void clickSideBarMyAccountDropDownMenuAChangePasswordLink() {
-		d.findElement(By.cssSelector(Constant.SideBarmenu_ChangePassword)).click();
+		WebDriverWait wait = new WebDriverWait(d, 30);
+		WebElement WithdrawaLink = d.findElement(By.cssSelector(Constant.SideBarmenu_ChangePassword));
+		wait.until(ExpectedConditions.visibilityOf(WithdrawaLink));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", WithdrawaLink);
+		
 
 	}
 

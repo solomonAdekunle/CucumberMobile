@@ -16,6 +16,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -28,33 +29,36 @@ public class TestBase {
 	WebDriver chrome = null;
 	WebDriver ie = null;
 
-
-
-	public TestBase() throws IOException{
+	public TestBase() throws IOException {
 		this.createDriver();
 	}
-	protected void createDriver()  throws IOException { 
+
+	protected void createDriver() throws IOException {
 		// initialising the properties
 		Config = new Properties();
 		FileInputStream fs = new FileInputStream(
 				System.getProperty("user.dir") + "\\src\\main\\java\\Config\\Config.Properties");
 		Config.load(fs);
-		//System.out.println("Looking at");
+		// System.out.println("Looking at");
 		// OR
 		OR = new Properties();
 		fs = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\Config\\OR.Properties");
 		OR.load(fs);
-					
+
 		if (d == null) {
 
 			// initialised webdriver
-			if (Config.getProperty("browser").equals("Firefox"))
+			if (Config.getProperty("browser").equals("Firefox")) {
+				// File file = new File("lib\\geckodriver.exe");
+				System.setProperty("webdriver.gecko.driver", "lib\\geckodriver.exe");
 				d = new FirefoxDriver();
-			else if (Config.getProperty("browser").equals("Chrome")) {
+			} else if (Config.getProperty("browser").equals("Chrome")) {
 				System.setProperty("webdriver.chrome.driver", "lib\\chromedriver.exe");
 				ChromeOptions options = new ChromeOptions();
+				options.addArguments("disable-infobars");
 				// options.addArguments("no-sandbox");
-				options.addArguments("--user-agent="+ "Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53");
+				options.addArguments("--user-agent="
+						+ "Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53");
 				// options.addArguments("--user-agent=" + "Mozilla/5.0 (iPad;
 				// CPU OS 8_0 like Mac OS X) AppleWebKit/600.1.3 (KHTML, like
 				// Gecko) Version/8.0 Mobile/12A4345d Safari/600.1.4");
@@ -62,22 +66,23 @@ public class TestBase {
 				// cap.setCapability(CapabilityType.PROXY, p);
 				cap.setCapability(ChromeOptions.CAPABILITY, options);
 				d = new ChromeDriver(cap);
+
 			} else if (Config.getProperty("browser").equals("IE")) {
 				File file = new File("C:\\QA\\Chrome\\IEDriverServer.exe");
 				System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
 				d = new InternetExplorerDriver();
+
 			}
-			
 			EventFiringWebDriver dr = new EventFiringWebDriver(d);
 			d.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			// Smalltouch devices such as iPhone, Android and Windows phones
-			Dimension k = new Dimension(320,568);
+			Dimension k = new Dimension(320, 568);
 			// Dimension k = new Dimension(768,1024);// ipad or tablet
 			d.manage().window().setSize(k);
-
 		}
+
 	}
-	
+
 	public void navigate(String URLKey) {
 		d.get(Config.getProperty(URLKey));
 		// Utility.takeScreenshot(URLKey);

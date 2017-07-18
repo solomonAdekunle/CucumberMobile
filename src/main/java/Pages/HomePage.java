@@ -86,7 +86,7 @@ public class HomePage extends BasePage {
 		d.findElement(By.cssSelector(Constant.hp_SearchBox)).click();
 	}
 
-	public void clickNetPlayTvRouletteGame( String GameType) {
+	public void clickNetPlayTvRouletteGame(String GameType) {
 		List<WebElement> NetplatvGames=d.findElements(By.cssSelector(Constant.hp_NetPlayTv_Games));
 		WebElement RouletteGame=NetplatvGames.get(2);
 		RouletteGame.click();
@@ -141,6 +141,9 @@ public class HomePage extends BasePage {
 	public void clickCasinoSearchInputBoxCloseIcon() {
 		d.findElement(By.cssSelector(Constant.hp_CasinoSearchInputboxCloseIcon)).click();
 
+	}
+	public void clickRouletteExpressPremium(){
+		d.findElement(By.cssSelector(Constant.RouletteExpressPremium)).click();
 	}
 
 	public void sendCasinoGameSearch() {

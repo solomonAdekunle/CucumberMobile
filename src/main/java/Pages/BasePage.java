@@ -125,16 +125,16 @@ public class BasePage {
 	
 	public void clickLoginButton() {
 	d.findElement(By.cssSelector(Constant.hp_Login)).click();
-	try{
-		WebDriverWait wait = new WebDriverWait(d,15);
-		WebElement PlayerMessage=d.findElement(By.cssSelector("div.playerMessages-modal .footer .ok"));
-				if(PlayerMessage.isDisplayed()==true)
-					wait.until(ExpectedConditions.visibilityOf(PlayerMessage));
-					((JavascriptExecutor) d).executeScript("arguments[0].click();", PlayerMessage);
+		//try{
+			WebDriverWait wait = new WebDriverWait(d,15);
+			WebElement PlayerMessage=d.findElement(By.cssSelector("div.playerMessages-modal .footer .ok"));
+					if(PlayerMessage.isDisplayed()==true)
+						wait.until(ExpectedConditions.visibilityOf(PlayerMessage));
+						((JavascriptExecutor) d).executeScript("arguments[0].click();", PlayerMessage);
 				
-		}catch (NoSuchElementException e){
-			e.getStackTrace();
-		}
+		//}catch (NoSuchElementException e){
+		//	e.getStackTrace();
+		//}
 
 	}
 	
@@ -172,14 +172,21 @@ public class BasePage {
 	public void clickTopDepositButton() {
 		try {
 			WebDriverWait wait = new WebDriverWait(d, 15);
-			WebElement PlayerMessage = d.findElement(By.cssSelector("div.playerMessages-modal .footer .ok"));
+			System.out.println("Checking for clue");
+			WebElement PlayerMessage = d.findElement(By.cssSelector("div.playerMessages-modal .footer button.ok"));
 			if (PlayerMessage.isDisplayed() == true)
+				System.out.println(PlayerMessage.isDisplayed());
+				System.out.println(">>>> " + PlayerMessage.toString());
 				wait.until(ExpectedConditions.visibilityOf(PlayerMessage));
-			((JavascriptExecutor) d).executeScript("arguments[0].click();", PlayerMessage);
+				JavascriptExecutor executor = (JavascriptExecutor) d;
+				executor.executeScript("arguments[0].click();", PlayerMessage);
+			//((JavascriptExecutor)d).executeScript("document.getElementById('onclick').click();");
+			System.out.println("Checking for clue1");
 
 		} catch (NoSuchElementException e) {
 			e.getStackTrace();
 		}
+		System.out.println("Checking for clue2");
 		WebDriverWait wait = new WebDriverWait(d, 20);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(Constant.LoginPopUpBox)));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_DepositButton)));

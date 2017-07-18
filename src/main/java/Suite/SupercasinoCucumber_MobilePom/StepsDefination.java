@@ -1,9 +1,11 @@
 package Suite.SupercasinoCucumber_MobilePom;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.junit.Assert;
 
+import Cashier.CashierMenuPage;
 import Cashier.DepositPage;
 import Cashier.TransactionPage;
 import Cashier.WithdrawPage;
@@ -13,6 +15,7 @@ import Pages.ChatPage;
 import Pages.ContactUSPage;
 import Pages.ExternalPage;
 import Pages.FooterPage;
+import Pages.GameInfoPage;
 import Pages.GettingStartedPage;
 import Pages.HomePage;
 import Pages.HowToDepositPage;
@@ -67,6 +70,8 @@ public class StepsDefination extends TestBase {
 	private TransactionPage transactionPage;
 	private WithdrawPage withdrawPage;
 	private ChatPage chatPage;
+	private CashierMenuPage cmPage;
+	private GameInfoPage gameInfoPage;
 
 	public StepsDefination() throws IOException {
 
@@ -99,6 +104,8 @@ public class StepsDefination extends TestBase {
 		transactionPage = new TransactionPage(TestBase.d);
 		withdrawPage = new WithdrawPage(TestBase.d);
 		chatPage = new ChatPage(TestBase.d);
+		cmPage = new CashierMenuPage(TestBase.d);
+		gameInfoPage= new GameInfoPage(TestBase.d);
 
 	}
 
@@ -991,6 +998,106 @@ public class StepsDefination extends TestBase {
 		depositPage.sendCashierDepositCreditCardExpireDateYear(cardExpiryYear);
 
 	}
+    /* User check his balance */
+	@When("^I check My account Balance on withdraw Page$")
+	public void i_check_My_account_Balance_on_withdraw_Page() {
+		withdrawPage.storePreviousBalance();
+	}
+	/* User  enter amount to withdraw*/
+	@When("^I enter withdraw amount as \"([^\"]*)\"$")
+	public void i_enter_withdraw_amount_as(String withdrawAmount) {
+		withdrawPage.sendCashierAmountToWithdraw(withdrawAmount);
+	}
+    /* User click on the Menu icon within the Cashier Page */
+	@When("^I click on  Cashier Menu Icon within the Cashier$")
+	public void i_click_on_Cashier_Menu_Icon_within_the_Cashier() {
+		withdrawPage.clickCashierMenuIcon();
+	}
+    /* user click on withrawal link within the  cashier Menu */
+	@When("^I click on Withdraw link within the Cashier Menu$")
+	public void i_click_on_Withdraw_link_within_the_Cashier_Menu() {
+		cmPage.clickCashierMenuWithdrawLink();
+
+	}
+	/* User click on ok button on the Success Po-up box */
+	@When("^I click success pop-up box Ok Button$")
+	public void i_click_success_pop_up_box_Ok_Button() {
+		withdrawPage.clickCashierWithdrawSuccessPopUpBoxOKButton();
+	}
+   /* User click on withdrawal button */
+	@When("^I click Withdrawal Button$")
+	public void i_click_Withdrawal_Button() {
+		withdrawPage.clickCashierWithdrawButton();
+
+	}
+	/* User click on Pending withdraw button */
+	@When("^I click on Pending withdrwal Cancel Button$")
+	public void i_click_on_Pending_withdrwal_Cancel_Button() {
+		withdrawPage.clickCashierWithdrawPendingCancelButton();
+
+	}
+	/* User click on Pending withdraw No Confirmation button*/
+	@When("^I click on No Button on Pending Confirmation box$")
+	public void i_click_on_No_Button_on_Pending_Confirmation_box() {
+		withdrawPage.clickCashierWithdrawPendingCancelNOConfirmationButton();
+
+	}
+	/* User click on Pending withdraw Yes Confirmation button*/
+	@When("^I click on Yes Button on Pending Confirmation box$")
+	public void i_click_on_Yes_Button_on_Pending_Confirmation_box() {
+		withdrawPage.clickCashierWithdrawPendingCancelYesConfirmationButton();
+
+	}
+	/* User click on Pending withdraw OK Confirmation button*/
+	@When("^I click on OK button on Confirmation success Pending Cancellation Pop up Box$")
+	public void i_click_on_OK_button_on_Confirmation_success_Pending_Cancellation_Pop_up_Box() {
+		withdrawPage.clickCashierWithdrawPendingCancelConfirmationOKButton();
+	}
+	/* User click on withdraw Transaction Failed Pop-up box Ok button*/
+	@When("^I click Transaction Failed Ok Button$")
+	public void i_click_Transaction_Failed_Ok_Button() {
+		withdrawPage.clickCashierWithdrawDeclinedTransactionPopBox_Ok();
+
+	}
+	
+	/* Click on Roulette Express Premium game */
+	@When("^I click on Roulette Express Premium Game$")
+	public void i_click_on_Roulette_Express_Premium_Game() {
+		homePage.clickRouletteExpressPremium();
+	    
+	}
+
+	/* Click on the More Info link with the Game Pop-up */
+	@When("^I click on More info link$")
+	public void i_click_on_More_info_link() {
+		homePage.clickGamePopBoxMoreInfoLink();
+	   
+	}
+   /* Click on Play For Real button on the Game info Page */
+	@When("^I click on Play For Real on Game Info Page$")
+	public void i_click_on_Play_For_Real_on_Game_Info_Page() throws AWTException {
+		gameInfoPage.clickGameInfoPlayForRealButton();
+	    
+	}
+	/* Click on Playtech Casino slot Game */
+	@When("^I click on Playtech casino slot Game$")
+	public void i_click_on_Playtech_casino_slot_Game()  {
+		homePage.clickCasinoSlotsGames();
+	   
+	}
+	
+    /* Click on Play for Fun Button on Game info page */
+	@When("^I click on Play For Fun on Game Info Page$")
+	public void i_click_on_Play_For_Fun_on_Game_Info_Page() {
+		gameInfoPage.clickGameInfoPlayForFunButton();
+	    
+	}
+   
+	/* Click on Playtech Virtue Fusion Games on Vegas */
+	@When("^I click on Playtech Virtue Fusion slot Game$")
+	public void i_click_on_Playtech_Virtue_Fusion_slot_Game() {
+	    homePage.clickCasinoSlotsGames();
+	}
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1391,13 +1498,14 @@ public class StepsDefination extends TestBase {
 	/* Verify if Slots Game can be launched by clicking Play button */
 	@Then("^I should see a Slots game launching$")
 	public void i_should_see_a_Slots_game_launching() {
-
+		Assert.assertTrue(slotGamePage.isVegasSlotGameSoundsBoxPresent());
 		slotGamePage.NavigateBackToHomePage();
 	}
 
 	/* Verify if Table Game can be launched by clicking Play button */
 	@Then("^I should see a Table Game launching$")
 	public void i_should_see_a_Table_Game_launching() {
+		Assert.assertTrue(slotGamePage.isVegasSlotGameSoundsBoxPresent());
 		slotGamePage.NavigateBackToHomePage();
 
 	}
@@ -1884,7 +1992,8 @@ public class StepsDefination extends TestBase {
 	/* Verify if user will Navigate to SafeCharge Withdraw Cashier Page */
 	@Then("^I should Navigate to SafeCharge Cashier Withdraw Page$")
 	public void i_should_Navigate_to_SafeCharge_Cashier_Withdraw_Page() {
-
+		Assert.assertTrue(withdrawPage.isWithdrawFundsTextPresent());
+		
 	}
 
 	/* Verify if user will Navigate to SafeCharge Deposit Cashier Page */
@@ -2127,6 +2236,7 @@ public class StepsDefination extends TestBase {
 	@Then("^I should see Your transaction was approved Text displayed$")
 	public void i_should_see_Your_transaction_was_approved_Text_displayed() {
 		Assert.assertTrue(depositPage.isCashierDepositSuccessLightBoxTextPresent());
+	    	
 	}
 
 	/*
@@ -2136,7 +2246,7 @@ public class StepsDefination extends TestBase {
 	@Then("^I should see CloseButton within the Success Cashier Pop-up box displayed$")
 	public void i_should_see_CloseButton_within_the_Success_Cashier_Pop_up_box_displayed() {
 		Assert.assertTrue(depositPage.isCashierDepositSuccessLightBoxCloseButtonPresent());
-		depositPage.NavigateBackToHomePage();
+		
 
 	}
 
@@ -2165,71 +2275,263 @@ public class StepsDefination extends TestBase {
 		Assert.assertTrue(depositPage.isCreditCardEXperiationMonthErrorMessagePresent());
 		depositPage.NavigateBackToHomePage();
 	}
-	/* Verify if Cvv Error Message is displayed when cvv Number are not filled */
+
+	/*
+	 * Verify if Cvv Error Message is displayed when cvv Number are not filled
+	 */
 	@Then("^I should see The field must be exactly Three digits ErrorMessage Text displayed$")
 	public void i_should_see_The_field_must_be_exactly_Three_digits_ErrorMessage_Text_displayed() {
 		Assert.assertTrue(depositPage.isCreditCardCVVErrorMessagePresent());
 		depositPage.NavigateBackToHomePage();
 	}
 
-
-   /* Verify if Error Message will be displayed when invalid amount is input in the Other Amount Input box */
+	/*
+	 * Verify if Error Message will be displayed when invalid amount is input in
+	 * the Other Amount Input box
+	 */
 	@Then("^I should  Please Enter Valid ammount errorText displayed$")
 	public void i_should_Please_Enter_Valid_ammount_errorText_displayed() {
 		Assert.assertTrue(depositPage.isCashierDepositOtherAmounToDepositErrorMessagePresent());
 		depositPage.NavigateBackToHomePage();
 	}
 
-	/* Verify if Green tick or green colour is diplayed when oreect data is input */
+	/*
+	 * Verify if Green tick or green colour is diplayed when oreect data is
+	 * input
+	 */
 	@Then("^I should see Green tick mark next to CardOwnerNametext box$")
-	public void i_should_see_Green_tick_mark_next_to_CardOwnerNametext_box()  {
-	   
+	public void i_should_see_Green_tick_mark_next_to_CardOwnerNametext_box() {
+
 	}
-	/* Verify if Green tick or green colour is diplayed when oreect data is input */
+
+	/*
+	 * Verify if Green tick or green colour is diplayed when oreect data is
+	 * input
+	 */
 	@Then("^I should see Green tick mark next to CardNumberbox box$")
-	public void i_should_see_Green_tick_mark_next_to_CardNumberbox_box()  {
+	public void i_should_see_Green_tick_mark_next_to_CardNumberbox_box() {
 		Assert.assertTrue(depositPage.isCashierDepositCardNumberGreenMarkPresent());
-	   
+
 	}
-    /* Verify if Green tick or green colour is diplayed when oreect data is input */
+
+	/*
+	 * Verify if Green tick or green colour is diplayed when oreect data is
+	 * input
+	 */
 	@Then("^I should see Green tick mark next to CardCVVtext box$")
-	public void i_should_see_Green_tick_mark_next_to_CardCVVtext_box()  {
+	public void i_should_see_Green_tick_mark_next_to_CardCVVtext_box() {
 		Assert.assertTrue(depositPage.isCashierDepositCardCVVNumberGreenMarkPresent());
 	}
-	/* Verify if Green tick or green colour is diplayed when oreect data is input */
+
+	/*
+	 * Verify if Green tick or green colour is diplayed when oreect data is
+	 * input
+	 */
 	@Then("^I should see a Green tick Mark next to EnterAmounttext box$")
-	public void i_should_see_a_Green_tick_Mark_next_to_EnterAmounttext_box(){
+	public void i_should_see_a_Green_tick_Mark_next_to_EnterAmounttext_box() {
 		Assert.assertTrue(depositPage.isCashierDepositOtherAmountToDepositGreenMarkPresent());
 		depositPage.NavigateBackToHomePage();
-	    
+
 	}
-	
+	/* Verify if Deposit Declincled TransactionPop-up isdaisplay */
 	@Then("^I should see Decline Pop-up box displayed$")
 	public void i_should_see_Decline_Pop_up_box_displayed() {
 		Assert.assertTrue(depositPage.isCashierDepositDeclinedPop_BoxPresent());
 	}
-
+    /* Verify if Transaction decline text is diplayed within the Pop-up box */
 	@Then("^I should see Your Transaction decline text displayed$")
-	public void i_should_see_Your_Transaction_decline_text_displayed()  {
+	public void i_should_see_Your_Transaction_decline_text_displayed() {
 		Assert.assertTrue(depositPage.isCashierDepositDeclinedPopBoxMessagePresent());
-	  
-	}
 
+	}
+   /* Verify if Contact number for customer support is displayed with the Declined Pop-up box*/
 	@Then("^I should see Contact Support Number displayed$")
 	public void i_should_see_Contact_Support_Number_displayed() {
 		Assert.assertTrue(depositPage.isCashierDepositDeclinedPopBoxMCustomerSupportContactNumberPresent());
+		depositPage.NavigateBackToHomePage();
+	}
+   /* Verify if Close icon is diplayed within the Declined Pop-up box */
+	@Then("^I should see a close icon displayed$")
+	public void i_should_see_a_close_icon_displayed() {
+		Assert.assertTrue(depositPage.isCashierDepositDeclinedPopBoxCloseIconPresent());
+		
+
+	}
+    /* Verify if the No Withdrawal method of Payement Pop-up box is displayed */
+	@Then("^I shoule see No Withdrawal Mentod Pop-up box displayed$")
+	public void i_shoule_see_No_Withdrawal_Mentod_Pop_up_box_displayed() {
+		Assert.assertTrue(withdrawPage.isNoWithdrawalMethodsAvailablePopUpBoxPresent());
+		withdrawPage.NavigateBackToHomePage();
+	}
+    
+	/* Verify if user navigated to the Withdrawal page */
+	@Then("^I should navigate to Withdrawl page\\.$")
+	public void i_should_navigate_to_Withdrawl_page() {
+		Assert.assertTrue(withdrawPage.isWithdrawFundsTextPresent());
+
+	}
+    
+	/* Verify if Card register logo is displayed within the withdrawal page */
+	@Then("^I should see myRegister card logo displayed$")
+	public void i_should_see_myRegister_card_logo_displayed() {
+		Assert.assertTrue(withdrawPage.isWithdrawCreditCardLogoPresent());
+
+	}
+	
+	/* Verify if Card OwnerName is displayed within the withdrawal page */
+	@Then("^I should see account creditcard ownername in the cashier Withdraw Page$")
+	public void i_should_see_account_creditcard_ownername_in_the_cashier_Withdraw_Page() {
+		Assert.assertTrue(withdrawPage.isWithdrawCreditCardOwnerNamesPresent());
+
+	}
+	/* Verify if Card expiry is displayed within the withdrawal page */
+	@Then("^I should see card expiry date in the cashier withdraw page$")
+	public void i_should_see_card_expiry_date_in_the_cashier_withdraw_page() {
+		Assert.assertTrue(withdrawPage.isWithdrawCreditCardExpiryPresent());
+	}
+	/* Verify if Card OwnerName is displayed within the withdrawal page */
+	@Then("^I should see an enabled withdraw button displayed$")
+	public void i_should_see_an_enabled_withdraw_button_displayed() {
+		Assert.assertTrue(withdrawPage.isWithdrawActiveWithdrawButtonPresent());
+		withdrawPage.NavigateBackToHomePage();
+	}
+	/* Verify if Amount to withdraw input box is displayed within the withdrawal page */
+	@Then("^I should see Amount To Withdraw input box display$")
+	public void i_should_see_Amount_To_Withdraw_input_box_display() {
+		Assert.assertTrue(withdrawPage.isWithdrawOtherAmountToWithdrawPresent());
+
+	}
+	/* Verify if disabled Withdraw button  is displayed within the withdrawal page */
+	@Then("^I should see a disabled withdraw button displayed$")
+	public void i_should_see_a_disabled_withdraw_button_displayed() {
+		Assert.assertTrue(withdrawPage.isWithdrawInActiveWithdrawButtonPresent());
+		withdrawPage.NavigateBackToHomePage();
+
+	}
+	/* Verify if Pop-up displayed within the withdrawal page can be closed */
+	@Then("^I should see no pop-up box displayed$")
+	public void i_should_see_no_pop_up_box_displayed() {
+		Assert.assertTrue(withdrawPage.isWithdrawInActiveWithdrawButtonPresent());
+	}
+	/* Verify if withdraw pending cancel button is displayed within the withdrawal page */
+	@Then("^I should see a withdrawl Pending displayed$")
+	public void i_should_see_a_withdrawl_Pending_displayed() {
+		Assert.assertTrue(withdrawPage.isWithdrawPendingWithdrawalCancelButton());
+		withdrawPage.NavigateBackToHomePage();
+
+	}
+	/* Verify if  Success Withdrawal pop box is displayed within the withdrawal page */
+	@Then("^I should see Withdrawal success Pop-up box$")
+	public void i_should_see_Withdrawal_success_Pop_up_box() {
+		Assert.assertTrue(withdrawPage.isWithdrawSuccessPopUpBoxresent());
+		withdrawPage.NavigateBackToHomePage();
+	}
+	
+	/* Verify if Pending withdrawal button is displayed within the withdrawal page */
+	@Then("^I should see Pending withdrwal Cancel Button$")
+	public void i_should_see_Pending_withdrwal_Cancel_Button() {
+		Assert.assertTrue(withdrawPage.isWithdrawPendingWithdrawalCancelButton());
+		withdrawPage.NavigateBackToHomePage();
+
+	}
+	/* Verify if Withdrawal Pending Notification  is displayed within the withdrawal page */
+	@Then("^I should see Pending Notification Pop-up box displayed$")
+	public void i_should_see_Pending_Notification_Pop_up_box_displayed() {
+		Assert.assertTrue(withdrawPage.isCashierWithdrawPendingNotificationPopBoxPresent());
+		withdrawPage.NavigateBackToHomePage();
+
+	}
+	/* Verify if new Balance is the same as Previous balance when if user cancel Pending withdrawal on the withdrawal page */
+	@Then("^I should see My Balance as the same$")
+	public void i_should_see_My_Balance_as_the_same() {
+		double PreviousBalDisplay = withdrawPage.storeCashierBalance();
+		double NewBal = PreviousBalDisplay;
+		System.out.println(NewBal);
+		System.out.println(PreviousBalDisplay);
+		Assert.assertTrue("equals", PreviousBalDisplay == NewBal);
+		depositPage.NavigateBackToHomePage();
+	}
+	/* Verify if Login Popup box is displayed */
+	@Then("^I should see a Login Pop-up box displayed on Game Info Page$")
+	public void i_should_see_a_Login_Pop_up_box_displayed_on_Game_Info_Page() {
+		Assert.assertTrue(loginPage.isLoginPopUpBoxPresend());
+	   
+	}
+   /* Verify if Game name is displayed as the title on the Game info page */
+	@Then("^I should see the Name of the game as title Page$")
+	public void i_should_see_the_Name_of_the_game_as_title_Page()  {
+		Assert.assertTrue(gameInfoPage.isGameNameTitlePresent());
+	   
+	}
+	
+   /* Verify if Game Inforamtion detai;s is displayed on Game Info Page */
+	@Then("^I should see Game Details Information$")
+	public void i_should_see_Game_Details_Information() {
+		Assert.assertTrue(gameInfoPage.isGameInfoGameDetailsPresent());
+	}
+    /* Verify if Game Device is displayed */
+	@Then("^I should see Game Devices images$")
+	public void i_should_see_Game_Devices_images() {
+		Assert.assertTrue(gameInfoPage.isGameInfoGameDeviceImagePresent());
+	}
+  
+	/* Verify if Game Air Status is displayed on Roulette Tv Game Info page */
+	@Then("^I should Game Air Status$")
+	public void i_should_Game_Air_Status() {
+	Assert.assertTrue(gameInfoPage.isGameInfoGameAirStatusPresent());
+	   
+	}
+    /* Verify that Play For Real Button is displayed on Game Info Page */
+	@Then("^I should see Play for Real Button on Game Info page$")
+	public void i_should_see_Play_for_Real_Button_on_Game_Info_page() {
+		Assert.assertTrue(gameInfoPage.isGameInfoPlayForRealButtonPresent());
+	    
+	}
+	/* Game Banner image on the Game Info Page */
+	@Then("^I should see Roulette Express Banner display Game Info Page$")
+	public void i_should_see_Roulette_Express_Banner_display_Game_Info_Page() {
+		Assert.assertTrue(gameInfoPage.isGameInfoGameBannerImagePresent());
+	}
+    /* Verify if Jackpot Slider is displayed within the Game Info Pag*/
+	@Then("^I should see Jackpot slider on the Game Info Page$")
+	public void i_should_see_Jackpot_slider_on_the_Game_Info_Page() {
+		Assert.assertTrue(gameInfoPage.isGameInfoJackpotSliderPresent());
+	    
+	}
+	/* Verify if Winners Slider is displayed within the Game Info Pag*/
+	@Then("^I should see Winners Slider Game Info Page$")
+	public void i_should_see_Winners_Slider_Game_Info_Page() {
+		Assert.assertTrue(gameInfoPage.isGameInfoWinnerSliderPresent());
+	   
+	}
+	/* Verify if Apple Logo is displayed within the Game Info Pag*/
+	@Then("^I should see AppStore logo on Game Info$")
+	public void i_should_see_AppStore_logo_on_Game_Info() {
+		Assert.assertTrue(gameInfoPage.isGameInfoAppleStoreLogoPresent());
 	  
 	}
-
-	@Then("^I should see a close icon displayed$")
-	public void i_should_see_a_close_icon_displayed()  {
-		Assert.assertTrue(depositPage.isCashierDepositDeclinedPopBoxCloseIconPresent());
+	/* Verify if Android Logo is displayed within the Game Info Pag*/
+	@Then("^I should see Android Logo on Game Info Page$")
+	public void i_should_see_Android_Logo_on_Game_Info_Page()  {
+		Assert.assertTrue(gameInfoPage.isGameInfoAndroidAppLogoPresent());
+	    
+	}
+		
+	
+	/* Verify if login pop-up box is displayed within the Game Info Pag*/
+	@Then("^I should see a Login Pop-up box displayed on this Playtech game GameInfo page$")
+	public void i_should_see_a_Login_Pop_up_box_displayed_on_this_Playtech_game_GameInfo_page()  {
+	    
+	}
+	/* Verify if Play for Fun Button is displayed within the Game Info Pag*/
+	@Then("^I should see Play for Fun Button on Game Info Page$")
+	public void i_should_see_Play_for_Fun_Button_on_Game_Info_Page() {
+		Assert.assertTrue(gameInfoPage.isGameInfoPlayForFunButtonPresent());
 	   
 	}
 
 
-	
-	
+
 	@After("@web")
 	public void closeBrowser() throws InterruptedException {
 		d.close();

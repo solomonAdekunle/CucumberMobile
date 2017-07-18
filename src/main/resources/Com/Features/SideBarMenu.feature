@@ -883,7 +883,7 @@ Scenario: Verifying if Responsible Gambling link will Navigate to Contact Us Pag
 	Then I should Navigate to Live Chat Page
 	
 
-@web	
+#@ignore 
 @SideBarMenu 
 Scenario: Verifying if Logout link will log user out on Live Vertical Sidebar Menu
 	Given I have loggedin on the BasePage 

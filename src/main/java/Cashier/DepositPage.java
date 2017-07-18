@@ -300,7 +300,12 @@ public class DepositPage extends BasePage {
 		//d.findElement(By.cssSelector(Constant.CashierDeposit_PaymentVisaLogo)).click();
 	}
 	
-	
+	public void clickCashierMenuDepositLink(){
+		WebDriverWait wait = new WebDriverWait(d,45);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.CashierMenu_MyAccountDeposit)));
+	d.findElement(By.cssSelector(Constant.CashierMenu_MyAccountDeposit)).click();
+
+	}
 
 	////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////// Store Element or
@@ -341,9 +346,9 @@ public class DepositPage extends BasePage {
 		
 	}
 
-	public void NavigateBackToHomePage() {
+	public void NavigateBackToHomePage()  {
 		d.navigate().back();
-		WebDriverWait wait = new WebDriverWait(d, 20);
+		WebDriverWait wait = new WebDriverWait(d, 40);
 		d.findElement(By.cssSelector(Constant.hp_SidebarIcon)).click();
 		WebElement Logoutlink = d.findElement(By.cssSelector(Constant.SideBarMenu_Logout));
 		wait.until(ExpectedConditions.visibilityOf(Logoutlink));
