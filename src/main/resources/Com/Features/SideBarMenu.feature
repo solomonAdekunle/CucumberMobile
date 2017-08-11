@@ -647,7 +647,7 @@ Scenario: Verifying if clicking on the How To GetStarted link within the dropdow
 	And I click on Gettstarted dropdown SubMenu arrow 
 	And I click on How To Get Started within the GettingStarted Dropdown SubMenu 
 	Then I should Navigate to Getting Started page 
-#@ignore 
+@ignore 
 @SideBarMenu 	
 Scenario: Verifying if clicking on the How To Deposit link within the dropdown Menu on Live will Navigate to How To Deposit Page 
 	Given I Navigate to the homepage on "browser" 

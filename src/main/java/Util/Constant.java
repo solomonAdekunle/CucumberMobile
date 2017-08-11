@@ -19,7 +19,9 @@ public class Constant {
 	 public static String hp_GameCategoryMenu_SlotsTab="div.view-games-nav .games_menu a[href='/taxonomy/term/83']";
 	 public static String hp_GameCategoryMenu_TableGamesTab="div.view-games-nav .games_menu a[href='/game-category-mobile/table-games']";
 	 public static String hp_GameCategoryMenu_AllTab="div.view-games-nav .games_menu a[href='/taxonomy/term/80']";
-	 public static String hp_SearchBox="div.view-games-nav .games_menu .search_box a.open_search";
+	 public static String hp_SearchBoxinputBox="input.search_field";
+	 public static String hp_SearchBox="a.open_search";
+	 public static String hp_SearchBoxCloseIcon="a.close_search .icon-close";
 	 public static String hp_NetPlayTv_Games="div.view-games .netplay-games";
 	 public static String hp_Playtech_SlotsGames="div.view-games .playtech-games";
 	 public static String hp_Playtech_TableGames="div.view-games .playtech-games";
@@ -32,6 +34,8 @@ public class Constant {
 	 public static String hp_GamePopUPBox_closeIcon="div.gameInfo-modal a.close .icon-close";
 	 public static String hp_CasinoSearchInputbox="div.search_field_container .search_field";
 	 public static String hp_CasinoSearchInputboxCloseIcon="a.close_search";
+	 public static String hp_SearchGameRouletteReturn="div.netplay-games.rep.NetplayRoulette_TEST";
+	 public static String hp_SearcgGameVirtueFusionGameReturn="div.playtech-games.Cleopatra.PLUS";
 	 
 	 
 	 
@@ -115,6 +119,18 @@ public class Constant {
 	  public static String Reg_ErrorText="body.page-register .basic-page .error";
 	  public static String Reg_BonusTermFrameBoxHeader="div.modal-dialog #scroller h2";
 	  public static String Reg_BonusTermFrameBox_Close="div.registration-modal .modal-dialog a.close";
+	  public static String Reg_GenderTypeFemale="";
+	  public static String Reg_GenderTypeMale="";
+	  public static String Reg_Country="";
+	  public static String Reg_Currency="";
+	  public static String Reg_CountryDialingCode="";
+	  public static String Reg_FindAddressButton="";
+	  public static String Reg_WelToSuperCasinoText="";
+	  public static String Reg_JackpotSliderBlock="";
+	  public static String Reg_PromoBanner="";
+	  public static String Reg_RegisterTitle="";
+	  public static String Reg_HelpIconlink="";
+	  public static String Reg_ChatIconlink="";
 	  // Elements on Welcome Page
 	  
 	  public static String WelcomePage_TitleText="h1.welcome_header";
@@ -131,7 +147,7 @@ public class Constant {
 	  // Elements on Slot Game Session Page
 	   public static String SlotsGameMenuIcon="div#mainMenuButton";
 	   public static String  SlotGamesSoundPopUpBox="//div[@id='aSU']";
-	   
+	   public static String SlotGamesLoading="div.cp-loading-brand-big";
 	   
 	   // Elements on Footer 
 	   
@@ -305,6 +321,8 @@ public class Constant {
 	   public static String GameInfoWinnerSlider="div.block-winners";
 	   public static String GameInfoAppStoreLogo="img.app-store-logo";
 	   public static String GameInfoAndroidLogo="img.android-logo";
+	   
+	   
 	   
 	   
 	   

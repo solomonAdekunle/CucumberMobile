@@ -125,16 +125,16 @@ public class BasePage {
 	
 	public void clickLoginButton() {
 	d.findElement(By.cssSelector(Constant.hp_Login)).click();
-		//try{
+		try{
 			WebDriverWait wait = new WebDriverWait(d,15);
 			WebElement PlayerMessage=d.findElement(By.cssSelector("div.playerMessages-modal .footer .ok"));
 					if(PlayerMessage.isDisplayed()==true)
 						wait.until(ExpectedConditions.visibilityOf(PlayerMessage));
 						((JavascriptExecutor) d).executeScript("arguments[0].click();", PlayerMessage);
 				
-		//}catch (NoSuchElementException e){
-		//	e.getStackTrace();
-		//}
+		}catch (NoSuchElementException e){
+			e.getStackTrace();
+		}
 
 	}
 	

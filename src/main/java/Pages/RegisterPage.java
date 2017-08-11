@@ -97,7 +97,16 @@ public class RegisterPage extends BasePage {
 	public void sendRegPostCode(String Postcode) {
 		d.findElement(By.cssSelector(Constant.Register_PostCode)).sendKeys(Postcode);
 	}
-
+    public void  sendRegCountry(String country){
+    	d.findElement(By.id(Constant.Reg_Country)).sendKeys(country);
+    }
+    
+    public void  sendRegCunrrency(String CurrencyType){
+    	d.findElement(By.id(Constant.Reg_Currency)).sendKeys(CurrencyType);
+    }
+    public void  sendRegCountryDialingCodeDropdownBox(String DialingCode){
+    	d.findElement(By.id(Constant.Reg_CountryDialingCode)).sendKeys(DialingCode);
+    }
 	public void sendRegContactNumber(String contactNumber) {
 		d.findElement(By.cssSelector(Constant.Register_ContactNumber)).sendKeys(contactNumber);
 	}
@@ -163,7 +172,82 @@ public class RegisterPage extends BasePage {
 		d.findElement(By.cssSelector(Constant.Reg_BonusTermFrameBox_Close)).click();
 
 	}
+	public boolean isRegisterEmailInputBoxPresent() {
+		return d.findElement(By.cssSelector(Constant.Register_Email)).isDisplayed();
+	}
 
+	public boolean isRegisterPasswordInputBoxPresent() {
+		return d.findElement(By.cssSelector(Constant.Register_Password)).isDisplayed();
+	}
+
+	public boolean isRegisterUserNameInputBoxPresent() {
+		return d.findElement(By.cssSelector(Constant.Register_Username)).isDisplayed();
+	}
+
+	public boolean isRegisterScreenNameInputBoxPresent() {
+		return d.findElement(By.cssSelector(Constant.Register_ScreenName)).isDisplayed();
+	}
+
+	public boolean isRegisterFirstNameInputBoxPresent() {
+		return d.findElement(By.cssSelector(Constant.Register_FirstName)).isDisplayed();
+	}
+
+	public boolean isRegisterSurNameInputBoxPresent() {
+		return d.findElement(By.cssSelector(Constant.Register_SurName)).isDisplayed();
+	}
+
+	public boolean isRegisterDOBDayDropdownBoxPresent() {
+		return d.findElement(By.cssSelector(Constant.Register_DOB_Day)).isDisplayed();
+	}
+
+	public boolean isRegisterDOBMonthDropdownBoxPresent() {
+		return d.findElement(By.cssSelector(Constant.Register_DOB_Month)).isDisplayed();
+	}
+
+	public boolean isRegisterGenderTypeFemaleRadioButtonPresent() {
+		return d.findElement(By.id(Constant.Reg_GenderTypeFemale)).isDisplayed();
+	}
+
+	public boolean isRegisterDOBYearhDropdownBoxPresent() {
+		return d.findElement(By.cssSelector(Constant.Register_DOB_Year)).isDisplayed();
+	}
+
+	public boolean isRegisterGenderTypeMaleRadioButtonPresent() {
+		return d.findElement(By.id(Constant.Reg_GenderTypeMale)).isDisplayed();
+	}
+
+	public boolean isRegisterCountryInputBoxPresent() {
+		return d.findElement(By.cssSelector(Constant.Reg_Country)).isDisplayed();
+	}
+
+	public boolean isRegisterCunrrencyDropdownBoxPresent() {
+		return d.findElement(By.cssSelector(Constant.Reg_Currency)).isDisplayed();
+	}
+
+	public boolean isRegisterFindAddressButtonPresent() {
+		return d.findElement(By.cssSelector(Constant.Reg_FindAddressButton)).isDisplayed();
+	}
+
+	public boolean isRegisterCountryDialingCodeDropdownBoxPresent() {
+		return d.findElement(By.cssSelector(Constant.Reg_CountryDialingCode)).isDisplayed();
+	}
+	
+	public boolean isRegisterFreeBonusessCheckedBoxPresent() {
+		return d.findElement(By.cssSelector(Constant.Register_FreeBonusCheckBox)).isDisplayed();
+	}
+	public boolean isRegisterOverEightennPlusCheckBoxPresent() {
+		return d.findElement(By.cssSelector(Constant.Register_Over18CheckBox)).isDisplayed();
+	}
+	public boolean isRegisterOverEighteenTermsPresent() {
+		return d.findElement(By.cssSelector(Constant.Register_Over18Term)).isDisplayed();
+	}
+	public boolean isRegisterOverEighteenPrivacyPolicyBoxPresent() {
+		return d.findElement(By.cssSelector(Constant.Register_Over18PrivacyPolicy)).isDisplayed();
+	}
+	
+	public boolean isComplianceTextPresent() {
+		return d.findElement(By.cssSelector(Constant.Register_ComplianceMessage)).isDisplayed();
+	}
 	public boolean isRegisterDepositLimiClickHeretLinkPresent() {
 		
 		return d.findElement(By.cssSelector(Constant.Register_DepositLimitClickHere)).isDisplayed();

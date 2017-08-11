@@ -75,9 +75,9 @@ public class TestBase {
 			}
 			EventFiringWebDriver dr = new EventFiringWebDriver(d);
 			d.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-			// Smalltouch devices such as iPhone, Android and Windows phones
+			/*Smalltouch devices such as iPhone, Android and Windows phones */
 			Dimension k = new Dimension(320, 568);
-			// Dimension k = new Dimension(768,1024);// ipad or tablet
+			/* Dimension k = new Dimension(768,1024);// ipad or tablet */
 			d.manage().window().setSize(k);
 		}
 

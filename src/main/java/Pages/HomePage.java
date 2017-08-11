@@ -63,6 +63,40 @@ public class HomePage extends BasePage {
 		return d.findElement(By.cssSelector(Constant.hp_GamePopUPBox_closeIcon)).isDisplayed();
 
 	}
+	
+	public boolean isGameSearchBoxOpenPresent(){
+		WebDriverWait wait = new WebDriverWait(d,30);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.hp_SearchBoxinputBox)));
+		return d.findElement(By.cssSelector(Constant.hp_SearchBoxinputBox)).isDisplayed();
+		
+		
+	}
+	public boolean isGameSearchBoxCloseIconPresent(){
+		WebDriverWait wait = new WebDriverWait(d,30);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.hp_CasinoSearchInputboxCloseIcon)));
+		return d.findElement(By.cssSelector(Constant.hp_CasinoSearchInputboxCloseIcon)).isDisplayed();
+		
+	}
+	public boolean isGameSearchRouletteGameReturnPresent(){
+		WebElement SearchRolutteGame=d.findElement(By.cssSelector(Constant.hp_SearchGameRouletteReturn));
+		WebDriverWait wait = new WebDriverWait(d,50);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.hp_SearchGameRouletteReturn)));
+		System.out.println(SearchRolutteGame.isDisplayed());
+		d.findElement(By.cssSelector(Constant.hp_SearchGameRouletteReturn));
+		return SearchRolutteGame.isDisplayed();
+		//return d.findElement(By.cssSelector(Constant.hp_SearchGameRouletteReturn)).isDisplayed();
+		
+	}
+	public boolean isGameSearchPlayTechGameReturnPresent(){
+		WebElement SearchVegasGame=d.findElement(By.cssSelector(Constant.hp_SearcgGameVirtueFusionGameReturn));
+		WebDriverWait wait = new WebDriverWait(d,65);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.hp_SearcgGameVirtueFusionGameReturn)));
+		System.out.println(SearchVegasGame.isDisplayed());
+		d.findElement(By.cssSelector(Constant.hp_SearcgGameVirtueFusionGameReturn));
+		return SearchVegasGame.isDisplayed();
+		//return d.findElement(By.cssSelector(Constant.hp_SearcgGameVirtueFusionGameReturn)).isDisplayed();
+		
+	}
 
 	public void clickGameCategoryFeatureTab() {
 		d.findElement(By.cssSelector(Constant.hp_GameCategoryMenu_FeatureTab)).click();
@@ -133,7 +167,6 @@ public class HomePage extends BasePage {
 	}
 
 	public void clickGamePopBoxCloseIcon() {
-		
 		d.findElement(By.cssSelector(Constant.hp_GamePopUPBox_closeIcon)).click();
 
 	}
@@ -142,12 +175,19 @@ public class HomePage extends BasePage {
 		d.findElement(By.cssSelector(Constant.hp_CasinoSearchInputboxCloseIcon)).click();
 
 	}
+	public void clickSearchInputBox() {
+		d.findElement(By.cssSelector(Constant.hp_SearchBox)).click();
+
+	}
+	
 	public void clickRouletteExpressPremium(){
 		d.findElement(By.cssSelector(Constant.RouletteExpressPremium)).click();
 	}
 
-	public void sendCasinoGameSearch() {
-		d.findElement(By.cssSelector(Constant.hp_CasinoSearchInputbox)).click();
+	public void sendGameSearch(String gameSearchType) {
+		WebDriverWait duro= new WebDriverWait(d,20);
+		duro.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_CasinoSearchInputbox)));
+		d.findElement(By.cssSelector(Constant.hp_CasinoSearchInputbox)).sendKeys(gameSearchType);
 	}
 	
 	

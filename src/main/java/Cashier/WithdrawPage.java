@@ -35,6 +35,7 @@ public class WithdrawPage extends BasePage {
 		wait.until(ExpectedConditions
 				.visibilityOfElementLocated(By.cssSelector(Constant.CashierWithdraw_WithdrawFundsTexts)));
 		return d.findElement(By.cssSelector(Constant.CashierWithdraw_WithdrawFundsTexts)).isDisplayed();
+		
 	}
 
 	public boolean isWithdrawCreditCardLogoPresent() {
@@ -188,7 +189,7 @@ public class WithdrawPage extends BasePage {
 
 	public void NavigateBackToHomePage() {
 		d.navigate().back();
-		WebDriverWait wait = new WebDriverWait(d, 20);
+		WebDriverWait wait = new WebDriverWait(d,30);
 		d.findElement(By.cssSelector(Constant.hp_SidebarIcon)).click();
 		WebElement Logoutlink = d.findElement(By.cssSelector(Constant.SideBarMenu_Logout));
 		wait.until(ExpectedConditions.visibilityOf(Logoutlink));
@@ -199,6 +200,9 @@ public class WithdrawPage extends BasePage {
 		WebElement Frame = d.findElement(By.cssSelector("iframe.fill"));
 		d.switchTo().frame(Frame);
 
+	}
+	public void SwitchDefaultCashier(){
+		d.switchTo().defaultContent();
 	}
 
 	public void storePreviousBalance() {
