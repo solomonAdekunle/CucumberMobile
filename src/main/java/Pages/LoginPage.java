@@ -103,7 +103,7 @@ public class LoginPage extends BasePage {
 	public void clickLoginBoxCloseIcon() {
 		System.out.println("Am closing the Pop-up");
 		WebDriverWait wait = new WebDriverWait(d,20);
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(Constant.LoginPopUpBoxCloseIcon)));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.LoginPopUpBoxCloseIcon)));
 		System.out.println("Am closing the Pop-up Box");
 		d.findElement(By.cssSelector(Constant.LoginPopUpBoxCloseIcon)).click();
 	}

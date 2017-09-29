@@ -22,7 +22,11 @@ public class GameInfoPage extends BasePage{
 		
 		
 	}
-
+    public String getInfoPageUrl( ){
+    String Url= d.getCurrentUrl();
+    return Url;
+    }
+    
 	public boolean isGameNameTitlePresent(){
 		return d.findElement(By.cssSelector(Constant.PageTitle)).isDisplayed();
 		

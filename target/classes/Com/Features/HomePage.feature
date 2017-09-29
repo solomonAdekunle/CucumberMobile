@@ -46,7 +46,7 @@ Scenario Outline: Launching Netplaytv Roulette Game
 		|GameType				 |
 		|Roulette Express Premium| 
 		
-#@ignore			
+@ignore			
 @LaunchGame 
 Scenario Outline: Launching Netplaytv Roulette Demo Game 
 	Given  I have loggedin on the BasePage 
@@ -64,8 +64,8 @@ Scenario: Launching Casino Slots Game
 	Given I have loggedin on the BasePage 
 	When  I click Games Category Slots tab
 	 And  I click on a Slots Game
-	 #And  I click on Play button
-    #Then I should see a Slots game launching
+	 And  I click on Play button
+    Then I should see a Slots game launching
      
 @ignore	
 @LaunchGame 
@@ -87,8 +87,8 @@ Scenario: Launching Casino Table Game
 	Given I have loggedin on the BasePage 
 	When  I click Games Category Table Games tab
 	 And  I click on a Table Game
-	# And  I click on Play button
-     #Then I should see a Table Game launching
+	 And  I click on Play button
+     Then I should see a Table Game launching
      
 #@ignore	    
 @LaunchGame 		

@@ -25,7 +25,7 @@ And I click on More info link
 And I click on Play For Real on Game Info Page
 Then I should see a Login Pop-up box displayed on Game Info Page
 
-#@ignore
+@ignore
 @gameInfo
 Scenario: Authenticated user Navigating to Roulette Game  game Info page 
 Given I have loggedin on the BasePage
@@ -53,7 +53,7 @@ When I click on Roulette Express Premium Game
 And I click on Play For Real on Game Info Page
 Then I should see a Play for Cash game Launching
 
-#@ignore
+@ignore
 @gameInfo
 Scenario: Authenticated user launching  Roulette Game from  game Info page 
 Given I have loggedin on the BasePage

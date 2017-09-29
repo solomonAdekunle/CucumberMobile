@@ -92,6 +92,17 @@ public class BasePage {
 
 	}
 	public boolean isTopDepositButtonPresent(){
+		try{
+			WebDriverWait wait = new WebDriverWait(d,15);
+			WebElement PlayerMessage=d.findElement(By.cssSelector("div.playerMessages-modal .footer .ok"));
+					if(PlayerMessage.isDisplayed()==true)
+						wait.until(ExpectedConditions.visibilityOf(PlayerMessage));
+						((JavascriptExecutor) d).executeScript("arguments[0].click();", PlayerMessage);
+				
+		}catch (NoSuchElementException e){
+			e.getStackTrace();
+		}
+	
 		WebDriverWait wait= new WebDriverWait(d,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.hp_DepositButton)));
 		return d.findElement(By.cssSelector(Constant.hp_DepositButton)).isDisplayed();
@@ -125,17 +136,6 @@ public class BasePage {
 	
 	public void clickLoginButton() {
 	d.findElement(By.cssSelector(Constant.hp_Login)).click();
-		try{
-			WebDriverWait wait = new WebDriverWait(d,15);
-			WebElement PlayerMessage=d.findElement(By.cssSelector("div.playerMessages-modal .footer .ok"));
-					if(PlayerMessage.isDisplayed()==true)
-						wait.until(ExpectedConditions.visibilityOf(PlayerMessage));
-						((JavascriptExecutor) d).executeScript("arguments[0].click();", PlayerMessage);
-				
-		}catch (NoSuchElementException e){
-			e.getStackTrace();
-		}
-
 	}
 	
 

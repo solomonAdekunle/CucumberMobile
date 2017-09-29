@@ -47,7 +47,7 @@ Then I should see Deposit Success Cashier Pop-up box displayed
  And I should see Your transaction was approved Text displayed
  And I should see CloseButton within the Success Cashier Pop-up box displayed
  
-#@ignore
+@ignore
  @DepositAppoved
  Scenario: Closing the Success Cashier Pop-up box
 Given I Navigate to the homepage on "browser"

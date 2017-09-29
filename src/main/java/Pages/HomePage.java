@@ -121,9 +121,8 @@ public class HomePage extends BasePage {
 	}
 
 	public void clickNetPlayTvRouletteGame(String GameType) {
-		List<WebElement> NetplatvGames=d.findElements(By.cssSelector(Constant.hp_NetPlayTv_Games));
-		WebElement RouletteGame=NetplatvGames.get(2);
-		RouletteGame.click();
+		WebElement RouletteGame	=d.findElement(By.cssSelector(Constant.RouletteExpressPremium));
+				RouletteGame.click();
 
 	}
 

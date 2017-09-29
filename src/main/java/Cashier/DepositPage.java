@@ -40,7 +40,7 @@ public class DepositPage extends BasePage {
 
 	public boolean isUserNamePresent(String Username) {
 		d.switchTo().defaultContent();
-		WebDriverWait wait = new WebDriverWait(d, 30);
+		WebDriverWait wait = new WebDriverWait(d,50);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.CashierDeposit_UserNameInfo)));
 		return d.findElement(By.cssSelector(Constant.CashierDeposit_UserNameInfo)).isDisplayed();
 
