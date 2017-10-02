@@ -74,8 +74,8 @@
 						<argument>--plugin</argument>
 						<argument>html:target/cucumber-html-report</argument>
 						<argument>--tags</argument>
-						<argument>@Login,@RegisterButton,
-							@ContactUs,@footer,@ForgottenDetails,@GameLaunch,@VegasGames,@Promotion,@RegisterNewCard,@DepositAppoved,@Withdrawal,@GameSearch</argument>
+						<argument>@Login,
+							@ContactUs,@footer,@ForgottenDetails,@LaunchGame ,@gameInfo,@Promotion,@Deposit,@Withdrawal,@SearchGame,@SideBarMenu,@Homepage </argument>
 						<argument>--glue</argument>
 						<argument>com/</argument>
 						<argument>src/</argument>

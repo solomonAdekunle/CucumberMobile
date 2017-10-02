@@ -19,10 +19,10 @@ public class ChatPage extends BasePage{
 		// TODO Auto-generated constructor stub
 	}
 	 public void isLiveChatSuperCasinoLogoPresent(){
-//		 WebElement Frame = d.findElement(By.cssSelector("iframe.noFrame"));
-//	    	d.switchTo().frame(Frame);
+	 WebElement Frame = d.findElement(By.cssSelector("iframe.noFrame"));
+    	d.switchTo().frame(Frame);
+    	 WebDriverWait wait= new WebDriverWait(d,45);
 		 WebElement Logo= d.findElement(By.cssSelector(Constant.LiveChat_SupercasinoLogo));
-		 WebDriverWait wait= new WebDriverWait(d,45);
 		 wait.until(ExpectedConditions.visibilityOf(Logo));
 		 Logo.isDisplayed();
 		 System.out.println(Logo.isDisplayed());

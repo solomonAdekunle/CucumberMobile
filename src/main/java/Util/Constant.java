@@ -34,7 +34,7 @@ public class Constant {
 	 public static String hp_GamePopUPBox_closeIcon="div.gameInfo-modal a.close .icon-close";
 	 public static String hp_CasinoSearchInputbox="div.search_field_container .search_field";
 	 public static String hp_CasinoSearchInputboxCloseIcon="a.close_search";
-	 public static String hp_SearchGameRouletteReturn="div.netplay-games.rep.NetplayRoulette_TEST";
+	 public static String hp_SearchGameRouletteReturn="div.netplay-games.rep";
 	 public static String hp_SearcgGameVirtueFusionGameReturn="div.playtech-games.Cleopatra.PLUS";
 	 
 	 
@@ -180,7 +180,7 @@ public class Constant {
 	   
 	   
 	   // Elements on Live Chat Page
-	   public static String LiveChat_SupercasinoLogo="div.logo_div";
+	   public static String LiveChat_SupercasinoLogo="section.rn_LiveHelp .logo_div";
 	   
 	   // Elements on Change Password
 	   public static String ChangePassword_OldPassword="input#old_password";

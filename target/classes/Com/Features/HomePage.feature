@@ -46,18 +46,18 @@ Scenario Outline: Launching Netplaytv Roulette Game
 		|GameType				 |
 		|Roulette Express Premium| 
 		
-@ignore			
-@LaunchGame 
-Scenario Outline: Launching Netplaytv Roulette Demo Game 
-	Given  I have loggedin on the BasePage 
-	When I click on "<GameType>" 
-	And I click on Demo button
-	Then I should see a Demo Game Launching 
-	
-	Examples: 
-		|GameType				 |
-		|Roulette Express Premium| 
-		
+#@ignore			
+#@LaunchGame 
+#Scenario Outline: Launching Netplaytv Roulette Demo Game 
+#	Given  I have loggedin on the BasePage 
+#	When I click on "<GameType>" 
+#	And I click on Demo button
+#	Then I should see a Demo Game Launching 
+#	
+#	Examples: 
+#		|GameType				 |
+#		|Roulette Express Premium| 
+#		
 #@ignore			
 @LaunchGame 		
 Scenario: Launching Casino Slots Game
@@ -67,19 +67,19 @@ Scenario: Launching Casino Slots Game
 	 And  I click on Play button
     Then I should see a Slots game launching
      
-@ignore	
-@LaunchGame 
-Scenario Outline:Checking if Game Pop-up box will close by clickin on close icon on it.
- Given I have loggedin on the BasePage 
-	When I click on "<GameType>" 
-	And I click on Close icon on the game Pop-up box
-	Then I should see Game Pop-up box closed
-	
-	Examples: 
-		|GameType				 |
-		|Roulette Express Premium| 	
-	
-	
+#@ignore	
+#@LaunchGame 
+#Scenario Outline:Checking if Game Pop-up box will close by clickin on close icon on it.
+# Given I have loggedin on the BasePage 
+#	When I click on "<GameType>" 
+#	And I click on Close icon on the game Pop-up box
+#	Then I should see Game Pop-up box closed
+#	
+#	Examples: 
+#		|GameType				 |
+#		|Roulette Express Premium| 	
+#	
+#	
 
 #@ignore		
 @LaunchGame 		

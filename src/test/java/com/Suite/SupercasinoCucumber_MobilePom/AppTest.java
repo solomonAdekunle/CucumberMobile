@@ -1,4 +1,4 @@
-package Suite.SupercasinoCucumber_MobilePom;
+package com.Suite.SupercasinoCucumber_MobilePom;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

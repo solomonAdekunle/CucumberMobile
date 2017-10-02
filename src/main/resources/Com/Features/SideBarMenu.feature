@@ -315,7 +315,7 @@ Scenario: Verifying if clicking on Home link within  Vegas SideBar Menu
 	When I click on Sidebar Menu 
 	And I click on Home Link within SideBar Menu 
 	Then I should Navigate Back to Home Page 
-	
+#	
 #@ignore 
 @SideBarMenu 
 Scenario: Verifying if clicking on the Getting Started dropdown on Vegas Sidebar Menu  will display a submenu 
@@ -395,9 +395,7 @@ Scenario: Verifying if Live Chat will Navigate to Live Chat Page
 	When I click on Sidebar Menu 
 	And I click on Live Chat link within the SideBar Menu 
 	Then I should Navigate to Live Chat Page
-	
-	
-	
+
 #@ignore 
 @SideBarMenu 	
 Scenario: Verifying if Responsible Gambling link will Navigate to Contact Us Page 
@@ -421,16 +419,16 @@ Scenario: SideBar Menu on Vegas Vertical for Authenticated User
 	And I should see Responsible Gambling link within the SidebarMenu 
 	And I Should see a Live Chat link within the SidebarMenu
 	And I should see a LogOut link 
-
-#@ignore 
-@SideBarMenu 	
-Scenario: Clicking on Home line within Sidebar Menu on Vegas Vertical for Authenticated User 
-	Given I have loggedin on the BasePage 
-	When  I click on Vegas Vertical Tab 
-	When  I click on Sidebar Menu 
-	And I click on Home Link within SideBar Menu 
-	Then I should Depsit button on Home Page
-	
+#
+##@ignore 
+#@SideBarMenu 	
+#Scenario: Clicking on Home line within Sidebar Menu on Vegas Vertical for Authenticated User 
+#	Given I have loggedin on the BasePage 
+#	When  I click on Vegas Vertical Tab 
+#	When  I click on Sidebar Menu 
+#	And I click on Home Link within SideBar Menu 
+#	Then I should Depsit button on Home Page
+#	
 #@ignore 
 @SideBarMenu 	
 Scenario: Clicking My Account Dropdown arrow for Authenticated user within Sidebar Menu On Vegas vertical 
@@ -525,7 +523,7 @@ Scenario: Verifying if clicking on the How To Withdraw link within the dropdown 
 	And I click on Gettstarted dropdown SubMenu arrow 
 	And I click on How To Withdraw link within the GettingStarted Dropdown SubMenu 
 	Then I should Navigate to How To Withdraw page 
-	
+#	
 #@ignore 
 @SideBarMenu 	
 Scenario: Verifying if clicking on Is My Deposit Safe link within the dropdown will Navigate to Is My Deposit Safe Page For Authenticated User on Vegas Vertical
@@ -573,16 +571,16 @@ Scenario: Verifying if Responsible Gambling link will Navigate to Contact Us Pag
 	When I click on Sidebar Menu 
 	And I click on Live Chat link within the SideBar Menu 
 	Then I should Navigate to Live Chat Page 
-	
-#@ignore 
-@SideBarMenu 	
-Scenario: Verifying if Logout link will log user out on Vegas Vertical Sidebar Menu
-	Given I have loggedin on the BasePage 
-	When  I click on Vegas Vertical Tab 
-	When I click on Sidebar Menu 
-	And I click on Logout link within the SideBar Menu 
-	Then I should be logged out 
-	
+#	
+##@ignore 
+#@SideBarMenu 	
+#Scenario: Verifying if Logout link will log user out on Vegas Vertical Sidebar Menu
+#	Given I have loggedin on the BasePage 
+#	When  I click on Vegas Vertical Tab 
+#	When I click on Sidebar Menu 
+#	And I click on Logout link within the SideBar Menu 
+#	Then I should be logged out 
+#	
 #@ignore 
 @SideBarMenu 	
 Scenario: SideBar Menu  on Live Vertical for UnAuthenticated User 
@@ -646,7 +644,7 @@ Scenario: Verifying if clicking on the How To GetStarted link within the dropdow
 	When I click on Sidebar Menu 
 	And I click on Gettstarted dropdown SubMenu arrow 
 	And I click on How To Get Started within the GettingStarted Dropdown SubMenu 
-	Then I should Navigate to Getting Started page 
+#	Then I should Navigate to Getting Started page 
 @ignore 
 @SideBarMenu 	
 Scenario: Verifying if clicking on the How To Deposit link within the dropdown Menu on Live will Navigate to How To Deposit Page 
@@ -735,7 +733,7 @@ Scenario: Clicking on Home line within Sidebar Menu on Live Vertical for Authent
 	When  I click on Sidebar Menu 
 	And I click on Home Link within SideBar Menu 
 	Then I should Depsit button on Home Page
-	
+#	
 #@ignore 
 @SideBarMenu 	
 Scenario: Clicking My Account Dropdown arrow for Authenticated user within Sidebar Menu On Live vertical 
@@ -757,7 +755,7 @@ Scenario: Clicking on Deposit link with My Account Menu on the Sidebar Menu on L
 	And I click on My Account dropdown arrow 
 	And I click on Deposit link within My Account DropDown SubMenu 
 	Then I should Navigate to SafeCharge Cashier Deposit Page 
-	
+#	
 #@ignore 
 @SideBarMenu 	
 Scenario: Clicking on Transaction link with My Account Menu on the Sidebar Menu on Live Vertical 
@@ -777,7 +775,7 @@ Scenario: Clicking on Withdraw link with My Account Menu on the Sidebar Menu on 
 	And I click on My Account dropdown arrow 
 	And I click on Withdraw link within My Account DropDown SubMenu 
 	Then I should Navigate to SafeCharge Cashier Withdraw Page 
-	
+#	
 @ignore 
 @SideBarMenu 	
 Scenario: Clicking on Change Password link with My Account Menu on the Sidebar Menu on Live Vertical 
@@ -787,7 +785,7 @@ Scenario: Clicking on Change Password link with My Account Menu on the Sidebar M
 	And I click on My Account dropdown arrow 
 	And I click on Change Password link within My Account DropDown SubMenu 
 	Then I should Navigate to  Change Password Page 
-	
+#	
 #@ignore 
 @SideBarMenu 	
 Scenario: Verifying if clicking on the Getting Started dropdown will display a submenu For Authenticated User on Live Vertical
@@ -811,7 +809,7 @@ Scenario: Verifying if clicking on the How To GetStarted link within the dropdow
 	And I click on Gettstarted dropdown SubMenu arrow 
 	And I click on How To Get Started within the GettingStarted Dropdown SubMenu 
 	Then I should Navigate to Getting Started page 
-
+#
 #@ignore 
 @SideBarMenu 	
 Scenario: Verifying if clicking on the How To Deposit link within the dropdown will Navigate to How To Deposit Page For Authenticated User on Live Vertical
@@ -832,7 +830,7 @@ Scenario:
 	And I click on Gettstarted dropdown SubMenu arrow 
 	And I click on How To Withdraw link within the GettingStarted Dropdown SubMenu 
 	Then I should Navigate to How To Withdraw page 
-
+#
 #@ignore 
 @SideBarMenu 	
 Scenario: 
@@ -852,7 +850,7 @@ Scenario: Verifying if Help link will Navigate to Contact Us Page For Authentica
 	When I click on Sidebar Menu 
 	And I click on Help link within the SideBar Menu 
 	Then I should Navigate to Contact Us Page 
-	
+
 #@ignore 
 #@SideBarMenu 	
 Scenario: Verifying if TV Presenter link will Navigate to Contact Us Page For Authenticated User on Live Vertical
@@ -872,7 +870,7 @@ Scenario: Verifying if Responsible Gambling link will Navigate to Contact Us Pag
 	And I click on Responsible Gambling link within the SideBar Menu 
 	Then I should Navigate to Responsible Gambling Page 
 	
-	
+
 #@ignore 
 @SideBarMenu 
 	Scenario: Verifying if Live Chat will Navigate to Live Chat Page
