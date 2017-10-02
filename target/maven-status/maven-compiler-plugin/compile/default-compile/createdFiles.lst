@@ -1,6 +1,7 @@
 Pages\HowToDepositPage.class
 Pages\ResponsibleGamblingPage.class
 Pages\WelcomePage.class
+Pages\RouletteExpressPremium$1.class
 Pages\TermsAndConditionsPage.class
 Pages\LiveVerticalPage.class
 Pages\PresentersPage.class
@@ -32,3 +33,4 @@ Pages\FooterPage.class
 Com\Suite\SupercasinoCucumber_MobilePom\StepsDefination.class
 Pages\VIPPage.class
 Pages\SecurityPage.class
+Pages\SlotsGamePage$1.class

@@ -121,7 +121,9 @@ public class HomePage extends BasePage {
 	}
 
 	public void clickNetPlayTvRouletteGame(String GameType) {
+		WebDriverWait wait = new WebDriverWait(d,15);
 		WebElement RouletteGame	=d.findElement(By.cssSelector(Constant.RouletteExpressPremium));
+		wait.until(ExpectedConditions.visibilityOf(RouletteGame));
 				RouletteGame.click();
 
 	}
