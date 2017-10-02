@@ -1,15 +1,14 @@
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Pages\SecurityPage.java
-D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Suite\SupercasinoCucumber_MobilePom\TestBase.java
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Pages\TermsAndConditionsPage.java
+D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\com\Suite\SupercasinoCucumber_MobilePom\Runner.java
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Pages\BasePage.java
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Util\Constant.java
+D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\com\Suite\SupercasinoCucumber_MobilePom\StepsDefination.java
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Pages\PrivacyPolicyPage.java
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Pages\ExternalPage.java
-D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Suite\SupercasinoCucumber_MobilePom\Runner.java
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Pages\GameInfoPage.java
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Pages\SideBarPage.java
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Cashier\CashierMenuPage.java
-D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Suite\SupercasinoCucumber_MobilePom\StepsDefination.java
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Pages\WelcomePage.java
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Pages\SlotsGamePage.java
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Pages\RegisterPage.java
@@ -17,6 +16,7 @@ D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Pages\IsMyDepositSaf
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Pages\LoginPage.java
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Pages\VIPPage.java
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Pages\ResponsibleGamblingPage.java
+D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\com\Suite\SupercasinoCucumber_MobilePom\TestBase.java
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Pages\FooterPage.java
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Pages\LiveVerticalPage.java
 D:\NewWorkspace\SupercasinoCucumber_MobilePom\src\main\java\Pages\GettingStartedPage.java

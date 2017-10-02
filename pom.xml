@@ -18,7 +18,6 @@
 
 
 	<build>
-
 		<testResources>
 			<testResource>
 				<directory>src/main/resources</directory>
@@ -75,8 +74,8 @@
 						<argument>--plugin</argument>
 						<argument>html:target/cucumber-html-report</argument>
 						<argument>--tags</argument>
-						<argument>@Login,@RegisterButton,@Register,
-							@RegisterButton,@ContactUs,@footer,@ForgottenDetails,@GameLaunch,@VegasGames,@Promotion,@RegisterNewCard,@DepositAppoved,@Withdrawal,@GameSearch</argument>
+						<argument>@Login,@RegisterButton,
+							@ContactUs,@footer,@ForgottenDetails,@GameLaunch,@VegasGames,@Promotion,@RegisterNewCard,@DepositAppoved,@Withdrawal,@GameSearch</argument>
 						<argument>--glue</argument>
 						<argument>com/</argument>
 						<argument>src/</argument>
