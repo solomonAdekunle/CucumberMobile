@@ -114,61 +114,78 @@ public class FooterPage extends BasePage {
 	
 	 
 	public void clickFooterTermsAndConditionlink() {
-		d.findElement(By.cssSelector(Constant.Footer_TermsAndConditions)).click();
+		WebElement TAndC =d.findElement(By.cssSelector(Constant.Footer_TermsAndConditions));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", TAndC);
 	}
 
 	public void clickFooterPrivacyPolicylink() {
-		d.findElement(By.cssSelector(Constant.Footer_PrivacyPolicy)).click();
+		WebElement Privacylink =d.findElement(By.cssSelector(Constant.Footer_PrivacyPolicy));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", Privacylink );
 
 	}
 
 	public void clickFooterResponsibleGamblinglink() {
-		d.findElement(By.cssSelector(Constant.Footer_ResponsibleGambling)).click();
+		WebElement Resplink =d.findElement(By.cssSelector(Constant.Footer_ResponsibleGambling));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", Resplink );
+
 	}
 
 	public void clickFooterVIPlink() {
-		d.findElement(By.cssSelector(Constant.Footer_VIP)).click();
+		WebElement VIPlink =d.findElement(By.cssSelector(Constant.Footer_VIP));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", VIPlink );
+		
 
 	}
 	public void clickLiveFooterVIPlink() {
 	WebElement LiveVIPFooterLink=d.findElement(By.cssSelector(Constant.Footer_VIP));
-	WebDriverWait wait= new WebDriverWait(d,30);
-	wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.footer-mobile-menu a[href='/vip']")));
-	JavascriptExecutor jse = (JavascriptExecutor)d;
-	jse.executeScript("window.scrollBy(0,250)", "");
-	LiveVIPFooterLink.click();
+	((JavascriptExecutor) d).executeScript("arguments[0].click();", LiveVIPFooterLink );
+//	WebDriverWait wait= new WebDriverWait(d,30);
+//	wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.footer-mobile-menu a[href='/vip']")));
+//	JavascriptExecutor jse = (JavascriptExecutor)d;
+//	jse.executeScript("window.scrollBy(0,250)", "");
+//	LiveVIPFooterLink.click();
 		
 
 	}
 
 	public void clickFooterFacebooklink() {
-		d.findElement(By.cssSelector(Constant.Footer_FacebookLogo)).click();
+		WebElement FaceBookLink=d.findElement(By.cssSelector(Constant.Footer_FacebookLogo));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", FaceBookLink );
+		//d.findElement(By.cssSelector(Constant.Footer_FacebookLogo)).click();
 
 	}
 
 	public void clickFooterTiwtterlink() {
-		WebDriverWait wait= new WebDriverWait(d,30);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.Footer_TwitterLogo)));
-		d.findElement(By.cssSelector(Constant.Footer_TwitterLogo)).click();
+		WebElement Tiwtterink=d.findElement(By.cssSelector(Constant.Footer_TwitterLogo));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", Tiwtterink );
+		//d.findElement(By.cssSelector(Constant.Footer_TwitterLogo)).click();
 
 	}
 	 public void clickFooterNetplayTvIconLink(){
-		 d.findElement(By.cssSelector(Constant.Footer_NetPlayTvLogo)).click();
+		 WebElement NetPlayTvlink=d.findElement(By.cssSelector(Constant.Footer_NetPlayTvLogo));
+			((JavascriptExecutor) d).executeScript("arguments[0].click();", NetPlayTvlink );
+		 //d.findElement(By.cssSelector(Constant.Footer_NetPlayTvLogo)).click();
 
 	 }
 
 	public void clickFooterEighteenPluslink() {
-		d.findElement(By.cssSelector(Constant.Footer_Over18Logo)).click();
+		 WebElement Over18link=d.findElement(By.cssSelector(Constant.Footer_Over18Logo));
+			((JavascriptExecutor) d).executeScript("arguments[0].click();", Over18link );
+		//d.findElement(By.cssSelector(Constant.Footer_Over18Logo)).click();
 
 	}
 
 	public void clickFooterGamCareink() {
-		d.findElement(By.cssSelector(Constant.Footer_GamcareLogo)).click();
+		WebElement GamCarelink=d.findElement(By.cssSelector(Constant.Footer_GamcareLogo));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", GamCarelink );
+		//d.findElement(By.cssSelector(Constant.Footer_GamcareLogo)).click();
 
 	}
 
 	public void clickFooterGamblingCommissionlink() {
-	d.findElement(By.cssSelector(Constant.Footer_GamblingCommissionLogo)).click();
+		WebElement Gamblingink=d.findElement(By.cssSelector(Constant.Footer_GamblingCommissionLogo));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", Gamblingink );
+	//d.findElement(By.cssSelector(Constant.Footer_GamblingCommissionLogo)).click();
 
 	}
 }
