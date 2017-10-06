@@ -2915,12 +2915,8 @@ public class StepsDefination extends TestBase {
 
 	@After("@web")
 	public void closeBrowser() throws InterruptedException {
-		d.close();
-		// if(basePage.isLoggedIn()){
-		// basePage.logOut();
-		//
-		// }
-		// // Thread.sleep(2000);
+		d.quit();
+		
 
 	}
 }
