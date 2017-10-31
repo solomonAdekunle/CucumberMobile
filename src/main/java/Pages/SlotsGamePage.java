@@ -16,50 +16,27 @@ public class SlotsGamePage extends BasePage {
 		super(d);
 		// TODO Auto-generated constructor stub
 	}
-
+  /* Get current Page url address */
 	public String isSlotsGameMenuWithinGameSessionPagePressent() {
 		this.waitForLoad(d);
 		String PlaytechUrl = d.getCurrentUrl();
 		System.out.println(PlaytechUrl);
 		return PlaytechUrl;
 
-		// WebElement iFrame= d.findElement(By.tagName("iframe"));
-		// System.out.println(iFrame.getSize());
-		// WebDriverWait wait = new WebDriverWait(d,220);
-		// wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("iframe#aliveFrame")));
-		// WebElement Frame =
-		// d.findElement(By.cssSelector("iframe#aliveFrame"));
-		// WebElement
-		// Frame2=d.findElement(By.cssSelector("iframe.force-fullscreen"));
-		// //wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.SlotsGameMenuIcon)));
-		// d.switchTo().frame(Frame).switchTo().defaultContent().switchTo().frame(Frame2);
-		// WebElement
-		// PlayTechGameSessionMenuIcon=d.findElement(By.cssSelector(Constant.SlotsGameMenuIcon));
-		// System.out.println(PlayTechGameSessionMenuIcon.isDisplayed());
-		// return PlayTechGameSessionMenuIcon.isDisplayed();
-		// return
-		// d.findElement(By.cssSelector(Constant.SlotsGameMenuIcon)).isDisplayed();
 	}
 
+	/* Navigate back to the Home Page */
 	public void NavigateBackToHomePage() {
 		d.navigate().back();
 	}
-
+	/* get the Current Url Address*/
 	public String VerifySlotGameUrlAddress() {
 		this.waitForLoad(d);
 		System.out.println(d.getCurrentUrl());
 		return d.getCurrentUrl();
 
-		// WebDriverWait wait = new WebDriverWait(d,200);
-		// wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("iframe#aliveFrame")));
-		// WebElement Frame =
-		// d.findElement(By.cssSelector("iframe#aliveFrame"));
-		// d.switchTo().frame(Frame).switchTo().defaultContent();
-		// return
-		// d.findElement(By.xpath(Constant.SlotGamesSoundPopUpBox)).isDisplayed();
-
-	}
-
+		}
+	/* Check if the Game is loading */
 	public boolean isGameLoading() {
 		WebDriverWait wait = new WebDriverWait(d, 200);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("iframe#aliveFrame")));

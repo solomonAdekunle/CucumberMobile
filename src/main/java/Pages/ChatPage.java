@@ -21,7 +21,7 @@ public class ChatPage extends BasePage{
 	 public void isLiveChatSuperCasinoLogoPresent(){
 	 WebElement Frame = d.findElement(By.cssSelector("iframe.noFrame"));
     	d.switchTo().frame(Frame);
-    	 WebDriverWait wait= new WebDriverWait(d,45);
+    	 WebDriverWait wait= new WebDriverWait(d,120);
 		 WebElement Logo= d.findElement(By.cssSelector(Constant.LiveChat_SupercasinoLogo));
 		 wait.until(ExpectedConditions.visibilityOf(Logo));
 		 Logo.isDisplayed();

@@ -229,8 +229,8 @@ Scenario: Registration with valid Data and clicking Deposit Button on Welcome
 #
 ##Credit Card Visa On production
 #
-##42650314 4370 6897, 2019/06, 275, Visa - Barclays Bank Plc, UK (Gold)
-##42650300 3535 6897, 2019/10, 230, Visa - Barclays Bank Plc, UK (Gold)
+
+
 ##42650367 5555 6897, 2019/04, 170, Visa - Barclays Bank Plc, UK (Gold)
 ##42650376 5786 6897, 2019/10, 472, Visa - Barclays Bank Plc, UK (Gold)
 ##42650365 0285 6897, 2020/11, 818, Visa - Barclays Bank Plc, UK (Gold)

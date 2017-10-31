@@ -11,7 +11,7 @@ public class ChangePasswordPage extends BasePage {
 
 	public ChangePasswordPage(WebDriver d) {
 		super(d);
-		// TODO Auto-generated constructor stub
+	
 	}
 
 	public boolean isChangePasswordTitlePageDisplay() {

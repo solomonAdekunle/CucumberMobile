@@ -13,7 +13,7 @@ public class TermsAndConditionsPage extends BasePage{
 	}
 
 	
-	
+	/* Check if Terms and Condition IS DISPLAYED on the T and C page */
 	public boolean isTermsAndConditionsTitlePageDisplay(){
 		return d.findElement(By.cssSelector(Constant.PageTitle)).isDisplayed();
 		

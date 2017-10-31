@@ -11,8 +11,9 @@ public class PrivacyPolicyPage extends BasePage{
 
 	public PrivacyPolicyPage(WebDriver d) {
 		super(d);
-		// TODO Auto-generated constructor stub
+		
 	}
+	/* Check if Privacy Policy is displayed as title Page */
 	public boolean isPrivacyPolicyTitlePageDisplay(){
 		WebDriverWait wait= new WebDriverWait(d,10);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.PageTitle)));

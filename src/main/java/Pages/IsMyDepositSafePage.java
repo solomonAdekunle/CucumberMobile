@@ -11,16 +11,18 @@ public class IsMyDepositSafePage extends BasePage {
 
 	public IsMyDepositSafePage(WebDriver d) {
 		super(d);
-		// TODO Auto-generated constructor stub
+
 	}
-	
-	
-	public boolean isIsMyDepositSafeTitlePageDisplay(){
-		WebDriverWait wait= new WebDriverWait(d,30);
+
+	/*
+	 * Check if is My deposit Safe is displayed as title on Is My Deposit Safe
+	 * Page
+	 */
+	public boolean isIsMyDepositSafeTitlePageDisplay() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.PageTitle)));
 		return d.findElement(By.cssSelector(Constant.PageTitle)).isDisplayed();
-		
+
 	}
-	
 
 }

@@ -12,9 +12,10 @@ public class LiveVerticalPage extends BasePage{
 
 	public LiveVerticalPage(WebDriver d) {
 		super(d);
-		// TODO Auto-generated constructor stub
+		
 	}
 
+	/* click on Live Roulette on Live Vertical home Page */
 	public void clickLiveRouletteGame() {
 		List<WebElement> NetplatvGames=d.findElements(By.cssSelector(Constant.hp_NetPlayTv_Games));
 		WebElement RouletteGame=NetplatvGames.get(0);

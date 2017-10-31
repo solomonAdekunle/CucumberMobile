@@ -1,4 +1,4 @@
-package com.Suite.SupercasinoCucumber_MobilePom;
+package Suite.SupercasinoCucumber_MobilePom;
 
 import java.awt.AWTException;
 import java.io.BufferedWriter;

@@ -14,7 +14,7 @@ public class SecurityPage extends BasePage{
 		// TODO Auto-generated constructor stub
 	}
 
-	
+	/* Check if  Security is displayed as Title Page */
 	public boolean isSesurityTitlePageDisplay(){
 		WebDriverWait wait= new WebDriverWait(d,30);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.PageTitle)));

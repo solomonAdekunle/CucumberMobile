@@ -16,7 +16,7 @@ public class RouletteExpressPremium extends BasePage {
 		super(d);
 		// TODO Auto-generated constructor stub
 	}
-
+	/* get the Current Url Address */
 	public String isMenuIconwithinGameSessionPresent(){
 		    this.waitForLoad(d);     
                   System.out.println(d.getCurrentUrl());
@@ -36,11 +36,11 @@ public class RouletteExpressPremium extends BasePage {
 //		return  d.findElement(By.cssSelector(Constant.RouletteExpressPremiun_MenuIcon)).isDisplayed();
 		
 	 
-	
+	/* Navigate back to the Home Page */
 	 public void NavigateBackToHomePage(){
 		 d.navigate().back();
 	 }
-	 
+	 /* Wait for Page to load */
 	 public void waitForLoad(WebDriver driver) {
 	        ExpectedCondition<Boolean> pageLoadCondition = new
 	                ExpectedCondition<Boolean>() {

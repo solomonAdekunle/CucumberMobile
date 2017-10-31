@@ -15,7 +15,7 @@ public class PresentersPage extends BasePage {
 	}
 
 	
-	
+	/* Check if Presenter is displayed as title on Presenter Page */
 	public boolean isPresntersTitlePageDisplay(){
 		WebDriverWait wait= new WebDriverWait(d,10);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.PageTitle)));

@@ -15,7 +15,7 @@ public class ResponsibleGamblingPage extends BasePage{
 	}
 	
 	
-	
+	/* Check if Responsible Gambling is displayed as Title on Responsible Gambling Page */
 	public boolean isResponsibleGamblingTitlePageDisplay(){
 		WebDriverWait wait= new WebDriverWait(d,10);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.PageTitle)));

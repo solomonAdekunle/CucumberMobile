@@ -3,7 +3,7 @@
 #         
 #
 #
-#@ignore       
+##@ignore       
 #@ChangePassword  
 #Scenario: Verifying Elements on Change Password page on Casino 
 #Given I Navigate to the homepage on "browser" 
@@ -66,7 +66,7 @@
 #			     
 #     
 #   
-#@ignore       
+##@ignore       
 # @ChangePassword  
 #Scenario: Verifying Elements on Change Password page on Vegas
 #Given I Navigate to the homepage on "browser" 

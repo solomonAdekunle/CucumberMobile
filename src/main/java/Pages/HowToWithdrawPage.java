@@ -13,11 +13,16 @@ public class HowToWithdrawPage extends BasePage {
 		super(d);
 		// TODO Auto-generated constructor stub
 	}
-	public boolean isHowToWithdrawTitlePageDisplay(){
-		WebDriverWait wait= new WebDriverWait(d,30);
+
+	/*
+	 * Check if How to withdraw is displayed as a title page on How to withdraw
+	 * page
+	 */
+	public boolean isHowToWithdrawTitlePageDisplay() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.PageTitle)));
 		return d.findElement(By.cssSelector(Constant.PageTitle)).isDisplayed();
-		
+
 	}
-	
+
 }

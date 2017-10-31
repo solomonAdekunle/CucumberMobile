@@ -13,7 +13,7 @@ public class WelcomePage  extends BasePage{
 	}
 
 	
-	
+	/* Check is Welcome is displayed as title on welcome page*/
 	public boolean isWelcomeTitleTextPresent(){
 	 return d.findElement(By.cssSelector(Constant.WelcomePage_TitleText)).isDisplayed();
 	}

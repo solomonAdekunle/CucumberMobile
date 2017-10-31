@@ -7,20 +7,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Util.Constant;
 
-public class HowToDepositPage extends BasePage{
+public class HowToDepositPage extends BasePage {
 
 	public HowToDepositPage(WebDriver d) {
 		super(d);
-		// TODO Auto-generated constructor stub
+
 	}
 
-	
-	
-	public boolean isHowToDepositTitlePageDisplay(){
-		WebDriverWait wait= new WebDriverWait(d,30);
+	/* Chech if How To deposit is displayed as title on How To Deposit Page */
+	public boolean isHowToDepositTitlePageDisplay() {
+		WebDriverWait wait = new WebDriverWait(d, 30);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(Constant.PageTitle)));
 		return d.findElement(By.cssSelector(Constant.PageTitle)).isDisplayed();
-		
+
 	}
-	
+
 }

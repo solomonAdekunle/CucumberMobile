@@ -1,4 +1,4 @@
-package com.Suite.SupercasinoCucumber_MobilePom;
+package Suite.SupercasinoCucumber_MobilePom;
 
 import java.io.File;
 import java.io.FileInputStream;
