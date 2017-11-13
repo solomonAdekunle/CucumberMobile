@@ -231,9 +231,9 @@ Scenario: Registration with valid Data and clicking Deposit Button on Welcome
 #
 
 
-##42650367 5555 6897, 2019/04, 170, Visa - Barclays Bank Plc, UK (Gold)
-##42650376 5786 6897, 2019/10, 472, Visa - Barclays Bank Plc, UK (Gold)
-##42650365 0285 6897, 2020/11, 818, Visa - Barclays Bank Plc, UK (Gold)
+
+
+
 ##42650365 3784 6897, 2020/10, 572, Visa - Barclays Bank Plc, UK (Gold)
 ##42650304 1014 6897, 2019/12, 647, Visa - Barclays Bank Plc, UK (Gold)
 ##42650338 3861 6897, 2019/03, 558, Visa - Barclays Bank Plc, UK (Gold)

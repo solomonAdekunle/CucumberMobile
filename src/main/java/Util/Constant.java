@@ -77,16 +77,18 @@ public class Constant {
 	  
 	  //Elements On Registration Page
 	  public static String RegisterTitle="h1.title";
-	  public static String Register_Username="username";
-	  public static String Register_Password="password";
+	  public static String Register_Username="account_username";
+	  public static String Register_Password="account_password";
+	  public static String Register_ConfPassword="password_confirm";
 	  public static String Register_ScreenName="screen_name";
 	  public static String Register_Email="email";
+	  public static String Register_Title="title";
 	  public static String Register_FirstName="fname";
 	  public static String Register_SurName="surname";
-	  public static String Register_DOB_Day="dob_day";
-	  public static String Register_DOB_Month="dob_month";
-	  public static String Register_DOB_Year="dob_year";
-	  public static String Register_EnterAddressManually="";
+	  public static String Register_DOB_Day="date_select[day]";
+	  public static String Register_DOB_Month="date_select[month]";
+	  public static String Register_DOB_Year="date_select[year]";
+	  public static String Register_EnterAddressManually="#enter_manually p a";
 	  public static String Register_Address="address";
 	  public static String Register_Town="city";
 	  public static String Register_County="county";
@@ -102,7 +104,7 @@ public class Constant {
 	  public static String Register_Over18CheckBox="agree_terms";
 	  public static String Register_Over18Term="div#terms-description a[data-ajax-url='/get-page/2']";
 	  public static String Register_Over18PrivacyPolicy="div#terms-description a[data-ajax-url='/get-page/3']";
-	  public static String Register_Submit="registration-submit";
+	  public static String Register_Submit="registration_submit";
 	  public static String Register_ComplianceMessage="div.registration-form-legal-footer p";
 	  public static String Reg_DepositLimit_ChooseTypeNolimit="div.form-item-deposit-limits option[value='0']";
 	  public static String Reg_DepositLimit_ChooseTypeDaily="div.form-item-deposit-limits option[value='Daily']";

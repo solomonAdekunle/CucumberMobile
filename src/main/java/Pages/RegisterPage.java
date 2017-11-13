@@ -46,6 +46,14 @@ public class RegisterPage extends BasePage {
 		d.findElement(By.name(Constant.Register_Password)).sendKeys(password);
 	}
 
+	public void sendRegConfPassword(String ConfPassword){
+		d.findElement(By.name(Constant.Register_ConfPassword)).sendKeys(ConfPassword);
+	}
+	
+	public void sendRegTitle(String title){
+		d.findElement(By.name(Constant.Register_Title)).sendKeys(title);
+	}
+	
 	/* Enter your ON ScreenName on Registration Page */
 	public void sendRegScreename(String screenName) {
 		String ScreenName = screenName;
@@ -95,6 +103,8 @@ public class RegisterPage extends BasePage {
 
 	/* Enter your Address Number on Registration Page */
 	public void sendRegAddress(String Address) {
+		WebDriverWait wait = new WebDriverWait (d,15);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.name(Constant.Register_Address)));
 		d.findElement(By.name(Constant.Register_Address)).sendKeys(Address);
 	}
 
@@ -146,19 +156,23 @@ public class RegisterPage extends BasePage {
 
 	/* Select your Deposit Limit other Amount on Registration Page */
 	public void sendRegDepositLimitOtherAmount(String Other) {
-		d.findElement(By.name(Constant.Register_DepositLimitOtherAmount)).sendKeys(Other);
+		d.findElement(By.cssSelector(Constant.Register_DepositLimitOtherAmount)).sendKeys(Other);
 	}
 
 	/* click on Deposit Limit link on Registration Page */
 	public void clickRegDepositLimitLink() {
-		d.findElement(By.name(Constant.Register_DepositLimitClickHere)).click();
+		WebElement ClikHereDepositLimitLink=d.findElement(By.cssSelector(Constant.Register_DepositLimitClickHere));
+		 ((JavascriptExecutor) d).executeScript("arguments[0].click();", ClikHereDepositLimitLink);
 	}
 
 	/*
 	 * click on click here to enter your address manually link Registration Page
 	 */
 	public void clickEnterAddressManuallyLink() {
-		d.findElement(By.name(Constant.Register_EnterAddressManually)).click();
+		 WebElement ClickHereToEnterYourAddress=d.findElement(By.cssSelector(Constant.Register_EnterAddressManually));
+		 ((JavascriptExecutor) d).executeScript("arguments[0].click();", ClickHereToEnterYourAddress);
+
+		 
 	}
 
 	/* click on Over 18 check box on Registration Page */
@@ -169,27 +183,30 @@ public class RegisterPage extends BasePage {
 		// checkbox.click();
 		((JavascriptExecutor) d).executeScript("arguments[0].click();", checkbox);
 
-		// d.findElement(By.name(Constant.Register_Over18CheckBox)).click();
+		
 	}
 
 	/* click on Term And Wagering check box on Registration Page */
 	public void clickTermAndWaggeringLink() {
-		d.findElement(By.name(Constant.Register_FreeBonusTermsAndWagering)).click();
+		d.findElement(By.cssSelector(Constant.Register_FreeBonusTermsAndWagering)).click();
 	}
 
 	/* click on Over 18 Term link on Registration Page */
 	public void clickOver18TermsLink() {
-		d.findElement(By.name(Constant.Register_Over18Term)).click();
+		d.findElement(By.cssSelector(Constant.Register_Over18Term)).click();
 	}
 
 	/* click on Over 18 Privacy Policy link on Registration Page */
 	public void clickOver18PrivacyPolicyLink() {
-		d.findElement(By.name(Constant.Register_Over18PrivacyPolicy)).click();
+		d.findElement(By.cssSelector(Constant.Register_Over18PrivacyPolicy)).click();
 	}
 
 	/* click on Submit button on Registration Page */
 	public void clickRegisterSubmitButtton() {
-		d.findElement(By.name(Constant.Register_Submit)).click();
+		WebElement RegisterSubmitButton=d.findElement(By.id(Constant.Register_Submit));
+		((JavascriptExecutor) d).executeScript("arguments[0].click();", RegisterSubmitButton);
+
+		//d.findElement(By.id(Constant.Register_Submit)).click();
 	}
 
 	/*
@@ -343,22 +360,23 @@ public class RegisterPage extends BasePage {
 	public boolean isComplianceTextPresent() {
 		return d.findElement(By.name(Constant.Register_ComplianceMessage)).isDisplayed();
 	}
+	
 	/* Check if  Deposit Limit click here link is displayed on Registration Page */
 	public boolean isRegisterDepositLimiClickHeretLinkPresent() {
 
-		return d.findElement(By.name(Constant.Register_DepositLimitClickHere)).isDisplayed();
+		return d.findElement(By.cssSelector(Constant.Register_DepositLimitClickHere)).isDisplayed();
 	}
 	/* Check if Submit  Button is displayed on Registration Page */
 	public boolean isRegisterSubmitButtonPresent() {
 		WebDriverWait wait = new WebDriverWait(d, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(Constant.Register_Submit)));
-		return d.findElement(By.name(Constant.Register_Submit)).isDisplayed();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(Constant.Register_Submit)));
+		return d.findElement(By.id(Constant.Register_Submit)).isDisplayed();
 	}
 	/* Check if Deposit limit Choose Limit is displayed on Registration Page */
 	public boolean isDepositLimitChooseLimitPresent() {
 		WebDriverWait wait = new WebDriverWait(d, 20);
 		wait.until(ExpectedConditions
-				.visibilityOfAllElementsLocatedBy(By.name(Constant.Register_DepositLimitChooseLimit)));
+				.presenceOfElementLocated(By.name(Constant.Register_DepositLimitChooseLimit)));
 		return d.findElement(By.name(Constant.Register_DepositLimitChooseLimit)).isDisplayed();
 	}
 	/* Check if Deposit limit choose Type Input box is displayed on Registration Page */
@@ -367,40 +385,43 @@ public class RegisterPage extends BasePage {
 	}
 	/* Check if Over 18 plus check box is displayed on Registration Page */
 	public boolean isDepositLimitDailyPresent(String Value) {
-		return d.findElement(By.name(Constant.Reg_DepositLimit_ChooseTypeDaily)).isDisplayed();
+		WebDriverWait wait = new WebDriverWait(d, 20);
+		wait.until(ExpectedConditions
+				.presenceOfElementLocated(By.cssSelector(Constant.Reg_DepositLimit_ChooseTypeDaily)));
+		return d.findElement(By.cssSelector(Constant.Reg_DepositLimit_ChooseTypeDaily)).isDisplayed();
 
 	}
 	/* Check if  Deposit limit weekly input box is displayed on Registration Page */
 	public boolean isDepositLimitWeeklyPresent(String Value) {
-		return d.findElement(By.name(Constant.Reg_DepositLimit_ChooseTypeWeekLy)).isDisplayed();
+		return d.findElement(By.cssSelector(Constant.Reg_DepositLimit_ChooseTypeWeekLy)).isDisplayed();
 
 	}
 	/* Check if Over 18 plus check box is displayed on Registration Page */
 	public boolean isDepositLimitMonthlyPresent(String Value) {
-		return d.findElement(By.name(Constant.Reg_DepositLimit_ChooseTypeMonthly)).isDisplayed();
+		return d.findElement(By.cssSelector(Constant.Reg_DepositLimit_ChooseTypeMonthly)).isDisplayed();
 
 	}
 	
 
 	public boolean isDepositLimitThousandPoundsPresent(String Value) {
-		return d.findElement(By.name(Constant.Reg_DepositLimit_ChooseLimitValue1)).isDisplayed();
+		return d.findElement(By.cssSelector(Constant.Reg_DepositLimit_ChooseLimitValue1)).isDisplayed();
 
 	}
 
 	public boolean isDepositLimitTenThousandPoundsPresent(String Value) {
-		return d.findElement(By.name(Constant.Reg_DepositLimit_ChooseLimitValue2)).isDisplayed();
+		return d.findElement(By.cssSelector(Constant.Reg_DepositLimit_ChooseLimitValue2)).isDisplayed();
 	}
 
 	public boolean isDepositLimitFiftyThousandPoundsPresent(String Value) {
-		return d.findElement(By.name(Constant.Reg_DepositLimit_ChooseLimitValue3)).isDisplayed();
+		return d.findElement(By.cssSelector(Constant.Reg_DepositLimit_ChooseLimitValue3)).isDisplayed();
 	}
 
 	public boolean isDepositLimitOtherValuePresent(String Value) {
-		return d.findElement(By.name(Constant.Reg_DepositLimit_ChooseLimitValue4)).isDisplayed();
+		return d.findElement(By.cssSelector(Constant.Reg_DepositLimit_ChooseLimitValue4)).isDisplayed();
 	}
 
 	public boolean isDepositLimitOtherInputBoxPresent(String Value) {
-		return d.findElement(By.name(Constant.Register_DepositLimitOtherAmount)).isDisplayed();
+		return d.findElement(By.cssSelector(Constant.Register_DepositLimitOtherAmount)).isDisplayed();
 	}
 	/* Check if Over 18 plus check box is displayed on Registration Page */
 	public boolean isRegisterComplianceMessagePresent() {
@@ -411,23 +432,23 @@ public class RegisterPage extends BasePage {
 	/* Check if Bonus Terms Pop-up fame box is displayed on Registration Page */
 	public boolean isRegisterBonusTermsFrameBoxPresent() {
 		WebDriverWait wait = new WebDriverWait(d, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(Constant.Reg_BonusTermFrameBoxHeader)));
-		return d.findElement(By.name(Constant.Reg_BonusTermFrameBoxHeader)).isDisplayed();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.Reg_BonusTermFrameBoxHeader)));
+		return d.findElement(By.cssSelector(Constant.Reg_BonusTermFrameBoxHeader)).isDisplayed();
 
 	}
 	/* Check if Terms And Condition Pop-up fame box is displayed on Registration Page */
 	public boolean isRegisterTermsAndConditionFrameBoxPresent() {
 		WebDriverWait wait = new WebDriverWait(d, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(Constant.Reg_BonusTermFrameBoxHeader)));
-		return d.findElement(By.name(Constant.Reg_BonusTermFrameBoxHeader)).isDisplayed();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.Reg_BonusTermFrameBoxHeader)));
+		return d.findElement(By.cssSelector(Constant.Reg_BonusTermFrameBoxHeader)).isDisplayed();
 
 	}
 
 	/* Check if Privacy Policy Pop-up fame box is displayed on Registration Page */
 	public boolean isRegisterPrivacyPolicyFrameBoxPresent() {
 		WebDriverWait wait = new WebDriverWait(d, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(Constant.Reg_BonusTermFrameBoxHeader)));
-		return d.findElement(By.name(Constant.Reg_BonusTermFrameBoxHeader)).isDisplayed();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Constant.Reg_BonusTermFrameBoxHeader)));
+		return d.findElement(By.cssSelector(Constant.Reg_BonusTermFrameBoxHeader)).isDisplayed();
 
 	}
 	/* Check if Error Message is displayed on Registration Page */

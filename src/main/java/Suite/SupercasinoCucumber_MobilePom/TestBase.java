@@ -58,10 +58,10 @@ public class TestBase {
 				options.addArguments("disable-infobars");
 				// options.addArguments("no-sandbox");
 				options.addArguments("--user-agent="
-						+ "Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53");
-				// options.addArguments("--user-agent=" + "Mozilla/5.0 (iPad;
-				// CPU OS 8_0 like Mac OS X) AppleWebKit/600.1.3 (KHTML, like
-				// Gecko) Version/8.0 Mobile/12A4345d Safari/600.1.4");
+						+ "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1");
+				// options.addArguments("--user-agent=" + "Mozilla/5.0 (iPad CPU
+				// OS 8_0 like Mac OS X) AppleWebKit/600.1.3 (KHTML, like Gecko)
+				// Version/8.0 Mobile/12A4345d Safari/600.1.4");
 				DesiredCapabilities cap = DesiredCapabilities.chrome();
 				// cap.setCapability(CapabilityType.PROXY, p);
 				cap.setCapability(ChromeOptions.CAPABILITY, options);
@@ -76,8 +76,9 @@ public class TestBase {
 			EventFiringWebDriver dr = new EventFiringWebDriver(d);
 			d.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			/* Smalltouch devices such as iPhone, Android and Windows phones */
-			Dimension k = new Dimension(320, 568);
-			/* Dimension k = new Dimension(768,1024);// ipad or tablet */
+			Dimension k = new Dimension(375, 667);
+			/* Ipad Device */
+			// Dimension k = new Dimension(768,1024);
 			d.manage().window().setSize(k);
 		}
 
@@ -88,12 +89,8 @@ public class TestBase {
 		// Utility.takeScreenshot(URLKey);
 	}
 
-	public void quit() {
-		if (d != null) {
-			d.quit();
-			d = null;
-		}
-	}
+	
+	
 
 	public String generateStringWithAllobedSplChars(int length, String allowdSplChrs) {
 		String allowedChars = "abcdefghijklmnopqrstuvwxyz" + // alphabets

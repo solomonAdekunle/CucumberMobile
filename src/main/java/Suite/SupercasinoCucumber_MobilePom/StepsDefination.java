@@ -264,6 +264,17 @@ public class StepsDefination extends TestBase {
 
 	}
 
+	/*
+	 * Enter ConfirmPassword for Registration
+	 * 
+	 * @param{string ConfPassword}- this is the ConfPassword of the Account
+	 */
+	@When("^I enter RegConfirmPassword as \"([^\"]*)\"$")
+	public void i_enter_RegConfirmPassword_as(String ConfPassword) {
+		RegPage.sendRegConfPassword(ConfPassword);
+
+	}
+
 	/* Enter ScreenName for Registration */
 	@When("^I enter a RegScreenName as \"([^\"]*)\"$")
 	public void i_enter_a_RegScreenName_as(String screenName) {
@@ -279,6 +290,17 @@ public class StepsDefination extends TestBase {
 	@When("^I enter RegEmail as \"([^\"]*)\"$")
 	public void i_enter_RegEmail_as(String email) {
 		RegPage.sendRegEmail(email);
+
+	}
+
+	/*
+	 * Enter Title for Registration
+	 * 
+	 * @param{string title}- this is the title of the Account Holder
+	 */
+	@When("^I enter RegTitle as \"([^\"]*)\"$")
+	public void i_enter_RegTitle_as(String title) {
+		RegPage.sendRegTitle(title);
 
 	}
 
@@ -325,7 +347,7 @@ public class StepsDefination extends TestBase {
 	@When("^I enter RegDOBMonth as \"([^\"]*)\"$")
 	public void i_enter_RegDOBMonth_as(String Month) {
 		RegPage.sendRegDOBMonth(Month);
-		
+
 	}
 
 	/*
@@ -420,9 +442,10 @@ public class StepsDefination extends TestBase {
 		RegPage.sendRegPostCode(Postcode);
 
 	}
+
 	@When("^I enter RegDialingCode as \"([^\"]*)\"$")
 	public void i_enter_RegDialingCode_as(String DialingCode) {
-	    RegPage.sendRegCountryDialingCodeDropdownBox(DialingCode);
+		RegPage.sendRegCountryDialingCodeDropdownBox(DialingCode);
 	}
 
 	/*
@@ -1493,85 +1516,95 @@ public class StepsDefination extends TestBase {
 	public void i_should_see_Compliance_Text_displayed_below_Register_Now_button_on_Registration_Page() {
 		Assert.assertTrue(RegPage.isRegisterComplianceMessagePresent());
 	}
-	
+
 	/* Verify if Error Message will be displayed with an invalid data */
 	@Then("^I should see Invalid Error Message displayed by the Email input box on Registration Page$")
-	public void i_should_see_Invalid_Error_Message_displayed_by_the_Email_input_box_on_Registration_Page()  {
+	public void i_should_see_Invalid_Error_Message_displayed_by_the_Email_input_box_on_Registration_Page() {
 		Assert.assertTrue(RegPage.isRegInvalidDataErrorMessagePresent());
-	    
+
 	}
+
 	/* Verify if Error Message will be displayed with an invalid data */
 	@Then("^I should see Error Message displayed by the Password input box on Registration Page$")
-	public void i_should_see_Error_Message_displayed_by_the_Password_input_box_on_Registration_Page()  {
+	public void i_should_see_Error_Message_displayed_by_the_Password_input_box_on_Registration_Page() {
 		Assert.assertTrue(RegPage.isRegInvalidDataErrorMessagePresent());
-	    
+
 	}
+
 	/* Verify if Error Message will be displayed with an invalid data */
 	@Then("^I should see Error Message displayed by the UserName input box on Registration Page$")
 	public void i_should_see_Error_Message_displayed_by_the_UserName_input_box_on_Registration_Page() {
 		Assert.assertTrue(RegPage.isRegInvalidDataErrorMessagePresent());
-	    
+
 	}
+
 	/* Verify if Error Message will be displayed with an invalid data */
 	@Then("^I should see Error Message displayed by the OnScreenName input box on Registration Page$")
-	public void i_should_see_Error_Message_displayed_by_the_OnScreenName_input_box_on_Registration_Page()  {
+	public void i_should_see_Error_Message_displayed_by_the_OnScreenName_input_box_on_Registration_Page() {
 		Assert.assertTrue(RegPage.isRegInvalidDataErrorMessagePresent());
-	    
+
 	}
+
 	/* Verify if Error Message will be displayed with an invalid data */
 	@Then("^I should see Error Message displayed by the FirstName input box on Registration Page$")
-	public void i_should_see_Error_Message_displayed_by_the_FirstName_input_box_on_Registration_Page(){
+	public void i_should_see_Error_Message_displayed_by_the_FirstName_input_box_on_Registration_Page() {
 		Assert.assertTrue(RegPage.isRegInvalidDataErrorMessagePresent());
-	    
+
 	}
+
 	/* Verify if Error Message will be displayed with an invalid data */
 	@Then("^I should see Error Message displayed by the SurName input box on Registration Page$")
 	public void i_should_see_Error_Message_displayed_by_the_SurName_input_box_on_Registration_Page() {
-	    
+
 	}
+
 	/* Verify if Error Message will be displayed with an invalid data */
 	@Then("^I should see Error Message displayed by the Address input box on Registration Page$")
-	public void i_should_see_Error_Message_displayed_by_the_Address_input_box_on_Registration_Page()  {
+	public void i_should_see_Error_Message_displayed_by_the_Address_input_box_on_Registration_Page() {
 		Assert.assertTrue(RegPage.isRegInvalidDataErrorMessagePresent());
-	    
+
 	}
+
 	/* Verify if Error Message will be displayed with an invalid data */
 	@Then("^I should see Error Message displayed by the Postcode input box on Registration Page$")
 	public void i_should_see_Error_Message_displayed_by_the_Postcode_input_box_on_Registration_Page() {
 		Assert.assertTrue(RegPage.isRegInvalidDataErrorMessagePresent());
-	    
+
 	}
+
 	/* Verify if Error Message will be displayed with an invalid data */
 	@Then("^I should see Error Message displayed by the Town input box on Registration Page$")
 	public void i_should_see_Error_Message_displayed_by_the_Town_input_box_on_Registration_Page() {
 		Assert.assertTrue(RegPage.isRegInvalidDataErrorMessagePresent());
-	    
+
 	}
+
 	/* Verify if Error Message will be displayed with an invalid data */
 	@Then("^I should see Error Message displayed by the County input box on Registration Page$")
 	public void i_should_see_Error_Message_displayed_by_the_County_input_box_on_Registration_Page() {
 		Assert.assertTrue(RegPage.isRegInvalidDataErrorMessagePresent());
 	}
+
 	/* Verify if Error Message will be displayed with an invalid data */
 	@Then("^I should see Error Message displayed by the Contact Number input box on Registration Page$")
 	public void i_should_see_Error_Message_displayed_by_the_Contact_Number_input_box_on_Registration_Page() {
 		Assert.assertTrue(RegPage.isRegInvalidDataErrorMessagePresent());
-	    
-	}
-	/* Verify if Error Message will be displayed with an invalid data */
-	@Then("^I should see Error Message displayed by the Deposit linit Amount input box on Registration Page$")
-	public void i_should_see_Error_Message_displayed_by_the_Deposit_linit_Amount_input_box_on_Registration_Page()  {
-		Assert.assertTrue(RegPage.isRegInvalidDataErrorMessagePresent());
-	    
+
 	}
 
-	/* Verify if disabled  Register now  button is displayed */
+	/* Verify if Error Message will be displayed with an invalid data */
+	@Then("^I should see Error Message displayed by the Deposit linit Amount input box on Registration Page$")
+	public void i_should_see_Error_Message_displayed_by_the_Deposit_linit_Amount_input_box_on_Registration_Page() {
+		Assert.assertTrue(RegPage.isRegInvalidDataErrorMessagePresent());
+
+	}
+
+	/* Verify if disabled Register now button is displayed */
 	@Then("^I should see Register Now Button disabled$")
 	public void i_should_see_Register_Now_Button_disabled() {
 		Assert.assertTrue(RegPage.isDisabledRegisterNowButtonPresent());
 	}
-	
-	
+
 	/*
 	 * Verify if Error Message is displayed on Registration form for Invalid
 	 * data
@@ -1641,6 +1674,12 @@ public class StepsDefination extends TestBase {
 		Assert.assertTrue(welcomePage.isWelcomeTitleTextPresent());
 
 	}
+	@Then("^I should navigate \"([^\"]*)\" to welcome page\\.$")
+	public void i_should_navigate_to_welcome_page(String expectedResult) {
+		Assert.assertTrue(welcomePage.isWelcomeTitleTextPresent());
+	   
+	}
+
 
 	/* Verify if Deposit Button is displayed within Welcome Page */
 	@Then("^I should see Deposit Now Button$")
@@ -1787,15 +1826,16 @@ public class StepsDefination extends TestBase {
 	/* Verify if the Game can be launched by clicking Play button */
 	@Then("^I should see a Play for Cash game Launching$")
 	public void i_should_see_a_Play_for_Cash_game_Launching() {
-		Assert.assertNotSame("Not the sate Url",gameInfoPage.getInfoPageUrl(), d.getCurrentUrl());
-			RepPage.NavigateBackToHomePage();
+		Assert.assertNotSame("Not the sate Url", gameInfoPage.getInfoPageUrl(), d.getCurrentUrl());
+		RepPage.NavigateBackToHomePage();
 
 	}
 
 	/* Verify if Demo game is Launched by clicking Demo button */
 	@Then("^I should see a Demo Game Launching$")
 	public void i_should_see_a_Demo_Game_Launching() {
-		Assert.assertNotSame("Not the sate Url",gameInfoPage.getInfoPageUrl(), d.getCurrentUrl());;
+		Assert.assertNotSame("Not the sate Url", gameInfoPage.getInfoPageUrl(), d.getCurrentUrl());
+		;
 		// Navigate Back to the Home Page.
 		RepPage.NavigateBackToHomePage();
 
@@ -1804,14 +1844,14 @@ public class StepsDefination extends TestBase {
 	/* Verify if Slots Game can be launched by clicking Play button */
 	@Then("^I should see a Slots game launching$")
 	public void i_should_see_a_Slots_game_launching() {
-		Assert.assertNotSame(slotGamePage.VerifySlotGameUrlAddress(),d.getCurrentUrl());
+		Assert.assertNotSame(slotGamePage.VerifySlotGameUrlAddress(), d.getCurrentUrl());
 		slotGamePage.NavigateBackToHomePage();
 	}
 
 	/* Verify if Table Game can be launched by clicking Play button */
 	@Then("^I should see a Table Game launching$")
 	public void i_should_see_a_Table_Game_launching() {
-		Assert.assertEquals(slotGamePage.VerifySlotGameUrlAddress(),d.getCurrentUrl());
+		Assert.assertEquals(slotGamePage.VerifySlotGameUrlAddress(), d.getCurrentUrl());
 		slotGamePage.NavigateBackToHomePage();
 
 	}
@@ -1822,7 +1862,7 @@ public class StepsDefination extends TestBase {
 	 */
 	@Then("^I should see a Vegas Slots Game launching$")
 	public void i_should_see_a_Vegas_Slots_Game_launching() {
-		Assert.assertNotSame(slotGamePage.VerifySlotGameUrlAddress(),d.getCurrentUrl());
+		Assert.assertNotSame(slotGamePage.VerifySlotGameUrlAddress(), d.getCurrentUrl());
 		// Assert.assertTrue(slotGamePage.isVegasSlotGameSoundsBoxPresent());
 		slotGamePage.NavigateBackToHomePage();
 
@@ -2914,9 +2954,11 @@ public class StepsDefination extends TestBase {
 	}
 
 	@After("@web")
-	public void closeBrowser() throws InterruptedException {
-		d.quit();
-		
+	public void quit() {
+		if (d != null) {
+			d.quit();
+			d = null;
+		}
 
 	}
 }
