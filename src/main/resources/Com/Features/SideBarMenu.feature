@@ -474,7 +474,7 @@ Scenario: Clicking on Withdraw link with My Account Menu on the Sidebar Menu on 
 @SideBarMenu 	
 Scenario: Clicking on Change Password link with My Account Menu on the Sidebar Menu on Vegas Vertical 
 	Given I have loggedin on the BasePage 
-	When  I click on Vegas Vertical Tab 
+	When I click on Vegas Vertical Tab 
 	When I click on Sidebar Menu 
 	And I click on My Account dropdown arrow 
 	And I click on Change Password link within My Account DropDown SubMenu 

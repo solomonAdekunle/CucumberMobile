@@ -1,4 +1,4 @@
- package Suite.SupercasinoCucumber_MobilePom;
+ package com.Suite.SupercasinoCucumber_MobilePom;
 
 
 	import org.junit.runner.RunWith;
