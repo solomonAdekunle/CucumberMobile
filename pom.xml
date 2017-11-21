@@ -73,7 +73,7 @@
 						<argument>html:target/cucumber-html-report</argument>
 						<argument>--tags</argument>
 						<argument>@Login,
-							@ContactUs,@footer,@ForgottenDetails,@LaunchGame ,@gameInfo,@Promotion,@Deposit,@Withdrawal,@SearchGame,@SideBarMenu,@Homepage </argument>
+							@ContactUs,@Footer,@ForgottenDetails,@LaunchGame ,@gameInfo,@Promotion,@Deposit,@Withdrawal,@SearchGame,@SideBarMenu,@Homepage </argument>
 						<argument>--glue</argument>
 						<argument>com/</argument>
 						<argument>src/</argument>
